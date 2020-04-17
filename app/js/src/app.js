@@ -15,7 +15,6 @@ class App {
 
   initLibs () {
     window.svg4everybody();
-    // window.initSliders();
   }
 
   initModules () {
@@ -24,7 +23,3 @@ class App {
 }
 
 const app = new App();
-
-window.addEventListener('DOMContentLoaded', () => {
-  window.initSliders();
-});

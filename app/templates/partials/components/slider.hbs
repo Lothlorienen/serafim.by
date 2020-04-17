@@ -1,25 +1,20 @@
-
-<div class="js-slider-default">
-  {{> ui/slider-arrow
-          mod-arrow="slider-arrow--prev"
-          mix-arrow="slider-default__arrow"
-          type="prev"
-  }}
-  <div class="swiper-container">
+<div class="article-slider">
+  <div class="article-slider__container swiper-container js-slider-article" data-timeout="7000">
     <div class="swiper-wrapper">
-      {{#times 5}}
-        <div class="swiper-slide">
-          <div class="slider-default__img">
-            <img src="../assets/images/post/01.jpg" alt="">
-          </div>
+      {{#each slider }}
+        <div class="swiper-slide article-slider__content">
+          {{> components/image-fit
+                  mix="article-slider__image"
+                  img=this.image
+                  fallback-ext="jpg"
+                  is-cover=true
+          }}
+          <p class="article-slider__description">
+            {{{../caption}}}
+          </p>
+          <div class="article-slider__pagination-wrapper"></div>
         </div>
-      {{/times}}
+      {{/each}}
     </div>
   </div>
-  {{> ui/slider-arrow
-          mod-arrow="slider-arrow--next"
-          mix-arrow="slider-default__arrow"
-          type="next"
-  }}
-  <div class="slider-default__paging" data-slider="paging"></div>
 </div>

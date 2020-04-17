@@ -1,99 +1,154 @@
-const configs = {
-  'default': {
-    slidesPerView: 1,
-    spaceBetween: 0,
-  },
-  'fade': {
-    effect: 'fade',
-    fadeEffect: {
-      crossFade: true,
-    },
-  },
-  'loop': {
-    loop: true,
-    loopedSlides: 1,
-  },
-  'autoHeight': {
-    autoHeight: true,
-  },
-};
+class SliderArticle {
+  constructor(nodeElement) {
+    this.nodeElement = nodeElement;
+    this.timeout = +this.nodeElement.dataset.timeout || 5000;
 
-function getInners (container) {
-  return {
-    slider: container.querySelector('[data-slider="slides"]'),
-    arrowPrev: container.querySelector('[data-slider="prev"]'),
-    arrowNext: container.querySelector('[data-slider="next"]'),
-    paging: container.querySelector('[data-slider="paging"]'),
-  };
-}
+    this.pagination = nodeElement.querySelector('.article-slider__pagination');
 
-function initSliders () {
-  const defaultSliderContainer = document.querySelector('.js-slider-default');
-  if (defaultSliderContainer) {
-    const { slider, arrowPrev, arrowNext, paging } = getInners(defaultSliderContainer);
-    const config = {
-      ...configs.default,
-      navigation: {
-        prevEl: arrowPrev,
-        nextEl: arrowNext,
-        disabledClass: 'disabled',
+    this.slidesCount = nodeElement.querySelectorAll('.swiper-slide').length;
+
+    this.startTime = null;
+    this.elapsedTime = null;
+    this.timeFraction = null;
+
+    this.activeSlideElement = null;
+    this.activeSlideElementProgress = null;
+
+    this.init();
+  }
+
+  initSwiper() {
+    this.swiper = new Swiper(this.nodeElement, {
+      effect: 'fade',
+      loop: true,
+      speed: 1000,
+      autoplay: false,
+      on: {
+        init: this.onSlideChange.bind(this),
+        slideChange: this.onSlideChange.bind(this),
       },
-    };
-    if (paging) {
-      config.pagination = {
-        el: paging,
-        type: 'bullets',
-        clickable: true,
-        dynamicBullets: true,
-        dynamicMainBullets: 1,
-        bulletActiveClass: 'active',
-      };
+      fadeEffect: { crossFade: true },
+    });
+
+    this.updateActiveSlideElement();
+  }
+
+  prepareHtmlPaginationForSlide(slideElement, slideIndex) {
+    if (slideElement.querySelector('.article-slider__pagination')) {
+      return;
     }
-    new Swiper(slider, config);
+
+    const element = document.createElement('div');
+    element.classList.add('article-slider__pagination');
+
+    for (let i = 0; i < this.slidesCount; i++) {
+      const pagerItem = document.createElement('div');
+      pagerItem.classList.add('article-slider__bullet');
+
+      if (i === slideIndex) {
+        const progressElement = document.createElement('div');
+        progressElement.classList.add('article-slider__progress');
+        pagerItem.appendChild(progressElement);
+      }
+
+      element.appendChild(pagerItem);
+
+      (i => {
+        pagerItem.addEventListener('click', e => {
+          e.preventDefault();
+          if (this.swiper.realIndex !== i) {
+            if (this.swiper.realIndex === this.slidesCount - 1 && i === 0) {
+              this.swiper.slideNext();
+            } else if (this.swiper.realIndex === 0 && i === this.slidesCount - 1) {
+              this.swiper.slidePrev();
+            } else {
+              this.swiper.slideTo(i + 1);
+            }
+          }
+        });
+      })(i);
+    }
+
+    slideElement.querySelector('.article-slider__pagination-wrapper').appendChild(element);
   }
 
-  const sliderAdvantagesContainer = document.querySelector('.js-slider-advantages');
-  if (sliderAdvantagesContainer) {
-    const { slider, arrowPrev, arrowNext } = getInners(sliderAdvantagesContainer);
-    const pagination = sliderAdvantagesContainer.querySelector('[data-slider="pagination"]');
-    const paginationItems = pagination.dataset.pagination.split(',');
-    const config = {
-      ...configs.default,
-      ...configs.loop,
-      navigation: {
-        prevEl: arrowPrev,
-        nextEl: arrowNext,
-        disabledClass: 'disabled',
-      },
-      pagination: {
-        el: pagination,
-        type: 'bullets',
-        clickable: true,
-        bulletClass: 'slider-advantages__pagination-item',
-        bulletActiveClass: 'active',
-        renderBullet: (index, className) => {
-          return `<span class="${className}">${paginationItems[index]}</span>`;
-        },
-      },
-    };
-    new Swiper(slider, config);
+  updateActiveSlideElement() {
+    if (!this.swiper) {
+      return;
+    }
+
+    this.activeSlideElement = this.swiper.slides[this.swiper.activeIndex];
+    this.prepareHtmlPaginationForSlide(this.activeSlideElement, this.swiper.realIndex);
+
+    if (this.activeSlideElement) {
+      this.activeSlideElementProgress = this.activeSlideElement.querySelector('.article-slider__progress');
+    } else {
+      this.activeSlideElementProgress = null;
+    }
   }
 
-  const sliderConversionContainer = document.querySelector('.js-slider-conversion');
-  if (sliderConversionContainer) {
-    const { slider, arrowPrev, arrowNext } = getInners(sliderConversionContainer);
-    const config = {
-      ...configs.default,
-      ...configs.fade,
-      ...configs.autoHeight,
-      navigation: {
-        prevEl: arrowPrev,
-        nextEl: arrowNext,
-        disabledClass: 'disabled',
-      },
-    };
-    new Swiper(slider, config);
+  init() {
+    this.initSwiper();
+  }
+
+  toNextSlide() {
+    this.swiper.slideNext();
+  }
+
+  timing(timeFraction) {
+    return timeFraction;
+  }
+
+  animate(time) {
+    let timeFraction = (time - this.startTime + this.elapsedTime) / this.timeout;
+    if (timeFraction > 1) timeFraction = 1;
+
+    let progress = this.timing(timeFraction);
+    this.drawProgress(progress);
+
+    if (timeFraction < 1) {
+      this.animationId = raf(this.animate.bind(this));
+    } else {
+      this.toNextSlide();
+    }
+  }
+
+  drawProgress(progress) {
+    if (this.activeSlideElementProgress) {
+      this.activeSlideElementProgress.style.transform = `scaleX(${progress})`;
+    }
+  }
+
+  startProgress() {
+    this.activeSlideElement = this.swiper ? this.swiper.slides[this.swiper.activeIndex] : null;
+
+    this.startTime = performance.now();
+    this.elapsedTime = 0;
+    this.animationId = raf(this.animate.bind(this));
+  }
+
+  resetProgress() {
+    this.startTime = null;
+    this.elapsedTime = null;
+    this.timeFraction = null;
+    this.drawProgress(0);
+  }
+
+  onSlideChange() {
+    this.updateActiveSlideElement();
+
+    this.resetProgress();
+    this.startProgress();
   }
 }
 
-window.initSliders = initSliders;
+class SliderArticleUI {
+  static initOnLoad() {
+    document.querySelectorAll('.js-slider-article').forEach(item => {
+      new SliderArticle(item);
+    });
+  }
+}
+
+SliderArticleUI.initOnLoad();
+window.SliderArticleUI = SliderArticleUI;

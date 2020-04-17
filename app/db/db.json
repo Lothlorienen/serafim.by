@@ -33,7 +33,16 @@
     }
   ],
 
-  "page-with-info-slider": [
+  "article-slider": [
+    {
+      "image": "post/01"
+    },
+    {
+      "image": "post/01"
+    },
+    {
+      "image": "post/01"
+    },
     {
       "image": "post/01"
     }
