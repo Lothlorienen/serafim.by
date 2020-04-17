@@ -1,0 +1,12 @@
+<li>
+
+  <article class="related-article">
+    <a class="related-article__link" href="{{#if href}}{{href}}{{else}}#{{/if}}"></a>
+    {{>components/image-fit img=image is-cover=true mix="related__bg"}}
+    <div class="related__info">
+      <h3 class="related-article__title">{{title}}</h3>
+      {{> components/views }}
+    </div>
+  </article>
+
+</li>

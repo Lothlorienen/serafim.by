@@ -1,0 +1,20 @@
+.nav-menu {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(50px, max-content));
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: bold;
+  height: 70px;
+
+  @include tablet-and-mobile {
+    display: none;
+  }
+
+  &__link {
+    &:hover {
+      color: $color-primary;
+    }
+  }
+}

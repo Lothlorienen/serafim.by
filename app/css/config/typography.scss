@@ -1,0 +1,29 @@
+.color-gray {
+  color: $color-text-gray;
+}
+
+.text-muted {
+  color: $color-muted;
+}
+
+.link {
+  color: $color-primary;
+}
+
+.page {
+  h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+  }
+
+  a {
+    &:not(.btn)[href]:hover {
+      color: $color-primary;
+    }
+
+    &.link {
+      &:hover {
+        color: $color-primary;
+      }
+    }
+  }
+}

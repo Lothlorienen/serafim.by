@@ -1,0 +1,28 @@
+.breadcrumbs {
+  position: absolute;
+  top: 0;
+  left: $container-padding;
+
+  @include mobile {
+    left: $container-padding - 10px;
+  }
+
+  &__link {
+    @include font-sm;
+    color: $color-text-gray;
+
+    &:not(:last-child) {
+      &::after {
+        content: '/';
+        display: inline-block;
+        margin: 0 3px;
+        color: $color-muted;
+      }
+    }
+
+    &--current {
+      color: $color-muted;
+    }
+
+  }
+}

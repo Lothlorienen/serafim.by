@@ -1,0 +1,43 @@
+{{> layout/head}}
+
+<header class="header page__header">
+  <div class="container">
+    <div class="header__top">
+      <div class="header__logo">
+        {{>components/image-fit img="header/logo" fallback-ext="png"}}
+      </div>
+      <div class="header__brand">
+        <h1 class="header__title">Приход преподобного<br>Серафима Саровского</h1>
+        <span>г. Минск, Белорусская Православная Церковь Московского Патриархата</span>
+      </div>
+      <div class="header__extra">
+        <div class="header__extra-row">
+          <div class="actions">
+            <a href="#" class="link--text" id="main-search">
+              {{>ui/svg name="search"}}
+              Поиск
+            </a>
+            <button class="link--text" type="button" id="main-entrance">Вход / Регистрация</button>
+          </div>
+        </div>
+        <div class="header__extra-row">
+          <div class="extra-links">
+            <a href="#" class="link--text">Контакты</a>
+            {{>ui/btn color="primary" mix="btn--funds" label="Пожертвования"}}
+          </div>
+        </div>
+        <div class="header__extra-row">
+          {{>blocks/header/socials}}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="header__bottom">
+    <div class="container">
+      <nav class="header__nav">
+        {{>blocks/header/menu}}
+      </nav>
+    </div>
+  </div>
+</header>

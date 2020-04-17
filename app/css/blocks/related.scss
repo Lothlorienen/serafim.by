@@ -1,0 +1,70 @@
+.related {
+  margin-top: $main-gutters;
+
+  &__title {
+    @include font-related-title;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: $main-gutters;
+    margin-top: 25px;
+
+    @include tablet-and-mobile {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  li {
+    position: relative;
+
+    &::before {
+      @include fill;
+      top: 50%;
+      z-index: 2;
+      content: '';
+      display: block;
+      background: linear-gradient(360deg, rgba(0, 0, 0, 0.7) 1.04%, rgba(1, 1, 1, 0) 100%);
+    }
+  }
+
+  &__bg {
+    position: relative;
+
+    &::before {
+      padding-top: 102%;
+      content: '';
+      display: block;
+    }
+
+    img {
+      @include fill;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__info {
+    position: absolute;
+    bottom: 0;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
+    padding: 0 15px 15px;
+    color: $color-white;
+  }
+
+  &-article__title {
+    @include font-related-text;
+    max-width: 78%;
+  }
+
+  &-article__link {
+    @include fill;
+    z-index: 3;
+  }
+
+}

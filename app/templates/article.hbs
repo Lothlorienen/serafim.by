@@ -1,0 +1,22 @@
+{{!Пример поста}}
+
+{{> layout/header }}
+
+<div class="container page__container">
+  {{> components/breadcrumbs
+    main="Главная"
+    topic="Новости"
+    current="Неделя мясопустная в 2020 году"
+  }}
+
+  <main class="page__content">
+    {{> pages/page-with-info/main }}
+    {{> blocks/related }}
+  </main>
+
+  <aside class="page__aside">
+    {{> pages/page-with-info/aside }}
+  </aside>
+</div>
+
+{{> layout/footer }}

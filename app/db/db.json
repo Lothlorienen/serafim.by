@@ -1,0 +1,41 @@
+{
+  "nav-links": {
+    "nav-1": {
+      "url": "#"
+    },
+    "nav-2": {
+      "url": "#"
+    },
+    "nav-3": {
+      "url": "#"
+    },
+    "nav-4": {
+      "url": "#"
+    },
+    "nav-5": {
+      "url": "#"
+    },
+    "nav-6": {
+      "url": "#"
+    },
+    "nav-7": {
+      "url": "#"
+    }
+  },
+  "page-with-info": [
+    {
+      "tag": "Праздники",
+      "tag-link": "#"
+    },
+    {
+      "tag": "Общество",
+      "tag-link": "#"
+    }
+  ],
+
+  "page-with-info-slider": [
+    {
+      "image": "post/01"
+    }
+  ]
+}

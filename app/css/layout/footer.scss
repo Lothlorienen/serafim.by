@@ -1,0 +1,96 @@
+.footer {
+  background-color: $color-white;
+
+  &__inner {
+    display: grid;
+    grid-template-columns: 600px repeat(2, 270px);
+    gap: 50px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+    @include tablet {
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    }
+
+    @include mobile {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__map {
+    @include tablet-and-mobile {
+      grid-column: 1 / -1;
+
+      iframe {
+        width: 100%;
+        min-height: 100%;
+      }
+    }
+
+  }
+
+  &__address {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    padding-right: 50px;
+
+    @include tablet-and-mobile {
+      padding-right: 0;
+    }
+  }
+
+  &__credits {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__copy {
+    margin-top: auto;
+    @include font-sm;
+  }
+
+
+  .btn--funds {
+    padding: 4px 27.5px;
+    margin: 20px auto 25px;
+
+    &:hover {
+      background: $color-primary;
+    }
+  }
+
+  .nav-menu {
+    @include font-sm;
+    color: $color-text-gray;
+    line-height: 26px;
+  }
+
+  .socials {
+    justify-content: flex-start;
+  }
+
+  .timetable {
+    margin-top: 15px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+.address {
+  font-style: inherit;
+  font-weight: inherit;
+  font-size: inherit;
+
+  a {
+    font-style: normal;
+  }
+}
