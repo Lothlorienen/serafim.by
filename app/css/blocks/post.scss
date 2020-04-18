@@ -24,11 +24,15 @@
     }
   }
 
-  &__text {
+  &__text, p {
     max-width: 95%;
 
     &:not(:first-child) {
       margin-top: 30px;
+    }
+
+    a {
+      color: $color-muted;
     }
   }
 
@@ -38,7 +42,7 @@
     line-height: 30px;
     color: $color-muted;
 
-    a {
+    p a {
       color: $color-text-gray;
 
       &:not(:last-child)::after {
