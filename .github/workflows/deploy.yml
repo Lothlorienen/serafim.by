@@ -30,4 +30,5 @@ jobs:
     - name: GitHub Pages
       uses: crazy-max/ghaction-github-pages@v1.4.0
       with:
-        build_dir: dist/html
+        target_branch: master
+        build_dir: dist/html/
