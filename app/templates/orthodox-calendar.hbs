@@ -12,9 +12,28 @@
         {{#> pages/page-with-info/block/main
         title="Православный календарь"
         }}
+
         <div class="events">
 
+            {{#each page-calendar-items}}
+            {{#if this.event__day}}
             <div class="event">
+                <p class="event__day">{{this.event__day}}</p>
+                <h3 class="event__date">{{this.event__date}}</h3>
+                <p class="event__old-date">{{this.event__old-date}}</p>
+                {{#if this.event__read}}
+                <a href="#" class="event__read">{{this.event__read}}</a>
+                {{/if}}
+                <p class="event__text1">{{this.event__text1}}</p>
+                <p class="event__text2">{{this.event__text2}}</p>
+                <p class="event__text3">{{this.event__text3}}</p>
+                <p class="event__text1">{{this.event__text4}}</p>
+                <p class="event__text4">{{this.event__text5}}</p>
+            </div>
+            {{/if}}
+            {{/each}}
+
+            {{!-- <div class="event">
                 <p class="event__day">Сегодня</p>
                 <h3 class="event__date">31 декабря</h3>
                 <p class="event__old-date">19 февраля по старому стилю</p>
@@ -64,7 +83,7 @@
                 <p class="event__text4">«Яко звезду великую, тя Церковь имущи, Архиппе,/ чудес твоих лучами просвещаема,
                     зовет тебе:// спаси
                     верою почитающия память твою.»</p>
-            </div>
+            </div> --}}
 
         </div>
 
