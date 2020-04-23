@@ -1,19 +1,19 @@
-<section class="post">
-  <h2 class="post__title">
+<section class="section section-post">
+  <h2 class="section-post__title">
     {{title}}
   </h2>
-  <div class="post__statistics">
+  <div class="section-post__statistics">
     <time datetime="{{machine-time}}">{{time}}</time>
     {{> components/views }}
   </div>
 
   {{> @partial-block }}
 
-  <div class="post__tags">
+  <div class="section-post__tags">
     <p> Теги:
       {{#each tags}}
         {{#if this.tag}}
-          <a href="{{this.tag-link}}" class="post__tags-link">{{this.tag}}</a>
+          <a href="{{this.tag-link}}" class="section-post__tags-link">{{this.tag}}</a>
         {{/if}}
       {{/each}}
     </p>

@@ -1,6 +1,4 @@
-.post {
-  padding: 20px 25px;
-  background-color: $color-white;
+.section-post {
   max-width: 921px;
 
   &__title {
@@ -64,7 +62,25 @@
     }
 
     &--caption {
-      + .post__text {
+      + .section-post__text {
+        margin-top: 10px;
+      }
+    }
+  }
+
+  figure {
+    margin-top: 30px;
+
+    figcaption {
+      font-style: italic;
+      font-size: 16px;
+      line-height: 30px;
+      color: $color-muted;
+      text-align: center;
+    }
+
+    &--caption {
+      + figcaption {
         margin-top: 10px;
       }
     }

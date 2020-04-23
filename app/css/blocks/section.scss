@@ -1,0 +1,40 @@
+.section {
+  padding: 20px 25px;
+  background-color: $color-white;
+
+  &-widget {
+    &__content {
+      @include font-sm;
+    }
+
+    &__text {
+      @include font-sm;
+    }
+
+    &__link {
+      display: inline-flex;
+      align-items: baseline;
+      margin-top: 40px;
+      color: $color-primary;
+      transition: all .3s ease;
+
+      &::after {
+        position: relative;
+        content: '';
+        display: inline-flex;
+        margin-left: 5px;
+        @include sprite('arrow');
+        transition: all .3s ease;
+      }
+
+      &:hover {
+        text-decoration: underline;
+
+        &::after {
+          transform: translateX(5px);
+          transition: all .3s ease;
+        }
+      }
+    }
+  }
+}

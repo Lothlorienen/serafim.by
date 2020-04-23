@@ -1,4 +1,4 @@
-<figure class="post__image post__image--caption">
+<figure class="section-post__image section-post__image--caption">
   {{#if image}}
     {{#if png}}
       {{> components/image-fit content=true img=image fallback-ext="png"}}
@@ -9,6 +9,6 @@
     {{> blocks/image-fake size="940x440"}}
   {{/if}}
   {{#if caption}}
-  <figcaption class="post__image__caption">{{{caption}}}</figcaption>
+  <figcaption class="section-post__image__caption">{{{caption}}}</figcaption>
   {{/if}}
 </figure>

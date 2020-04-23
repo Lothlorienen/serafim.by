@@ -1,0 +1,10 @@
+.widget {
+  &__title {
+    @include font-related-title;
+    color: $color-danger;
+
+    + .section {
+      margin-top: 15px;
+    }
+  }
+}
