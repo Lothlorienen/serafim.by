@@ -9,9 +9,11 @@
                   fallback-ext="jpg"
                   is-cover=true
           }}
-          <p class="article-slider__description">
-            {{{../caption}}}
-          </p>
+          {{#if ../caption}}
+            <p class="article-slider__description">
+              {{{../caption}}}
+            </p>
+          {{/if}}
           <div class="article-slider__pagination-wrapper"></div>
         </div>
       {{/each}}

@@ -1,14 +1,17 @@
 .section-post {
   max-width: 921px;
 
+  @include tablet-and-mobile  {
+    max-width: 100%;
+  }
+
   &__header {
     margin-bottom: 10px;
   }
 
   &__title {
-    max-width: 75%;
     @include font-post-title;
-    margin-bottom: 5px;
+    margin-bottom: 5px !important;
   }
 
   &__statistics {
@@ -50,6 +53,11 @@
       line-height: 30px;
       color: $color-muted;
       text-align: center;
+
+      @include mobile {
+        font-size: 13px;
+        line-height: 22px;
+      }
     }
 
     &--caption {

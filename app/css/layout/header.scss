@@ -1,25 +1,31 @@
 .header {
+  position: relative;
   color: $color-text-main;
   background: $color-white;
 
   &__top {
     display: grid;
-    grid-template-columns: 232px 1fr 278px;
+    grid-template-columns: 172px 1fr 278px;
     grid-template-rows: 172px;
     align-content: center;
     gap: 65px;
 
     @include tablet-and-mobile {
-      grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(40px, max-content));
       grid-template-rows: auto;
-      gap: 20px;
+      gap: 43px;
       padding: 20px 0;
+    }
+
+    @include mobile {
+      gap: 10px;
+      padding: 10px 0 0;
     }
   }
 
   &__logo {
     @include mobile {
-      display: none;
+      align-self: flex-end;
     }
 
     .image-fit {
@@ -29,6 +35,11 @@
         content: '';
         display: block;
         padding-top: 172px;
+        width: 80px;
+
+        @include tablet-and-mobile {
+          padding-top: 112px;
+        }
       }
 
       img{
@@ -42,20 +53,12 @@
   }
 
   &__brand {
-    margin-top: 23px;
-    @include mobile {
-      margin-top: 0;
-    }
+    align-self: center;
+    justify-self: center;
 
-    span {
-      font-size: 16px;
-      line-height: 38px;
-      font-weight: normal;
-
-      @include tablet-and-mobile {
-        font-size: 13px;
-        line-height: 1.2;
-      }
+    @include tablet-and-mobile {
+      justify-self: auto;
+      align-self: center;
     }
   }
 
@@ -70,20 +73,36 @@
     }
 
     @include mobile {
-      font-size: 24px;
+      font-size: 20px;
+    }
+  }
+
+  &__text {
+    font-size: 16px;
+    line-height: 38px;
+    font-weight: normal;
+
+    @include tablet-and-mobile {
+      display: flex;
+      font-size: 13px;
+      line-height: 22px;
     }
   }
 
   &__extra {
     align-self: center;
     display: grid;
-    gap: 14px;
-    grid-template-rows: auto;
-    margin-top: 23px;
+    gap: 13px;
+    grid-template-rows: repeat(auto-fit, minmax(20px, max-content));
     color: $color-text-gray;
 
     @include tablet-and-mobile {
       display: none;
+    }
+
+    .btn--funds {
+      line-height: 1;
+      padding: 4.5px 20px;
     }
   }
 
@@ -93,7 +112,13 @@
     background-color: $color-gray;
   }
 
-  .actions, .extra-links {
+  &__breadcrumbs {
+    position: relative;
+    background-color: $color-bg-main;
+  }
+
+  .actions,
+  .extra-links {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -110,7 +135,4 @@
     width: 14px;
     height: 14px;
   }
-
-  //&__nav {
-  //}
 }

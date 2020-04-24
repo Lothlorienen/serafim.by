@@ -8,8 +8,11 @@
   font-weight: bold;
   height: 70px;
 
+
   @include tablet-and-mobile {
-    display: none;
+    .header & {
+      display: none;
+    }
   }
 
   &__link {

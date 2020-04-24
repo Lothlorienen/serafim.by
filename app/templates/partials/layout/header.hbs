@@ -4,11 +4,11 @@
   <div class="container">
     <div class="header__top">
       <div class="header__logo">
-        {{>components/image-fit img="header/logo" fallback-ext="png"}}
+        {{>components/image-fit img="header/logo" tablet-img="header/logo-mobile" fallback-ext="png"}}
       </div>
       <div class="header__brand">
         <h1 class="header__title">Приход преподобного<br>Серафима Саровского</h1>
-        <span>г. Минск, Белорусская Православная Церковь Московского Патриархата</span>
+        <span class="header__text">г. Минск, Белорусская Православная Церковь Московского Патриархата</span>
       </div>
       <div class="header__extra">
         <div class="header__extra-row">
@@ -38,6 +38,16 @@
       <nav class="header__nav">
         {{>blocks/header/menu}}
       </nav>
+    </div>
+  </div>
+
+  <div class="header__breadcrumbs">
+    <div class="container">
+      {{> components/breadcrumbs
+              main="Главная"
+              topic="Новости"
+              current="Неделя мясопустная в 2020 году"
+      }}
     </div>
   </div>
 </header>

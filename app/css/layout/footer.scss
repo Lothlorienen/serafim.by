@@ -1,6 +1,13 @@
 .footer {
   background-color: $color-white;
 
+  @include mobile {
+    .container {
+      padding-right: 20px;
+      padding-left: 20px;
+    }
+  }
+
   &__inner {
     display: grid;
     grid-template-columns: 600px repeat(2, 270px);
@@ -20,6 +27,7 @@
   &__map {
     @include tablet-and-mobile {
       grid-column: 1 / -1;
+      grid-row: 2 / 3;
 
       iframe {
         width: 100%;
@@ -33,10 +41,9 @@
     justify-content: center;
     align-items: flex-start;
     flex-direction: column;
-    padding-right: 50px;
 
     @include tablet-and-mobile {
-      padding-right: 0;
+      justify-content: flex-start;
     }
   }
 
@@ -48,6 +55,10 @@
   &__copy {
     margin-top: auto;
     @include font-sm;
+
+    @include mobile {
+      margin-top: $main-gutters;
+    }
   }
 
   &__btn {
@@ -64,11 +75,12 @@
   }
 
   .nav-menu {
-    @include font-sm;
-    color: $color-text-gray;
-    line-height: 26px;
     grid-template-columns: auto;
     height: auto;
+    color: $color-text-gray;
+    @include font-sm;
+    line-height: 26px;
+    font-weight: 400;
   }
 
   .socials {
@@ -79,15 +91,6 @@
     margin-top: 15px;
   }
 }
-
-
-
-
-
-
-
-
-
 
 .address {
   font-style: inherit;

@@ -31,8 +31,12 @@
     gap: 40px;
     flex: 1 0 auto;
     min-height: 1px;
-    padding-top: 50px;
+    padding-top: 30px;
     padding-bottom: 67px;
+
+    @include tablet-and-mobile  {
+      grid-template-columns: minmax(320px, 100vw);
+    }
   }
 
   &__aside {
@@ -42,5 +46,9 @@
     grid-template-columns: 1fr;
     grid-template-rows: repeat(auto-fit, minmax(100px, max-content));
     gap: $main-gutters;
+
+    @include tablet-and-mobile {
+      display: none;
+    }
   }
 }

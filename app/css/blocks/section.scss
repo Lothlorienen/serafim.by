@@ -1,6 +1,11 @@
 .section {
   padding: 20px 25px;
   background-color: $color-white;
+  font-family: 'Bitter', serif;
+
+  @include mobile {
+    padding: 20px 15px;
+  }
 
   &-widget {
     &__content {
