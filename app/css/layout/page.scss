@@ -38,5 +38,9 @@
   &__aside {
     flex: 1 0 auto;
     min-height: 1px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(auto-fit, minmax(100px, max-content));
+    gap: $main-gutters;
   }
 }

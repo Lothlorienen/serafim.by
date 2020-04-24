@@ -4,17 +4,43 @@
 
   &-widget {
     &__content {
+      position: relative;
       @include font-sm;
+    }
+
+    &__title {
+      @include font-related-title;
+      margin-bottom: 4px;
     }
 
     &__text {
       @include font-sm;
+
+      + .section-widget__link-container {
+        margin-top: $main-gutters;
+      }
+    }
+
+    &__link-container {
+      &--download {
+        a {
+          border-bottom: 1px dashed $color-primary;
+
+          &::after {
+            display: none;
+          }
+
+          &:hover {
+            text-decoration: none;
+            opacity: 0.5;
+          }
+        }
+      }
     }
 
     &__link {
       display: inline-flex;
       align-items: baseline;
-      margin-top: 40px;
       color: $color-primary;
       transition: all .3s ease;
 
@@ -34,6 +60,23 @@
           transform: translateX(5px);
           transition: all .3s ease;
         }
+      }
+    }
+
+    &--timetable {
+      .section-widget__link {
+        @include font-base;
+      }
+    }
+
+    &__image-timetable {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+
+      img {
+        max-width: 60px;
+        max-height: 60px;
       }
     }
   }
