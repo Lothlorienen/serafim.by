@@ -1,21 +1,30 @@
 <section class="section section-post">
-  <h2 class="section-post__title">
-    {{title}}
-  </h2>
-  <div class="section-post__statistics">
-    <time datetime="{{machine-time}}">{{time}}</time>
-    {{> components/views }}
+  <header class="section-post__header">
+    <h2 class="section-post__title">
+      {{title}}
+    </h2>
+    <div class="section-post__statistics">
+      <time datetime="{{machine-time}}">{{time}}</time>
+      {{> components/views }}
+    </div>
+  </header>
+
+  <div class="section-post__content">
+    {{> @partial-block }}
   </div>
 
-  {{> @partial-block }}
-
-  <div class="section-post__tags">
-    <p> Теги:
-      {{#each tags}}
-        {{#if this.tag}}
-          <a href="{{this.tag-link}}" class="section-post__tags-link">{{this.tag}}</a>
-        {{/if}}
-      {{/each}}
-    </p>
-  </div>
+  <footer class="section-post__footer">
+    <div class="section-post__tags tags">
+      <strong class="tags__title">Теги:</strong>
+      <ul class="tags__list">
+        {{#each tags}}
+          {{#if this.tag}}
+            <li class="tags__item">
+              <a href="{{this.tag-link}}" class="tags__link">{{this.tag}}</a>
+            </li>
+          {{/if}}
+        {{/each}}
+      </ul>
+    </div>
+  </footer>
 </section>

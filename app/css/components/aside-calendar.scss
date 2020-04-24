@@ -1,0 +1,50 @@
+.calendar {
+  font-size: 35px;
+
+  &__date {
+    margin-bottom: 15px;
+    position: relative;
+    line-height: 1;
+  }
+
+  &__label {
+    position: absolute;
+    right: 5px;
+    top: 0;
+    font-style: italic;
+    line-height: 1;
+    color: $color-muted;
+  }
+
+  &__day {
+    display: block;
+    font-size: 65px;
+    line-height: 1;
+  }
+
+  &__bullets {
+    display: flex;
+    justify-content: center;
+    margin: 15px auto 0;
+    line-height: 1;
+
+    span {
+      width: 6px;
+      height: 6px;
+
+      &:not(:last-child) {
+        margin-right: 5px;
+      }
+
+      &:hover, &:focus {
+        background-color: $color-primary;
+        opacity: 0.3;
+      }
+
+      &.active {
+        background-color: $color-primary;
+        opacity: 1;
+      }
+    }
+  }
+}

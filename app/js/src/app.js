@@ -19,6 +19,7 @@ class App {
 
   initModules () {
     disablingPreloader();
+    initSliders();
   }
 }
 

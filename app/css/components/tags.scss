@@ -1,0 +1,31 @@
+.tags {
+  font-size: 13px;
+  line-height: 30px;
+  color: $color-muted;
+
+  &__title {
+    color: $color-muted;
+    font-weight: 400;
+    float: left;
+    margin-right: 5px;
+  }
+
+  &__list {
+    display: flex;
+  }
+
+  &__item {
+    &:not(:last-child) a {
+      margin-right: 5px;
+
+      &::after {
+        content: ',';
+        display: inline;
+      }
+    }
+  }
+
+  &__link {
+    color: $color-text-gray;
+  }
+}

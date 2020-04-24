@@ -1,9 +1,14 @@
 .section-post {
   max-width: 921px;
 
+  &__header {
+    margin-bottom: 10px;
+  }
+
   &__title {
     max-width: 75%;
     @include font-post-title;
+    margin-bottom: 5px;
   }
 
   &__statistics {
@@ -22,55 +27,23 @@
     }
   }
 
-  &__text, p {
-    max-width: 95%;
+  &__content {
+    p {
+      &:not(:first-child) {
+        margin-top: 30px;
+      }
 
-    &:not(:first-child) {
-      margin-top: 30px;
-    }
-
-    a {
-      color: $color-muted;
-    }
-  }
-
-  &__tags {
-    margin-top: 40px;
-    font-size: 13px;
-    line-height: 30px;
-    color: $color-muted;
-
-    p a {
-      color: $color-text-gray;
-
-      &:not(:last-child)::after {
-        content: ',';
-        display: inline;
+      a {
+        color: $color-muted;
       }
     }
   }
 
-  &__image {
-    margin-top: 30px;
-
-    &__caption {
-      font-style: italic;
-      font-size: 16px;
-      line-height: 30px;
-      color: $color-muted;
-      text-align: center;
-    }
-
-    &--caption {
-      + .section-post__text {
-        margin-top: 10px;
-      }
-    }
-  }
-
+  &__image,
   figure {
     margin-top: 30px;
 
+    &__caption,
     figcaption {
       font-style: italic;
       font-size: 16px;
@@ -80,10 +53,27 @@
     }
 
     &--caption {
+      + .section-post__text,
       + figcaption {
         margin-top: 10px;
       }
     }
+
+    + p:not(:first-child) {
+      margin-top: 10px;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      object-position: center;
+      object-fit: cover;
+      max-height: 430px;
+    }
+  }
+
+  &__footer {
+    margin-top: 40px;
   }
 }
 

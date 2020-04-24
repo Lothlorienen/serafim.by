@@ -1,0 +1,27 @@
+<div class="widget widget--calendar">
+  <h3 class="widget__title">Провославный календарь</h3>
+  <section class="section section-widget js-slider-default">
+    <div class="section-widget__content swiper-container " data-slider="slides">
+      <div class="swiper-wrapper">
+        {{#each aside-calendar}}
+          <div class="swiper-slide calendar">
+            <div class="calendar__date">
+              <a href="#">
+                <span class="calendar__label">{{this.label}}</span>
+                <span class="calendar__day">{{this.day}}</span>
+                <span class="calendar__month">{{this.month}}</span>
+              </a>
+            </div>
+
+            <p class="section-widget__text">
+              <a href="#">{{this.text}}</a>
+            </p>
+          </div>
+        {{/each}}
+      </div>
+    </div>
+
+    <div class="calendar__bullets" data-slider="paging"></div>
+  </section>
+</div>
+

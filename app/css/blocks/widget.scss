@@ -1,10 +1,66 @@
 .widget {
+  max-width: 280px;
+
   &__title {
     @include font-related-title;
-    color: $color-danger;
 
     + .section {
       margin-top: 15px;
+    }
+  }
+
+  &--calendar {
+
+  }
+
+  &--timetable {
+    .section-widget__link {
+      @include font-base;
+    }
+  }
+
+  &--attention {
+    .widget__title {
+      color: $color-danger;
+    }
+  }
+
+  &--announcement {
+    .section-widget__title {
+      color: $color-danger;
+    }
+
+    .section-widget__text {
+      color: $color-text-gray;
+      @include font-base;
+
+      strong {
+        color: $color-text-main;
+        font-weight: inherit;
+      }
+    }
+  }
+
+  &--form {
+    .section-widget__title {
+      @include font-base;
+      font-weight: bold;
+    }
+
+    .btn {
+      padding: 10px 25px ;
+      @include font-sm;
+      color: $color-white;
+      background-color: $color-primary;
+      border: none;
+      border-radius: 10px;
+      line-height: 1;
+      transition: all 0.3s ease;
+
+      &:hover,
+      &:focus {
+        background-color: $color-success;
+      }
     }
   }
 }
