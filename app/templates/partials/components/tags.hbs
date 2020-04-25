@@ -1,0 +1,12 @@
+<div class="tags {{#if tags-mode}}{{tags-mode}}{{/if}}">
+  <strong class="tags__title">Теги:</strong>
+  <ul class="tags__list">
+    {{#each tags}}
+      {{#if this.tag}}
+        <li class="tags__item">
+          <a href="{{this.tag-link}}" class="tags__link">{{this.tag}}</a>
+        </li>
+      {{/if}}
+    {{/each}}
+  </ul>
+</div>

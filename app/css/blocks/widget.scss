@@ -4,7 +4,7 @@
   &__title {
     @include font-regular-title;
 
-    + .section {
+    + * {
       margin-top: 15px;
     }
   }

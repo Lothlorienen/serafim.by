@@ -1,10 +1,4 @@
 .related {
-  margin-top: $main-gutters;
-
-  &__title {
-    @include font-regular-title;
-  }
-
   &__list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);

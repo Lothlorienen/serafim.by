@@ -1,8 +1,4 @@
 .section {
-  padding: 20px 25px;
-  background-color: $color-white;
-  font-family: 'Bitter', serif;
-
   @include mobile {
     padding: 20px 15px;
   }
@@ -14,7 +10,9 @@
 
     &__title {
       @include font-regular-title;
-      margin-bottom: 20px !important;
+      + * {
+        margin-top: 20px;
+      }
     }
   }
 
@@ -90,4 +88,9 @@
       }
     }
   }
+}
+
+.card {
+  padding: 20px 25px;
+  background-color: $color-white;
 }
