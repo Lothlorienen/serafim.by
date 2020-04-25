@@ -1,25 +1,33 @@
 {{#each items}}
-  {{#if this.day}}
-    <li class="section main-calendar__item">
-      <div class="main-calendar__header">
-        <i class="main-calendar__label {{#if current}}main-calendar__label--current{{/if}}">
-          {{this.day}}
-        </i>
-        <strong class="main-calendar__date">{{this.date}}</strong>
-        <span class="main-calendar__old-date">{{this.old-date}}</span>
-        {{#if this.article-link}}
-          <a href="{{this.article-link}}" class="main-calendar__article-link">
-              <span>Читать статью</span>
-          </a>
+  <li class="section main-calendar__item">
+    <div class="main-calendar__header">
+      <div class="main-calendar__header-left">
+        {{#if this.day}}
+          <i class="main-calendar__label {{#if current}}main-calendar__label--current{{/if}}">
+            {{this.day}}
+          </i>
+        {{/if}}
+        {{#if this.date}}
+          <strong class="main-calendar__date">{{this.date}}</strong>
+        {{/if}}
+        {{#if this.old-date}}
+          <span class="main-calendar__old-date">{{this.old-date}}</span>
         {{/if}}
       </div>
-      <div class="main-calendar__content">
-        <p><strong>{{this.text1}}</strong></p>
-        <p>{{this.text2}}</p>
-        <p><span>{{{this.text3}}}</span></p>
-        <p><strong>{{this.text4}}</strong></p>
-        <p><i>{{{this.text5}}}</i></p>
-      </div>
-    </li>
-  {{/if}}
+      {{#if this.article-link}}
+        <div class="main-calendar__header-right">
+          <a href="{{this.article-link}}" class="main-calendar__article-link">
+            <span>Читать статью</span>
+          </a>
+        </div>
+      {{/if}}
+    </div>
+    <div class="main-calendar__content">
+      <p><strong>{{this.text1}}</strong></p>
+      <p>{{this.text2}}</p>
+      <p><span>{{{this.text3}}}</span></p>
+      <p><strong>{{this.text4}}</strong></p>
+      <p><i>{{{this.text5}}}</i></p>
+    </div>
+  </li>
 {{/each}}

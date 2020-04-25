@@ -1,7 +1,11 @@
 {{#> blocks/section-wrapper title="Православный календарь"}}
   <div class="calendar-wrapper">
     <ul class="main-calendar">
-      {{> components/calendar-item items=calendar-main.calendar-events }}
+      {{> components/calendar-item items=calendar-article.calendar-events }}
     </ul>
   </div>
+{{/blocks/section-wrapper}}
+
+{{#> blocks/section-wrapper title="Статья на эту тему"}}
+
 {{/blocks/section-wrapper}}

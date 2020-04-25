@@ -7,6 +7,17 @@
     padding: 20px 15px;
   }
 
+  &-wrapper {
+    &:not(:first-child) {
+      margin-top: $main-gutters;
+    }
+
+    &__title {
+      @include font-regular-title;
+      margin-bottom: 20px !important;
+    }
+  }
+
   &-widget {
     &__content {
       position: relative;

@@ -1,24 +1,31 @@
-.page__title {
-  @include font-regular-title;
-  margin-bottom: 20px !important;
-}
-
 .main-calendar {
   display: grid;
   gap: $main-gutters;
 
   &__header {
     display: grid;
-    grid-template-areas: 'label date old-date article-link';
-    grid-template-columns: repeat(3, minmax(100px, max-content)) 1fr;
+    grid-template-areas: 'left right';
+    grid-template-columns: 1fr max-content;
     gap: 23px;
     align-items: baseline;
     min-width: 100%;
     margin-bottom: 10px;
+
+    &-left {
+      grid-area: left;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(100px, max-content));
+      align-items: baseline;
+      gap: 23px;
+    }
+
+    &-right {
+      grid-area: right;
+    }
   }
 
   &__label {
-    grid-area: label;
+    //grid-area: label;
     font-style: italic;
     font-size: 35px;
     line-height: 1;
@@ -30,20 +37,20 @@
   }
 
   &__date {
-    grid-area: date;
+    //grid-area: date;
     font-size: 35px;
     line-height: 1;
   }
 
   &__old-date {
-    grid-area: old-date;
+    //grid-area: old-date;
     @include font-base;
     line-height: 1;
     color: #C8C8C8;
   }
 
   &__article-link {
-    grid-area: article-link;
+    //grid-area: article-link;
     justify-self: end;
     display: flex;
     @include font-sm;
