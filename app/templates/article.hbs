@@ -1,10 +1,10 @@
 {{!Пример поста}}
 
-{{> layout/header }}
+{{> layout/header page-breadcrumbs=article.page-breadcrumbs}}
 
 <div class="container page__container">
   <main class="page__content">
-    {{> pages/page-with-info/main }}
+    {{> pages/article/main }}
     {{> blocks/related }}
   </main>
 

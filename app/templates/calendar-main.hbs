@@ -1,93 +1,41 @@
 {{!Православный календарь}}
 
-{{> layout/header }}
+{{> layout/header page-breadcrumbs=calendar-main.page-breadcrumbs }}
 
 <div class="container page__container">
-    <main class="page__content">
-        {{#> pages/page-with-info/block/main
-        title="Православный календарь"
-        }}
+  <main class="page__content">
+    {{#> pages/article/block/main
+            title="Православный календарь"
+    }}
 
-        <div class="events">
-            {{#each page-calendar-items}}
-            {{#if this.event__day}}
+      <div class="events">
+        {{#each page-calendar-items}}
+          {{#if this.event__day}}
             <div class="event">
-                <p class="event__day">{{this.event__day}}</p>
-                <h3 class="event__date">{{this.event__date}}</h3>
-                <p class="event__old-date">{{this.event__old-date}}</p>
-                {{#if this.event__read}}
+              <p class="event__day">{{this.event__day}}</p>
+              <h3 class="event__date">{{this.event__date}}</h3>
+              <p class="event__old-date">{{this.event__old-date}}</p>
+              {{#if this.event__read}}
                 <a href="#" class="event__read">{{this.event__read}}</a>
-                {{/if}}
-                <p class="event__text1">{{this.event__text1}}</p>
-                <p class="event__text2">{{this.event__text2}}</p>
-                <p class="event__text3">{{this.event__text3}}</p>
-                <p class="event__text1">{{this.event__text4}}</p>
-                <p class="event__text4">{{this.event__text5}}</p>
+              {{/if}}
+              <p class="event__text1">{{this.event__text1}}</p>
+              <p class="event__text2">{{this.event__text2}}</p>
+              <p class="event__text3">{{this.event__text3}}</p>
+              <p class="event__text1">{{this.event__text4}}</p>
+              <p class="event__text4">{{this.event__text5}}</p>
             </div>
-            {{/if}}
-            {{/each}}
+          {{/if}}
+        {{/each}}
 
-            {{!-- <div class="event">
-                <p class="event__day">Сегодня</p>
-                <h3 class="event__date">31 декабря</h3>
-                <p class="event__old-date">19 февраля по старому стилю</p>
-                <a href="#" class="event__read">Читать статью</a>
-                <p class="event__text1">Апп. от 70-ти Архиппа и Филимона и мц. равноап. Апфии (I). Прп. Феодора
-                    Санаксарского (1791).</p>
-                <p class="event__text2">Мчч. Максима, Феодота, Исихия, мц. Асклипиодоты (305–311). Прпп. Евгения и
-                    Макария испп., пресвитеров
-                    Антиохийских (363). Прп. Досифея (VII), ученика прп. аввы Дорофея. Прп. Равулы (ок. 530).</p>
-                <p class="event__text3">Мч. Димитрия Волкова (1942). <br>
-                    На 6-м часе: Ис. I, 19 – II, 3. На веч.: Быт. I, 14–23. Притч. I, 20–33.</p>
-                <p class="event__text1">Кондак апостола Архиппа, глас 4:</p>
-                <p class="event__text4">«Яко звезду великую, тя Церковь имущи, Архиппе,/ чудес твоих лучами просвещаема,
-                    зовет тебе:// спаси
-                    верою почитающия память твою.»</p>
-            </div>
+      </div>
 
-            <div class="event">
-                <p class="event__day">Завтра</p>
-                <h3 class="event__date">1 января</h3>
-                <p class="event__old-date">20 февраля по старому стилю</p>
-                <p class="event__text1">Апп. от 70-ти Архиппа и Филимона и мц. равноап. Апфии (I). Прп. Феодора
-                    Санаксарского (1791).</p>
-                <p class="event__text2">Мчч. Максима, Феодота, Исихия, мц. Асклипиодоты (305–311). Прпп. Евгения и
-                    Макария испп., пресвитеров
-                    Антиохийских (363). Прп. Досифея (VII), ученика прп. аввы Дорофея. Прп. Равулы (ок. 530).</p>
-                <p class="event__text3">Мч. Димитрия Волкова (1942). <br>
-                    На 6-м часе: Ис. I, 19 – II, 3. На веч.: Быт. I, 14–23. Притч. I, 20–33.</p>
-                <p class="event__text1">Кондак апостола Архиппа, глас 4:</p>
-                <p class="event__text4">«Яко звезду великую, тя Церковь имущи, Архиппе,/ чудес твоих лучами просвещаема,
-                    зовет тебе:// спаси
-                    верою почитающия память твою.»</p>
-            </div>
+    {{/pages/article/block/main}}
+    {{> blocks/related }}
+  </main>
 
-            <div class="event">
-                <p class="event__day">Послезавтра</p>
-                <h3 class="event__date">30 сентября</h3>
-                <p class="event__old-date">20 февраля по старому стилю</p>
-                <p class="event__text1">Апп. от 70-ти Архиппа и Филимона и мц. равноап. Апфии (I). Прп. Феодора
-                    Санаксарского (1791).</p>
-                <p class="event__text2">Мчч. Максима, Феодота, Исихия, мц. Асклипиодоты (305–311). Прпп. Евгения и
-                    Макария испп., пресвитеров
-                    Антиохийских (363). Прп. Досифея (VII), ученика прп. аввы Дорофея. Прп. Равулы (ок. 530).</p>
-                <p class="event__text3">Мч. Димитрия Волкова (1942). <br>
-                    На 6-м часе: Ис. I, 19 – II, 3. На веч.: Быт. I, 14–23. Притч. I, 20–33.</p>
-                <p class="event__text1">Кондак апостола Архиппа, глас 4:</p>
-                <p class="event__text4">«Яко звезду великую, тя Церковь имущи, Архиппе,/ чудес твоих лучами просвещаема,
-                    зовет тебе:// спаси
-                    верою почитающия память твою.»</p>
-            </div> --}}
-
-        </div>
-
-        {{/pages/page-with-info/block/main}}
-        {{> blocks/related }}
-    </main>
-
-    <aside class="page__aside">
-        {{> pages/common/aside }}
-    </aside>
+  <aside class="page__aside">
+    {{> pages/common/aside }}
+  </aside>
 </div>
 
 {{> layout/footer }}

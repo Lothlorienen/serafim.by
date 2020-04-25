@@ -1,15 +1,17 @@
 <div class="breadcrumbs">
   <div class="breadcrumbs__container">
-    {{#if main}}
-      <a href="{{#if main-link}}{{main-link}}{{else}}#{{/if}}"
-         class="breadcrumbs__link breadcrumbs__link--main">{{main}}</a>
-    {{/if}}
-    {{#if topic}}
-      <a href="{{#if topic-link}}{{topic-link}}{{else}}#{{/if}}"
-         class="breadcrumbs__link breadcrumbs__link--topic">{{topic}}</a>
-    {{/if}}
-    {{#if current}}
-      <a class="breadcrumbs__link breadcrumbs__link--current">{{current}}</a>
-    {{/if}}
+    {{#breadcrumbs}}
+      {{#if this.main}}
+        <a href="{{#if this.main-link}}{{this.main-link}}{{else}}#{{/if}}"
+           class="breadcrumbs__link breadcrumbs__link--main">{{this.main}}</a>
+      {{/if}}
+      {{#if this.topic}}
+        <a href="{{#if this.topic-link}}{{this.topic-link}}{{else}}#{{/if}}"
+           class="breadcrumbs__link breadcrumbs__link--topic">{{this.topic}}</a>
+      {{/if}}
+      {{#if this.current}}
+        <span class="breadcrumbs__link breadcrumbs__link--current">{{this.current}}</span>
+      {{/if}}
+    {{/breadcrumbs}}
   </div>
 </div>

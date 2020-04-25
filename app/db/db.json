@@ -22,16 +22,6 @@
       "url": "#"
     }
   },
-  "page-with-info": [
-    {
-      "tag": "Праздники",
-      "tag-link": "#"
-    },
-    {
-      "tag": "Общество",
-      "tag-link": "#"
-    }
-  ],
   "article-slider": [
     {
       "image": "post/01"
@@ -98,5 +88,31 @@
       "event__text4": "Кондак апостола Архиппа, глас 4:",
       "event__text5": "«Яко звезду великую, тя Церковь имущи, Архиппе,/ чудес твоих лучами просвещаема, зовет тебе:// спаси верою почитающия память твою.»"
     }
-  ]
+  ],
+  "article": {
+    "page-breadcrumbs": {
+      "main": "Главная",
+      "topic": "Новости",
+      "current": "Неделя мясопустная в 2020 году",
+      "main-link": "home.html",
+      "topic-link": "news.html"
+    },
+    "tags": [
+      {
+        "tag": "Праздники",
+        "tag-link": "#"
+      },
+      {
+        "tag": "Общество",
+        "tag-link": "#"
+      }
+    ]
+  },
+  "calendar-main": {
+    "page-breadcrumbs": {
+      "main": "Главная",
+      "current": "Православный календарь",
+      "main-link": "home.html"
+    }
+  }
 }
