@@ -1,63 +1,87 @@
 .page__title {
-  font-weight: normal;
-  font-size: 25px;
-  line-height: 30px;
+  @include font-regular-title;
   margin-bottom: 20px !important;
 }
 
-.events {
-  height: 1090px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
+.main-calendar {
+  display: grid;
+  gap: $main-gutters;
 
-.event {
-  display: flex;
-  //   justify-content: space-between;
-  flex-wrap: wrap;
-  background: #fff;
-  padding: 24px 26px;
-  font-weight: normal;
-  font-size: 16px;
-  line-height: 33px;
+  &__header {
+    display: grid;
+    grid-template-areas: 'label date old-date article-link';
+    grid-template-columns: repeat(3, minmax(100px, max-content)) 1fr;
+    gap: 23px;
+    align-items: baseline;
+    min-width: 100%;
+    margin-bottom: 10px;
+  }
 
-  &__day {
+  &__label {
+    grid-area: label;
     font-style: italic;
     font-size: 35px;
-    line-height: 22px;
-    color: #C8C8C8;
-    letter-spacing: 1px;
-    margin-right: 25px !important;
+    line-height: 1;
+    color:$color-muted;
+
+    &--current {
+      color: $color-danger;
+    }
   }
 
   &__date {
+    grid-area: date;
     font-size: 35px;
-    line-height: 22px;
-    margin-right: 25px !important;
+    line-height: 1;
   }
 
   &__old-date {
-    line-height: 32px;
+    grid-area: old-date;
+    @include font-base;
+    line-height: 1;
     color: #C8C8C8;
   }
 
-  &__read {
-    line-height: 32px;
-    color: #00A0FA;
-    margin-left: 150px !important;
+  &__article-link {
+    grid-area: article-link;
+    justify-self: end;
+    display: flex;
+    @include font-sm;
+    line-height: 1;
+    color: $color-primary;
+
+    &::after {
+      position: absolute;
+      top: 50%;
+      right: -20px;
+      content: '';
+      display: inline-flex;
+      @include sprite('arrow');
+      transition: all .3s ease;
+      transform: translateY(-50%);
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+      transform: translateX(-10px);
+
+      &::after {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
   }
 
-  &__text1 {
-    width: 100%;
-    font-weight: bold;
-  }
+  &__content {
+    p {
+      @include font-base;
 
-  &__text3 {
-    color: #828282;
-  }
-
-  &__text4 {
-    font-style: italic;
+      span {
+        color: $color-text-gray;
+      }
+    }
   }
 }

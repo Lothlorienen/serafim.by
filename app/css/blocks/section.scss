@@ -14,7 +14,7 @@
     }
 
     &__title {
-      @include font-related-title;
+      @include font-regular-title;
       margin-bottom: 5px !important;
     }
 

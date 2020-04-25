@@ -2,7 +2,7 @@
   margin-top: $main-gutters;
 
   &__title {
-    @include font-related-title;
+    @include font-regular-title;
   }
 
   &__list {

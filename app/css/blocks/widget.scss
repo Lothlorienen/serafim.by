@@ -2,7 +2,7 @@
   max-width: 280px;
 
   &__title {
-    @include font-related-title;
+    @include font-regular-title;
 
     + .section {
       margin-top: 15px;
