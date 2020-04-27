@@ -58,7 +58,7 @@
   }
 
   &-article__title {
-    @include font-related-text;
+    @include font-base-up;
     max-width: 84%;
   }
 

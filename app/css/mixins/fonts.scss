@@ -52,7 +52,7 @@
   font-weight: normal;
 }
 
-@mixin font-related-text() {
+@mixin font-base-up() {
   font-size: $font-related-text;
   line-height: 30px;
   font-weight: bold;

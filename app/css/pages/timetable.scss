@@ -1,0 +1,88 @@
+.timetable {
+  &__container {
+    display: grid;
+    grid-template-areas:
+      'column-1 aside'
+      'column-1 column-2';
+    grid-template-columns: 1fr 1fr;
+    gap: $main-gutters;
+  }
+
+  &-content {
+    color: $color-text-gray;
+
+    &--column-1 {
+      grid-area: column-1;
+    }
+
+    &--column-2 {
+      grid-area: column-2;
+    }
+
+    &--aside {
+      grid-area: aside;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto;
+
+      .calendar__text-big {
+        @include font-base;
+      }
+    }
+  }
+
+  &__day {
+    @include font-base-up;
+    display: inline-block;
+    margin-right: 5px;
+    color: $color-text-main;
+
+    &::after {
+      display: inline;
+      content: ',';
+    }
+
+    &--weekend {
+      color: $color-danger;
+    }
+  }
+
+  &__date {
+    @include font-base;
+    color: $color-muted;
+    font-weight: 400;
+    font-style: italic;
+
+    &::after {
+      display: inline;
+      content: '.';
+    }
+  }
+
+  &__event {
+    span {
+      color: $color-text-main;
+    }
+  }
+
+  &__title {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: $main-gutters;
+
+    &-wrapper {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    a {
+      @include font-base;
+      color: $color-primary;
+      border-bottom: 1px dashed $color-primary;
+
+      &:hover,
+      &:focus {
+        opacity: 0.5;
+      }
+    }
+  }
+}

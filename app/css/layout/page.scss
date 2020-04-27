@@ -28,7 +28,7 @@
     position: relative;
     display: grid;
     grid-template-columns: 3.3fr 1fr;
-    gap: 40px;
+    gap: $main-gutters;
     flex: 1 0 auto;
     min-height: 1px;
     padding-top: 20px;
@@ -36,6 +36,10 @@
 
     @include tablet-and-mobile  {
       grid-template-columns: minmax(320px, 100vw);
+    }
+
+    &--timetable {
+      display: block;
     }
   }
 
