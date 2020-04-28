@@ -3,14 +3,16 @@
 {{> layout/header page-breadcrumbs=calendar-main.page-breadcrumbs }}
 
 <div class="container page__container">
-  <main class="page__content">
-    {{> pages/calendar/article }}
-    {{> blocks/related }}
-  </main>
+  <div class="grid-main">
+    <main class="page__content">
+      {{> pages/calendar/article }}
+      {{> blocks/related }}
+    </main>
 
-  <aside class="page__aside">
-    {{> pages/common/aside }}
-  </aside>
+    <aside class="page__aside">
+      {{> pages/common/aside }}
+    </aside>
+  </div>
 </div>
 
 {{> layout/footer }}

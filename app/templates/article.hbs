@@ -3,14 +3,16 @@
 {{> layout/header page-breadcrumbs=article.page-breadcrumbs}}
 
 <div class="container page__container">
-  <main class="page__content">
-    {{> pages/article/main }}
-    {{> blocks/related }}
-  </main>
+  <div class="grid-main">
+    <main class="page__content">
+      {{> pages/article/main }}
+      {{> blocks/related }}
+    </main>
 
-  <aside class="page__aside">
-    {{> pages/common/aside }}
-  </aside>
+    <aside class="page__aside">
+      {{> pages/common/aside }}
+    </aside>
+  </div>
 </div>
 
 {{> layout/footer }}

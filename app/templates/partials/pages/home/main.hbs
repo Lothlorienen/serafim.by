@@ -1,0 +1,7 @@
+{{#> blocks/section-wrapper title="Главное"}}
+  <div class="news-container">
+    {{> blocks/slider-article }}
+
+    {{> pages/news/blocks/list items=news.related}}
+  </div>
+{{/blocks/section-wrapper}}

@@ -17,7 +17,7 @@
 
     &__item {
       position: relative;
-      height: 290px;
+      height: 287px;
       overflow: hidden;
     }
   }
@@ -101,7 +101,7 @@
   &-slider {
     position: relative;
     width: 100%;
-    max-width: 921px;
+    max-width: 920px;
 
     &__bullets {
       position: absolute;
@@ -111,6 +111,8 @@
       line-height: 1;
 
       span {
+        max-width: 6px;
+        max-height: 6px;
         background-color: $color-gray;
         opacity: 1;
 

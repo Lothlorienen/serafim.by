@@ -26,33 +26,38 @@
 
   &__container {
     position: relative;
-    display: grid;
-    grid-template-columns: 3.3fr 1fr;
-    gap: $main-gutters;
     flex: 1 0 auto;
     min-height: 1px;
-    padding-top: 20px;
-    padding-bottom: 67px;
-
-    @include tablet-and-mobile  {
-      grid-template-columns: minmax(320px, 100vw);
-    }
-
-    &--timetable {
-      display: block;
-    }
   }
 
   &__aside {
     flex: 1 0 auto;
     min-height: 1px;
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 277px;
     grid-template-rows: repeat(auto-fit, minmax(100px, max-content));
     gap: $main-gutters;
 
     @include tablet-and-mobile {
       display: none;
     }
+  }
+}
+
+.grid {
+  &-main {
+    display: grid;
+    grid-template-columns: 1fr 277px;
+    gap: $main-gutters;
+    padding-top: 20px;
+    padding-bottom: 67px;
+
+    @include tablet-and-mobile  {
+      grid-template-columns: minmax(320px, 100vw);
+    }
+  }
+
+  &-timetable {
+    display: block;
   }
 }
