@@ -28,9 +28,10 @@ function getInners (container) {
 }
 
 function initSliders () {
-  const defaultSliderContainer = document.querySelector('.js-slider-default');
-  if (defaultSliderContainer) {
-    const { slider, arrowPrev, arrowNext, paging } = getInners(defaultSliderContainer);
+  const defaultSliderContainer = document.querySelectorAll('.js-slider-default');
+
+  defaultSliderContainer.forEach(item => {
+    const { slider, arrowPrev, arrowNext, paging } = getInners(item);
     const config = {
       ...configs.default,
       navigation: {
@@ -50,7 +51,7 @@ function initSliders () {
       };
     }
     new Swiper(slider, config);
-  }
+  });
 }
 
 window.initSliders = initSliders;
