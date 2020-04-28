@@ -1,20 +1,24 @@
 .tags {
+  //display: grid;
+  //grid-template-columns: repeat(auto-fit, minmax(60px, max-content));
   font-size: 13px;
   line-height: 30px;
   color: $color-muted;
 
   &__title {
-    color: $color-muted;
-    font-weight: 400;
+    display: inline;
     float: left;
     margin-right: 5px;
+    color: $color-muted;
+    font-weight: 400;
   }
 
   &__list {
-    display: flex;
+    display: inline;
   }
 
   &__item {
+    display: inline;
     &:not(:last-child) a {
       margin-right: 5px;
 

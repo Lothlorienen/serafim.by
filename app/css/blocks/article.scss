@@ -4,6 +4,16 @@
   grid-template-columns: 1fr minmax(320px, 430px);
   @include font-base;
 
+  &__footer {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    > :first-child {
+      margin-right: 15px;
+    }
+  }
+
   &__link {
     @include fill;
   }
@@ -34,4 +44,11 @@
       object-position: center;
     }
   }
+
+  //.views {
+  //  display: inline;
+  //  .icon-eye {
+  //    display: inline-block;
+  //  }
+  //}
 }

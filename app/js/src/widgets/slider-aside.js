@@ -51,49 +51,6 @@ function initSliders () {
     }
     new Swiper(slider, config);
   }
-
-  const sliderAdvantagesContainer = document.querySelector('.js-slider-advantages');
-  if (sliderAdvantagesContainer) {
-    const { slider, arrowPrev, arrowNext } = getInners(sliderAdvantagesContainer);
-    const pagination = sliderAdvantagesContainer.querySelector('[data-slider="pagination"]');
-    const paginationItems = pagination.dataset.pagination.split(',');
-    const config = {
-      ...configs.default,
-      ...configs.loop,
-      navigation: {
-        prevEl: arrowPrev,
-        nextEl: arrowNext,
-        disabledClass: 'disabled',
-      },
-      pagination: {
-        el: pagination,
-        type: 'bullets',
-        clickable: true,
-        bulletClass: 'slider-advantages__pagination-item',
-        bulletActiveClass: 'active',
-        renderBullet: (index, className) => {
-          return `<span class="${className}">${paginationItems[index]}</span>`;
-        },
-      },
-    };
-    new Swiper(slider, config);
-  }
-
-  const sliderConversionContainer = document.querySelector('.js-slider-conversion');
-  if (sliderConversionContainer) {
-    const { slider, arrowPrev, arrowNext } = getInners(sliderConversionContainer);
-    const config = {
-      ...configs.default,
-      ...configs.fade,
-      ...configs.autoHeight,
-      navigation: {
-        prevEl: arrowPrev,
-        nextEl: arrowNext,
-        disabledClass: 'disabled',
-      },
-    };
-    new Swiper(slider, config);
-  }
 }
 
 window.initSliders = initSliders;

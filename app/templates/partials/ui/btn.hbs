@@ -1,6 +1,10 @@
 {{#if button}}
-    <button {{#if popup}}data-popup="{{popup}}"{{/if}}  {{#if submit}}type="submit"{{/if}}
-            class="btn{{#if size}} btn-{{size}}{{/if}}{{#if color}} btn-{{color}}{{#if outline}}-outline{{/if}}{{/if}}{{#if w100}} btn-w100{{/if}} {{#if popup}} js-popup-open{{/if}} {{mix}}" {{{attr}}}>
+  <button
+      {{#if popup}}data-popup="{{popup}}"{{/if}}
+      {{#if submit}}type="submit"{{else}}type="button"{{/if}}
+      class="btn{{#if size}} btn-{{size}}{{/if}}{{#if color}} btn-{{color}}{{#if outline}}-outline{{/if}}{{/if}}{{#if w100}} btn-w100{{/if}} {{#if popup}} js-popup-open{{/if}} {{mix}}"
+      aria-label="{{label}}"
+      {{{attr}}}>
         {{label}}
     </button>
 {{else}}

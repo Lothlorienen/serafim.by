@@ -12,7 +12,10 @@
           </div>
           <h3 class="article__title">{{this.title}}</h3>
           <p class="article__text">{{this.text}}</p>
-          {{> components/tags tags=this.tags }}
+          <div class="article__footer">
+            {{> components/tags tags=this.tags }}
+            {{> components/views views=this.views}}
+          </div>
         </div>
       </div>
     {{/each}}
