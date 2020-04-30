@@ -4,6 +4,23 @@
   grid-template-columns: 1fr minmax(320px, 430px);
   @include font-base;
 
+  &__right {
+    display: flex;
+    flex-direction: column;
+    > * {
+      flex: 1 1 100%;
+    }
+  }
+
+  &__content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    > * {
+      flex: 1 1 100%;
+    }
+  }
+
   &__footer {
     display: flex;
     align-items: flex-end;
@@ -11,6 +28,12 @@
 
     > :first-child {
       margin-right: 15px;
+    }
+
+    &-link[href] {
+      position: relative;
+      z-index: 10;
+      margin-top: 63px;
     }
   }
 
@@ -33,7 +56,7 @@
     margin-top: 15px;
   }
 
-  .image-fit {
+  &__left {
     height: 100%;
     width: 100%;
 
@@ -44,11 +67,4 @@
       object-position: center;
     }
   }
-
-  //.views {
-  //  display: inline;
-  //  .icon-eye {
-  //    display: inline-block;
-  //  }
-  //}
 }

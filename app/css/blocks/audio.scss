@@ -1,0 +1,50 @@
+.audio {
+  &__list {
+    + * {
+      margin-top: 15px;
+    }
+  }
+
+  &__item {
+    display: flex;
+    @include font-sm;
+
+    &:not(:first-child) {
+      margin-top: 15px;
+    }
+  }
+
+  &__left {
+    margin-right: 10px;
+  }
+
+  &__image {
+    .icon {
+      max-width: 22px;
+      max-height: 31px;
+    }
+  }
+
+  &__right {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__name {
+    flex: 1 1 100%;
+  }
+
+  &__duration {
+    flex: 0 1 49%;
+    font-style: italic;
+    color: $color-muted;
+  }
+
+  &__label {
+    flex: 0 1 49%;
+    display: flex;
+    justify-content: flex-end;
+    font-style: italic;
+    color: $color-muted;
+  }
+}

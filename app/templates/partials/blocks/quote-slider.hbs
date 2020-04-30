@@ -1,0 +1,33 @@
+<section class="quote-slider js-slider-default">
+  <div class="quote-slider__container swiper-container " data-slider="slides">
+    <div class="quote-slider__wrapper swiper-wrapper">
+      {{#times 5}}
+        <div class="quote-slider__slide swiper-slide">
+          <article class="article">
+            <div class="article__left">
+              {{> components/image img="quotes/nikon" fallback-ext="jpg"}}
+            </div>
+            <div class="article__right">
+              {{#each ../example.quote-1}}
+                <div class="card">
+                  <div class="article__content">
+                    <p class="article__text">{{this.text}}</p>
+                    <div class="article__footer">
+                      <a class="article__footer-link link-arrow" href="{{this.link}}">{{this.author}}</a>
+                    </div>
+                  </div>
+                </div>
+              {{/each}}
+            </div>
+          </article>
+        </div>
+      {{/times}}
+    </div>
+  </div>
+
+  <div class="slider__nav quote-slider__nav">
+    <button class="slider__button slider__prev" data-slider="prev"></button>
+    <button class="slider__button slider__next" data-slider="next"></button>
+  </div>
+</section>
+
