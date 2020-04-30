@@ -1,21 +1,11 @@
 {{!Главная}}
 
-{{> layout/header }}
+{{> layout/header page-class="home" }}
 
-<main class="container page__container">
-  <div class="grid-main">
-    <div class="page__content">
-      {{> pages/home/main }}
-    </div>
-
-    <div class="page__aside">
-      {{> pages/common/aside
-              no-timetable=true
-              no-announcement=true
-              no-form=true
-      }}
-    </div>
-  </div>
-</main>
+<div class="container page__container">
+  <main class="grid-main">
+    {{> pages/home/info }}
+  </main>
+</div>
 
 {{> layout/footer }}

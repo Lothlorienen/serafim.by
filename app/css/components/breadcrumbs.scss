@@ -1,8 +1,4 @@
 .breadcrumbs {
-  //position: absolute;
-  bottom: 0;
-  left: $container-padding;
-
   @include mobile {
     display: none;
   }

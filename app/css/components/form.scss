@@ -1,6 +1,7 @@
 .form {
   &-field {
     position: relative;
+    margin: 15px auto;
   }
 
   &-row {
@@ -28,33 +29,45 @@
   &-input {
     width: 100%;
     display: block;
-    border: 2px solid transparent;
+    border: 1px solid $color-gray;
     padding: 0 17px;
     height: 43px;
-    border-radius: 3px;
-    background-color: #f8f8f9;
+    border-radius: 17px;
+    @include font-sm;
+    color: $color-text-main;
 
     &:focus {
       border-color: $color-primary;
       background-color: transparent;
-      @include bold;
+    }
+
+    @include placeholder {
+      @include font-sm;
+      color: $color-input;
     }
   }
 
   &-area {
     width: 100%;
     display: block;
-    border: 2px solid transparent;
+    border: 1px solid $color-gray;
     padding: 12px 17px;
     min-height: 130px;
-    border-radius: 3px;
-    background-color: #f8f8f9;
+    border-radius: 17px;
     resize: none;
+    @include font-sm;
+    color: $color-text-main;
 
     &:focus {
       border-color: $color-primary;
       background-color: transparent;
-      @include bold;
+    }
+
+    @include placeholder {
+      position: relative;
+      top: 3px;
+      @include font-sm;
+      color: $color-input;
     }
   }
 

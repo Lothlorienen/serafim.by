@@ -41,9 +41,11 @@
     </div>
   </div>
 
-  <div class="header__breadcrumbs">
-    <div class="container">
-      {{> components/breadcrumbs breadcrumbs=page-breadcrumbs}}
+  {{#if page-breadcrumbs}}
+    <div class="header__breadcrumbs">
+      <div class="container">
+        {{> components/breadcrumbs breadcrumbs=page-breadcrumbs}}
+      </div>
     </div>
-  </div>
+  {{/if}}
 </header>

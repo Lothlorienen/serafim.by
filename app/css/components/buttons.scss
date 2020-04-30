@@ -9,6 +9,14 @@
   line-height: 20px;
   border-radius: 3px;
   border: 1px solid $color-primary;
+  color: $color-primary;
+
+  &:hover,
+  &:focus {
+    background-color: $color-primary;
+    border-color: $color-primary;
+    color: #ffffff;
+  }
 
   &-primary {
     background-color: $color-primary;

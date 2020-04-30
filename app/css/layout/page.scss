@@ -18,6 +18,9 @@
   &__content {
     flex: 1 0 auto;
     min-height: 1px;
+    display: grid;
+    gap: $main-gutters;
+    grid-template-rows: repeat(auto-fit, minmax(100px, max-content));
   }
 
   &__footer {
@@ -26,8 +29,15 @@
 
   &__container {
     position: relative;
+    display: grid;
+    gap: $main-gutters;
     flex: 1 0 auto;
     min-height: 1px;
+    margin: 20px auto 67px;
+
+    .home & {
+      margin-top: 40px;
+    }
   }
 
   &__aside {
@@ -47,17 +57,30 @@
 .grid {
   &-main {
     display: grid;
-    grid-template-columns: 1fr 277px;
+    grid-template-columns: repeat(12, minmax($main-gutters, 1fr));
     gap: $main-gutters;
-    padding-top: 20px;
-    padding-bottom: 67px;
 
-    @include tablet-and-mobile  {
-      grid-template-columns: minmax(320px, 100vw);
-    }
+    //@include tablet-and-mobile  {
+    //  grid-template-columns: minmax(320px, 100vw);
+    //}
   }
 
   &-timetable {
     display: block;
+  }
+
+  //&-info {
+  //  //display: grid;
+  //  //grid-template-columns: 2.1fr 3fr;
+  //  //gap: $main-gutters;
+  //  display: grid;
+  //  grid-template-columns: repeat(12, minmax($main-gutters, 1fr));
+  //  gap: $main-gutters;
+  //}
+
+  &-column-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $main-gutters;
   }
 }

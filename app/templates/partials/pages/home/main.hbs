@@ -1,7 +1,17 @@
-{{#> blocks/section-wrapper title="Главное"}}
-  <div class="news-container">
-    {{> blocks/slider-article }}
+<div class="page__content">
+  {{#> blocks/section-wrapper title="Главное"}}
+    <div class="news-container">
+      {{> blocks/slider-article }}
 
-    {{> pages/news/blocks/list items=news.related}}
-  </div>
-{{/blocks/section-wrapper}}
+      {{> pages/news/blocks/list items=news.related}}
+    </div>
+  {{/blocks/section-wrapper}}
+</div>
+
+<div class="page__aside">
+  {{> pages/common/aside
+          no-timetable=true
+          no-announcement=true
+          no-form=true
+  }}
+</div>

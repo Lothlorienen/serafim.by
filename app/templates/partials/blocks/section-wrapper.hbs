@@ -1,5 +1,7 @@
 <div class="section-wrapper {{#if class-sw}}{{class-sw}}{{/if}}">
-  <h2 class="section-wrapper__title">{{title}}</h2>
+  {{#if title}}
+    <h2 class="section-wrapper__title">{{title}}</h2>
+  {{/if}}
 
   {{> @partial-block }}
 
