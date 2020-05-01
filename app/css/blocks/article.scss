@@ -1,7 +1,7 @@
 .article {
   position: relative;
   display: grid;
-  grid-template-columns: 1fr minmax(320px, 430px);
+  grid-template-columns: 1fr minmax(320px, 530px);
   @include font-base;
 
   &__right {
