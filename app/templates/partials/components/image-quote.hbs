@@ -1,0 +1,22 @@
+<figure class="section-quote__image-wrapper">
+  <div class="section-quote__image">
+    {{#if image}}
+      {{#if png}}
+        {{> components/image img=(concat 'quotes/' image) fallback-ext="png"}}
+      {{else}}
+        {{> components/image img=(concat 'quotes/' image) fallback-ext="jpg"}}
+      {{/if}}
+    {{else}}
+    {{/if}}
+  </div>
+  <figcaption>
+    <div>
+      <span class="color-gray">Дата рождения</span>
+      <span class="section-quote__b-date">{{b-date}}</span>
+    </div>
+    <div>
+      <span class="color-gray">Дата смерти</span>
+      <span class="section-quote__d-date">{{d-date}}</span>
+    </div>
+  </figcaption>
+</figure>
