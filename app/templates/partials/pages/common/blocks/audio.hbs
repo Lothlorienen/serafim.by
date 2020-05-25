@@ -2,18 +2,20 @@
   <ul class="audio__list">
     {{#each example.audio}}
       <li class="audio__item">
-        <div class="audio__left">
-          <div class="audio__image">
-            {{> ui/svg name="music" }}
+        <button class="audio__play-btn">
+          <div class="audio__left">
+            <div class="audio__image">
+              {{> ui/svg name="music" }}
+            </div>
           </div>
-        </div>
-        <div class="audio__right">
-          <div class="audio__name">{{this.text}}</div>
-          <div class="audio__duration">{{this.duration}}</div>
-          {{#if this.isListened }}
-            <div class="audio__label">Прослушано</div>
-          {{/if}}
-        </div>
+          <div class="audio__right">
+            <div class="audio__name">{{this.text}}</div>
+            <div class="audio__duration">{{this.duration}}</div>
+            {{#if this.isListened }}
+              <div class="audio__label">Прослушано</div>
+            {{/if}}
+          </div>
+        </button>
       </li>
     {{/each}}
   </ul>

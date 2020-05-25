@@ -1,0 +1,64 @@
+<div class="card">
+  {{#each audio-folder}}
+    <div class="audio__folder js-collapse">
+      <button class="audio__folder-header collapse-btn" type="button">
+        <div class="audio__folder-container">
+          <div class="audio__folder-image">
+            {{> ui/svg name="folder" }}
+          </div>
+          <div class="audio__folder-text">{{folder-text}}</div>
+          <div class="audio__folder-label">{{folder-count}} аудио</div>
+        </div>
+      </button>
+      {{#if folder-content}}
+        <div class="audio__folder-content collapse-content">
+          <ul class="audio__list">
+            {{#each folder-content}}
+              <li class="audio__item">
+                <button class="audio__play-btn">
+                  <div class="audio__left">
+                    <div class="audio__image">
+                      {{> ui/svg name="music" }}
+                    </div>
+                  </div>
+                  <div class="audio__right">
+                    <div class="audio__name">{{this.text}}</div>
+                    <div class="audio__description">
+                      <div class="audio__duration">{{this.duration}}</div>
+                      {{#if this.isListened }}
+                        <div class="audio__label">Прослушано</div>
+                      {{/if}}
+                    </div>
+                  </div>
+                </button>
+              </li>
+            {{/each}}
+          </ul>
+        </div>
+      {{else}}
+      {{/if}}
+    </div>
+  {{/each}}
+  <ul class="audio__list">
+    {{#each example.audio-2}}
+      <li class="audio__item">
+        <button class="audio__play-btn">
+          <div class="audio__left">
+            <div class="audio__image">
+              {{> ui/svg name="music" }}
+            </div>
+          </div>
+          <div class="audio__right">
+            <div class="audio__name">{{this.text}}</div>
+            <div class="audio__description">
+              <div class="audio__duration">{{this.duration}}</div>
+              {{#if this.isListened }}
+                <div class="audio__label">Прослушано</div>
+              {{/if}}
+            </div>
+          </div>
+        </button>
+      </li>
+    {{/each}}
+  </ul>
+</div>

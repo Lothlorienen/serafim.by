@@ -139,4 +139,13 @@
       }
     }
   }
+
+  &--calendar {
+    max-width: 277px;
+  }
+
+  &--photo,
+  &--video {
+    min-height: 292px;
+  }
 }
