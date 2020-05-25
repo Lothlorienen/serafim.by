@@ -158,7 +158,7 @@
     "quote-1": [
       {
         "text": "«Если будем прибегать ко Господу, то Он посетит нас, войдет в наше сердце, защитит нас, покроет от всяких искушений, будет для нас столпом крепким от лица вражия и приведет нас незаблудно к крайнему пределу наших желаний и стремлений, к вечному блаженству, в Царство Небесное.»",
-        "link": "#",
+        "link": "./quote.html",
         "author": "Преп. Никон"
       }
     ],
@@ -413,6 +413,45 @@
         ]
       }
     ]
+  },
+  "funds": {
+    "page-breadcrumbs": {
+      "main": "Главная",
+      "current": "Пожертвования",
+      "main-link": "home.html"
+    }
+  },
+  "photo": {
+    "page-breadcrumbs": {
+      "main": "Главная",
+      "current": "Фото",
+      "main-link": "home.html"
+    },
+    "example": {
+      "page-breadcrumbs": {
+        "main": "Главная",
+        "topic": "Файлы",
+        "current": "19.04.2020 Пасха Хрисотва",
+        "topic-link": "./photos.html",
+        "main-link": "home.html"
+      }
+    }
+  },
+  "video": {
+    "page-breadcrumbs": {
+      "main": "Главная",
+      "current": "Видео",
+      "main-link": "home.html"
+    }
+  },
+  "projects-files": {
+    "page-breadcrumbs": {
+      "main": "Главная",
+      "topic": "Проекты и деятельность",
+      "current": "Файлы",
+      "main-link": "./home.html",
+      "topic-link": "./projects-and-activity.html"
+    }
   },
   "news": {
     "page-breadcrumbs": {
