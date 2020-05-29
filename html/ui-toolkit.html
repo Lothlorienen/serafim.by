@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <title>Ui toolkit</title>
+  <meta name="description" content="Description">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content>
+  <meta property="og:title" content>
+  <meta property="og:description" content>
+  <meta property="og:image" content>
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content>
+
+  <link rel="stylesheet" href="../css/main.css?v=1976">
+  <link rel="shortcut icon" href="../assets/images/meta/favicon.png" type="image/png">
+</head>
+
+<body class="page  ">
+<div class="preloader js-preloader"></div>
+<div class="page__inner">
+
+<section class="ui">
+  <header class="ui__title">
+    <h1>UI Toolkit</h1>
+  </header>
+
+  <main class="ui__container">
+    <aside class="ui__aside">
+      <nav class="aside__inner">
+        <ul class="aside__nav">
+          <li>
+            <button class="_link" data-id="ui-colors">Colors</button>
+          </li>
+          <li>
+            <button class="_link" data-id="ui-buttons">Buttons</button>
+          </li>
+          <li>
+            <button class="_link" data-id="ui-form">Forms</button>
+          </li>
+          <li>
+            <button class="_link" data-id="ui-checkbox-radio">Checkbox / Radio</button>
+          </li>
+          <li>
+            <button class="_link" data-id="ui-popups">Popups</button>
+          </li>
+          <li>
+            <button class="_link" data-id="ui-loader">Loader</button>
+          </li>
+          <li>
+            <button class="_link" data-id="ui-loader-empty">Loader Empty</button>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+    <section class="ui__main">
+      <section class="main__section" id="ui-colors">
+          <header class="_title">
+              <h2>Colors</h2>
+          </header>
+          <div class="_body">
+      <div class="ui__colors">
+        <div class="_item">
+          <span>$color-primary</span>
+          <div class="_demo" style="background-color: #00b763">
+            <span>#00B763</span>
+          </div>
+        </div>
+      
+        <div class="_item">
+          <span>$color-secondary</span>
+          <div class="_demo" style="background-color: #FD5800">
+            <span>#FD5800</span>
+          </div>
+        </div>
+      </div>
+      </div>
+      </section>
+
+      <section class="main__section" id="ui-buttons">
+          <header class="_title">
+              <h2>Buttons</h2>
+          </header>
+          <div class="_body">
+      <div class="btn-list">
+        <div class="btn-list__item">
+          <i>.btn</i>
+            <a href="#" class="btn    ">
+                  Button
+              </a>
+        </div>
+      
+        <div class="btn-list__item">
+          <i>.btn-primary</i>
+            <a href="#" class="btn  btn-primary  ">
+                  Button
+              </a>
+        </div>
+      
+        <div class="btn-list__item">
+          <i>.btn-primary-outline</i>
+            <a href="#" class="btn  btn-primary-outline  ">
+                  Button
+              </a>
+        </div>
+      
+        <div class="btn-list__item">
+          <i>.btn-secondary</i>
+            <a href="#" class="btn  btn-secondary  ">
+                  Button
+              </a>
+        </div>
+      
+        <div class="btn-list__item">
+          <i>.btn-secondary-outline</i>
+            <a href="#" class="btn  btn-secondary-outline  ">
+                  Button
+              </a>
+        </div>
+      </div>
+      
+      <div class="btn-list">
+        <div class="btn-list__item">
+          <i>.btn</i>
+            <a href="#" class="btn    ">
+                  Button
+              </a>
+        </div>
+      
+        <div class="btn-list__item">
+          <i>.btn-small</i>
+            <a href="#" class="btn  btn-small   ">
+                  Button
+              </a>
+        </div>
+      
+        <div class="btn-list__item">
+          <i>.btn-large</i>
+            <a href="#" class="btn  btn-large   ">
+                  Button
+              </a>
+        </div>
+      </div>
+      
+      <div class="btn-list__item" style="flex-basis: 100%;">
+        <i>.btn .btn-w100</i>
+          <a href="#" class="btn  btn-primary btn-w100  ">
+                Button
+            </a>
+      </div>
+      
+      </div>
+      </section>
+
+      <section class="main__section" id="ui-forms">
+          <header class="_title">
+              <h2>Inputs</h2>
+          </header>
+          <div class="_body">
+      <div class="row">
+        <div class="col-sm-6">
+          <i style="text-align: left">.form-input</i>
+          <div class="form-field ">
+              <label for class="form-label ">Ваше имя</label>
+          
+                <input type="text" class="form-input " placeholder="Иван Иван Иванович">
+          
+          </div>
+        </div>
+      
+        <div class="col-sm-6">
+          <i style="text-align: left">.form-input</i>
+          <div class="form-field ">
+              <label for class="form-label ">Ваш пароль</label>
+          
+                <input type="text" class="form-input " placeholder="Не менее 6 символов">
+          
+                <span class="form-message">Error Error</span>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <i style="text-align: left">.form-area</i>
+          <div class="form-field ">
+              <label for class="form-label ">Ваше сообщение</label>
+          
+                <textarea class="form-area " placeholder="Иван Иван Иванович"></textarea>
+          
+          
+          </div>
+        </div>
+      </div>
+      </div>
+      </section>
+
+      <section class="main__section" id="ui-checkbox-radio">
+          <header class="_title">
+              <h2>Checkbox / Radio</h2>
+          </header>
+          <div class="_body">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="radio-box">
+              <input class="radio-input" type="radio" name="radio1" id="1">
+              <label class="radio-label" for="1">Example label</label>
+          </div>    <br>
+          <div class="radio-box">
+              <input class="radio-input" type="radio" name="radio1" id="2" checked>
+              <label class="radio-label" for="2">Example label</label>
+          </div>  </div>
+      
+        <div class="col-md-6">
+          <div class="check-box">
+              <input type="checkbox" id="3" class="check-input">
+              <label for="3" class="check-label">Example label</label>
+          </div>    <br>
+          <div class="check-box">
+              <input type="checkbox" id="4" class="check-input" checked>
+              <label for="4" class="check-label">Example label</label>
+          </div>  </div>
+      </div>
+      </div>
+      </section>
+
+      <section class="main__section" id="ui-popups">
+          <header class="_title">
+              <h2>Popups</h2>
+          </header>
+          <div class="_body">
+      <div class="row">
+          <div class="col-sm-3">
+                <button data-popup="example" type="button" class="btn btn-small btn-primary  js-popup-open " aria-label="Попап">
+                      Попап
+                  </button>
+          </div>
+      </div>
+      </div>
+      </section>
+
+      <section class="main__section" id="ui-popups">
+          <header class="_title">
+              <h2>Loader</h2>
+          </header>
+          <div class="_body">
+      <div class="loader">
+        <div class="loader__circle">Loading...</div>
+      
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-field ">
+                <label for class="form-label ">Example label</label>
+            
+                  <input type="text" class="form-input " placeholder="Input placeholder">
+            
+            </div>
+          </div>
+      
+          <div class="col-md-6">
+            <div class="form-field ">
+                <label for class="form-label ">Example label</label>
+            
+                  <input type="text" class="form-input form-error">
+            
+                  <span class="form-message">Error Error</span>
+            </div>
+          </div>
+        </div>
+      
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-field ">
+                <label for class="form-label ">Example label</label>
+            
+                  <input type="text" class="form-input " placeholder="Input disabled" disabled>
+            
+            </div>
+          </div>
+      
+          <div class="col-md-6">
+            <div class="form-field ">
+                <label for class="form-label ">Example label</label>
+            
+                <select class="js-dropdown-box" data-placeholder="Choose any one">
+                    <option value="1">Example text 1</option>
+                    <option value="2">Example text 2</option>
+                    <option value="3">Example text 3</option>
+                    <option value="4">Example text 4</option>
+                    <option value="5">Example text 5</option>
+                </select>
+            </div>
+          </div>
+        </div>
+      
+        <div class="row">
+          <div class="col-md-6">
+            <div class="radio-box">
+                <input class="radio-input" type="radio" name="radio1" id="1">
+                <label class="radio-label" for="1">Example label</label>
+            </div>      <br>
+            <div class="radio-box">
+                <input class="radio-input" type="radio" name="radio1" id="2" checked>
+                <label class="radio-label" for="2">Example label</label>
+            </div>    </div>
+      
+          <div class="col-md-6">
+            <div class="check-box">
+                <input type="checkbox" id="3" class="check-input">
+                <label for="3" class="check-label">Example label</label>
+            </div>      <br>
+            <div class="check-box">
+                <input type="checkbox" id="4" class="check-input" checked>
+                <label for="4" class="check-label">Example label</label>
+            </div>    </div>
+        </div>
+      </div>
+      
+      <br><br>
+      
+      <div class="loader loader--trans">
+        <div class="loader__circle">Loading...</div>
+      </div>
+      </div>
+      </section>
+    </section>
+  </main>
+</section>
+
+<div class="popup js-popup" data-popup-id="example">
+  <div class="popup__header">
+    <span class="popup__title">Base popup</span>
+    <button class="popup__close js-popup-close"></button>
+  </div>
+  <div class="popup__content">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aperiam modi nemo nihil officia rerum tempore
+      voluptatem?
+  </div>
+</div>
+
+<script>
+  /*
+  window.onload = () => {
+    const $btn = $('.aside__nav').find('._link');
+
+    $btn.on('click', function() {
+      const id = $(this).data('id');
+
+      $('html, body').animate({
+        scrollTop: $(`#${id}`).offset().top,
+      }, 600);
+    });
+  };*/
+</script>
+
+<script src="../js/vendors.js?v=1976"></script>  <script src="../js/layout.js?v=1976"></script>  <script src="../js/scroll-observer.js?v=1976"></script>  <script src="../js/resize-observer.js?v=1976"></script>  <script src="../js/scroll-control.js?v=1976"></script>  <script src="../js/preloader.js?v=1976"></script>  <script src="../js/popups.js?v=1976"></script>  <script src="../js/app.js?v=1976"></script>  <script src="../js/sliders.js?v=1976"></script>  <script src="../js/slider-aside.js?v=1976"></script>  <script src="../js/collapse.js?v=1976"></script></div></body>
+</html>

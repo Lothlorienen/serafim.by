@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <title>Расписание богослужений</title>
+  <meta name="description" content="Description">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content>
+  <meta property="og:title" content>
+  <meta property="og:description" content>
+  <meta property="og:image" content>
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content>
+
+  <link rel="stylesheet" href="../css/main.css?v=1976">
+  <link rel="shortcut icon" href="../assets/images/meta/favicon.png" type="image/png">
+</head>
+
+<body class="page  ">
+<div class="preloader js-preloader"></div>
+<div class="page__inner">
+
+<header class="header page__header">
+  <div class="container">
+    <div class="header__top">
+      <div class="header__logo">
+        <div class="image-fit  ">
+            <picture>
+          
+                
+                  <source media="(max-width: 1279px)" data-srcset="../assets/images/header/logo-mobile.webp,
+                          ../assets/images/header/logo-mobile@2x.webp 2x" type="image/webp">
+                <source media="(max-width: 1279px)" data-srcset="../assets/images/header/logo-mobile.png,
+                          ../assets/images/header/logo-mobile@2x.png 2x" type="image/png">
+              
+                <source data-srcset="../assets/images/header/logo.webp,
+                        ../assets/images/header/logo@2x.webp 2x" type="image/webp">
+              <source data-srcset="../assets/images/header/logo.png,
+                        ../assets/images/header/logo@2x.png 2x" type="image/png">
+              <img class="lazy" data-sizes="auto" data-original="../assets/images/header/logo.png" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt>
+            </picture>
+        </div>
+      </div>
+      <div class="header__brand">
+        <h1 class="header__title">Приход преподобного<br>Серафима Саровского</h1>
+        <span class="header__text">г. Минск, Белорусская Православная Церковь Московского Патриархата</span>
+      </div>
+      <div class="header__extra">
+        <div class="header__extra-row">
+          <div class="actions">
+            <a href="#" class="link--text" id="main-search">
+              <svg class="icon icon-search ">
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../assets/images/spriteInline.svg#search"/>
+              </svg>              Поиск
+            </a>
+            <button class="link--text" type="button" id="main-entrance">Вход / Регистрация</button>
+          </div>
+        </div>
+        <div class="header__extra-row">
+          <div class="extra-links">
+            <a href="#" class="link--text">Контакты</a>
+              <a href="#" class="btn  btn-primary  btn--funds">
+                    Пожертвования
+                </a>
+          </div>
+        </div>
+        <div class="header__extra-row">
+          <ul class="socials">
+            <li class="socials__item">
+              <a href="#" class="socials__link socials__link--instagram" target="_blank" rel="noopener noreferrer">
+                  <svg class="icon icon-instagram ">
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../assets/images/spriteInline.svg#instagram"/>
+                  </svg>    </a>
+            </li>  <li class="socials__item">
+              <a href="#" class="socials__link socials__link--vk" target="_blank" rel="noopener noreferrer">
+                  <svg class="icon icon-vk ">
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../assets/images/spriteInline.svg#vk"/>
+                  </svg>    </a>
+            </li>  <li class="socials__item">
+              <a href="#" class="socials__link socials__link--facebook" target="_blank" rel="noopener noreferrer">
+                  <svg class="icon icon-facebook ">
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../assets/images/spriteInline.svg#facebook"/>
+                  </svg>    </a>
+            </li>  <li class="socials__item">
+              <a href="#" class="socials__link socials__link--twitter" target="_blank" rel="noopener noreferrer">
+                  <svg class="icon icon-twitter ">
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../assets/images/spriteInline.svg#twitter"/>
+                  </svg>    </a>
+            </li>  <li class="socials__item">
+              <a href="#" class="socials__link socials__link--youtube" target="_blank" rel="noopener noreferrer">
+                  <svg class="icon icon-youtube ">
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../assets/images/spriteInline.svg#youtube"/>
+                  </svg>    </a>
+            </li>  <li class="socials__item">
+              <a href="#" class="socials__link socials__link--ok" target="_blank" rel="noopener noreferrer">
+                  <svg class="icon icon-ok ">
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../assets/images/spriteInline.svg#ok"/>
+                  </svg>    </a>
+            </li></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="header__bottom">
+    <div class="container">
+      <nav class="header__nav">
+        <ul class="nav-menu">
+          <li class="nav-menu__item"><a href="#" class="nav-menu__link">О приходе</a></li>
+          <li class="nav-menu__item"><a href="#" class="nav-menu__link">Службы и таинства</a></li>
+          <li class="nav-menu__item"><a href="#" class="nav-menu__link">Проекты и деятельность</a></li>
+          <li class="nav-menu__item"><a href="#" class="nav-menu__link">Воскресная школа</a></li>
+          <li class="nav-menu__item"><a href="#" class="nav-menu__link">Паломнический отдел</a></li>
+          <li class="nav-menu__item"><a href="#" class="nav-menu__link">Молодежный центр</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+    <div class="header__breadcrumbs">
+      <div class="container">
+        <div class="breadcrumbs">
+          <div class="breadcrumbs__container">
+                <a href="home.html" class="breadcrumbs__link breadcrumbs__link--main">Главная</a>
+                <a href="#" class="breadcrumbs__link breadcrumbs__link--topic">Службы и таинства</a>
+                <span class="breadcrumbs__link breadcrumbs__link--current">Расписание богослужений</span>
+          </div>
+        </div>
+      </div>
+    </div>
+</header>
+
+<div class="container page__container">
+  <div class="grid-timetable">
+    <div class="section-wrapper">
+
+      <h2 class="section-wrapper__title timetable__title">
+      <span class="timetable__title-wrapper">
+        Расписание богослужений
+        <a href="#">Скачать PDF</a>
+      </span>
+      </h2>
+
+      <div class="timetable__container">
+        <div class="timetable-content timetable-content--column-1">
+          <ul class="timetable__list">
+              <li class="timetable__item card">
+                <h3 class="timetable__item-title">
+                  <span class="timetable__day ">Понедельник</span>
+                  <span class="timetable__date">3 марта</span>
+                </h3>
+                <p class="timetable__text">Неделя мясопустная, о Страшном Суде. Харалампия (заговенье на мясо)</p>
+                  <p class="timetable__event"><span>6:40</span> Божественная литургия. Молебен.</p>
+                  <p class="timetable__event"><span>9:30</span> Исповедь.</p>
+                  <p class="timetable__event"><span>9:40</span> Божественная литургия. Молибин. Лития</p>
+                  <p class="timetable__event"><span>13:00</span> Молебен в часовне (ул. Белецкого 37/2)</p>
+                  <p class="timetable__event"><span>17:00</span> Вечернее Богослужение с Акафистом прп. Серафиму Саровскому</p>
+              </li>
+              <li class="timetable__item card">
+                <h3 class="timetable__item-title">
+                  <span class="timetable__day ">Вторник</span>
+                  <span class="timetable__date">4 марта</span>
+                </h3>
+                <p class="timetable__text">Седьмица сырная (масленица)  - сплошная. Сщмч. Власия, еп. Севастийского</p>
+                  <p class="timetable__event"><span>8:00</span> Молебен перед началом доброго дела.</p>
+                  <p class="timetable__event"><span>9:30</span> Исповедь.</p>
+                  <p class="timetable__event"><span>9:40</span> Божественная литургия. Молибин. Лития</p>
+                  <p class="timetable__event"><span>17:00</span> Водосвятый молебен с Акафистом «Свт. Николаю чудотворцу»</p>
+              </li>
+              <li class="timetable__item card">
+                <h3 class="timetable__item-title">
+                  <span class="timetable__day ">Среда</span>
+                  <span class="timetable__date">5 марта</span>
+                </h3>
+                <p class="timetable__text">Седьмица сырная (масленица)  - сплошная. Сщмч. Власия, еп. Севастийского)</p>
+                  <p class="timetable__event"><span>8:00</span> Молебен перед началом доброго дела.</p>
+                  <p class="timetable__event"><span>9:30</span> Исповедь.</p>
+                  <p class="timetable__event"><span>9:40</span> Божественная литургия. Молибин. Лития</p>
+                  <p class="timetable__event"><span>17:00</span> Водосвятый молебен с Акафистом «Свт. Николаю чудотворцу»</p>
+              </li>
+              <li class="timetable__item card">
+                <h3 class="timetable__item-title">
+                  <span class="timetable__day ">Четверг</span>
+                  <span class="timetable__date">6 марта</span>
+                </h3>
+                <p class="timetable__text">Неделя мясопустная, о Страшном Суде. Харалампия (заговенье на мясо)</p>
+                  <p class="timetable__event"><span>6:40</span> Божественная литургия. Молебен.</p>
+                  <p class="timetable__event"><span>9:30</span> Исповедь.</p>
+                  <p class="timetable__event"><span>9:40</span> Божественная литургия. Молибин. Лития</p>
+                  <p class="timetable__event"><span>13:00</span> Молебен в часовне (ул. Белецкого 37/2)</p>
+                  <p class="timetable__event"><span>17:00</span> Вечернее Богослужение с Акафистом прп. Серафиму Саровскому</p>
+              </li>
+          </ul>
+        </div>
+
+        <aside class="page__aside timetable-content--aside">
+          <div class="widget widget--calendar">
+            <section class="card section-widget">
+              <div class="calendar">
+                <div class="calendar__date">
+                  <a href="#">
+                    <span class="calendar__label">сегодня</span>
+                    <span class="calendar__day">3 </span>
+                    <span class="calendar__month">марта</span>
+                  </a>
+                </div>
+          
+                <p class="section-widget__text calendar__text-big">
+                  <a href="#">
+                    Апп. от 70-ти Архиппа и Филимона и мц. равноап. Апфии (I). Прп. Феодора
+                  </a>
+                </p>
+              </div>
+            </section>
+          </div>
+          
+          <div class="widget widget--calendar">
+            <section class="card section-widget">
+              <div class="calendar">
+                <div class="calendar__date">
+                  <a href="#">
+                    <span class="calendar__label">сегодня</span>
+                    <span class="calendar__day">3 </span>
+                    <span class="calendar__month">марта</span>
+                  </a>
+                </div>
+          
+                <p class="section-widget__text calendar__text-big">
+                  <a href="#">
+                    Апп. от 70-ти Архиппа и Филимона и мц. равноап. Апфии (I). Прп. Феодора
+                  </a>
+                </p>
+              </div>
+            </section>
+          </div>
+          
+        </aside>
+
+        <div class="timetable-content timetable-content--column-2">
+          <ul class="timetable__list">
+              <li class="timetable__item card">
+                <h3 class="timetable__item-title">
+                  <span class="timetable__day ">Пятница</span>
+                  <span class="timetable__date">7 марта</span>
+                </h3>
+                <p class="timetable__text">Седьмица сырная (масленица)  - сплошная. Сщмч. Власия, еп. Севастийского</p>
+                  <p class="timetable__event"><span>8:00</span> Молебен перед началом доброго дела.</p>
+                  <p class="timetable__event"><span>9:30</span> Исповедь.</p>
+                  <p class="timetable__event"><span>9:40</span> Божественная литургия. Молибин. Лития</p>
+                  <p class="timetable__event"><span>17:00</span> Водосвятый молебен с Акафистом «Свт. Николаю чудотворцу»</p>
+              </li>
+              <li class="timetable__item card">
+                <h3 class="timetable__item-title">
+                  <span class="timetable__day timetable__day--weekend">Суббота</span>
+                  <span class="timetable__date">8 марта</span>
+                </h3>
+                <p class="timetable__text">Седьмица сырная (масленица)  - сплошная. Сщмч. Власия, еп. Севастийского</p>
+                  <p class="timetable__event"><span>8:00</span> Молебен перед началом доброго дела.</p>
+                  <p class="timetable__event"><span>9:30</span> Исповедь.</p>
+                  <p class="timetable__event"><span>9:40</span> Божественная литургия. Молибин. Лития</p>
+                  <p class="timetable__event"><span>17:00</span> Вечернее Богослужение с Акафистом прп. Серафиму Саровскому</p>
+              </li>
+              <li class="timetable__item card">
+                <h3 class="timetable__item-title">
+                  <span class="timetable__day timetable__day--weekend">Воскресенье</span>
+                  <span class="timetable__date">9 марта</span>
+                </h3>
+                <p class="timetable__text">Седьмица сырная (масленица)  - сплошная. Сщмч. Власия, еп. Севастийского</p>
+                  <p class="timetable__event"><span>6:40</span> Божественная литургия. Молебен.</p>
+                  <p class="timetable__event"><span>9:30</span> Исповедь.</p>
+                  <p class="timetable__event"><span>9:40</span> Божественная литургия. Молибин. Лития</p>
+                  <p class="timetable__event"><span>13:00</span> Молебен в часовне (ул. Белецкого 37/2)</p>
+                  <p class="timetable__event"><span>17:00</span> Вечернее Богослужение с Акафистом прп. Серафиму Саровскому</p>
+              </li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<footer class="footer page__footer">
+  <div class="container footer__inner">
+    <div class="footer__map">
+      <div style="position:relative;overflow:hidden;">
+        <a href="https://yandex.by/maps/org/prikhod_prepodobnogo_serafima_sarovskogo/205184322415/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">Приход преподобного Серафима Саровского</a>
+        <a href="https://yandex.by/maps/157/minsk/category/orthodox_church/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:14px;">Православный храм в Минске</a>
+        <a href="https://yandex.by/maps/157/minsk/category/religious_association/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:28px;">Религиозное объединение в Минске</a>
+        <iframe src="https://yandex.by/map-widget/v1/-/CKuQEG9V" width="600" height="380" frameborder="0" allowfullscreen="true" style="position:relative;">
+        </iframe>
+      </div>
+    </div>
+    <div class="footer__address">
+      <address class="address">
+        <p class="font-regular">
+          г. Минск, ул. Космонавтов 24
+        </p>
+        <p>
+          <a href="tel:+375173767002"><span class="text-muted">+375 17</span> 376 70 02</a>
+        </p>
+        <p>
+          © 2013-2020
+        </p>
+        <p>
+          <a href="mailto:palomnik.minsk@mail.ru" class="link">palomnik.minsk@mail.ru</a>
+        </p>
+      </address>
+    
+      <div class="footer__btn">
+          <a href="#" class="btn  btn-muted  btn--funds">
+                Пожертвования
+            </a>
+      </div>
+    
+      <ul class="nav-menu">
+        <li class="nav-menu__item"><a href="#" class="nav-menu__link">О приходе</a></li>
+        <li class="nav-menu__item"><a href="#" class="nav-menu__link">Службы и таинства</a></li>
+        <li class="nav-menu__item"><a href="#" class="nav-menu__link">Проекты и деятельность</a></li>
+        <li class="nav-menu__item"><a href="#" class="nav-menu__link">Воскресная школа</a></li>
+        <li class="nav-menu__item"><a href="#" class="nav-menu__link">Паломнический отдел</a></li>
+        <li class="nav-menu__item"><a href="#" class="nav-menu__link">Молодежный центр</a></li>
+      </ul>
+    
+    </div>
+    <div class="footer__credits">
+      <ul class="socials">
+        <li class="socials__item">
+          <a href="#" class="socials__link socials__link--instagram" target="_blank" rel="noopener noreferrer">
+              <svg class="icon icon-instagram ">
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../assets/images/spriteInline.svg#instagram"/>
+              </svg>    </a>
+        </li>  <li class="socials__item">
+          <a href="#" class="socials__link socials__link--vk" target="_blank" rel="noopener noreferrer">
+              <svg class="icon icon-vk ">
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../assets/images/spriteInline.svg#vk"/>
+              </svg>    </a>
+        </li>  <li class="socials__item">
+          <a href="#" class="socials__link socials__link--facebook" target="_blank" rel="noopener noreferrer">
+              <svg class="icon icon-facebook ">
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../assets/images/spriteInline.svg#facebook"/>
+              </svg>    </a>
+        </li>  <li class="socials__item">
+          <a href="#" class="socials__link socials__link--twitter" target="_blank" rel="noopener noreferrer">
+              <svg class="icon icon-twitter ">
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../assets/images/spriteInline.svg#twitter"/>
+              </svg>    </a>
+        </li>  <li class="socials__item">
+          <a href="#" class="socials__link socials__link--youtube" target="_blank" rel="noopener noreferrer">
+              <svg class="icon icon-youtube ">
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../assets/images/spriteInline.svg#youtube"/>
+              </svg>    </a>
+        </li>  <li class="socials__item">
+          <a href="#" class="socials__link socials__link--ok" target="_blank" rel="noopener noreferrer">
+              <svg class="icon icon-ok ">
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../assets/images/spriteInline.svg#ok"/>
+              </svg>    </a>
+        </li></ul>
+    
+      <div class="timetable">
+        <h3 class="timetable__title">Начало служений:</h3>
+        <p>
+          Пн - Сб 8<span class="color-gray">:00</span> / 17<span class="color-gray">:00</span>
+          <br>
+          Воскресенье 7<span class="color-gray">:00</span> / 10<span class="color-gray">:00</span> / 17<span class="color-gray">:00</span>
+        </p>
+      </div>
+    
+      <div class="footer__copy">
+        <p class="text-muted">
+          Все права защищены. Использование и цитирование материалов сайта разрешается при условии
+          открытой ссылки на цитируемую статью, которая должна находиться в первом абзаце публикуемого
+          материала. Мнение редакции может не совпадать с точкой зрения авторов публикаций.
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</div>
+
+<script src="../js/vendors.js?v=1976"></script>  <script src="../js/layout.js?v=1976"></script>  <script src="../js/scroll-observer.js?v=1976"></script>  <script src="../js/resize-observer.js?v=1976"></script>  <script src="../js/scroll-control.js?v=1976"></script>  <script src="../js/preloader.js?v=1976"></script>  <script src="../js/popups.js?v=1976"></script>  <script src="../js/app.js?v=1976"></script>  <script src="../js/sliders.js?v=1976"></script>  <script src="../js/slider-aside.js?v=1976"></script>  <script src="../js/collapse.js?v=1976"></script></body>
+</html>
