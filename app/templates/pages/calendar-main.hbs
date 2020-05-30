@@ -1,0 +1,18 @@
+{{!Календарь}}
+
+{{> layout/header page-breadcrumbs=calendar-main.page-breadcrumbs }}
+
+<div class="container page__container">
+  <div class="grid-main">
+    <main class="page__content grid-col-9">
+      {{> blocks/calendar/main }}
+      {{> blocks/related }}
+    </main>
+
+    <aside class="page__aside grid-col-3">
+      {{> blocks/common/aside }}
+    </aside>
+  </div>
+</div>
+
+{{> layout/footer }}

@@ -1,0 +1,35 @@
+{{!Расписание богослужений}}
+
+{{> layout/header page-breadcrumbs=timetable.page-breadcrumbs}}
+
+<div class="container page__container">
+  <div class="grid-timetable">
+    <div class="section-wrapper">
+
+      <h2 class="section-wrapper__title timetable__title">
+      <span class="timetable__title-wrapper">
+        Расписание богослужений
+        <a href="#">Скачать PDF</a>
+      </span>
+      </h2>
+
+      <div class="timetable__container">
+        <div class="timetable-content timetable-content--column-1">
+          {{> blocks/timetable/timetable-list items=timetable.days-1}}
+        </div>
+
+        <aside class="page__aside timetable-content--aside">
+          {{> blocks/common/blocks/calendar-simple }}
+          {{> blocks/common/blocks/calendar-simple }}
+        </aside>
+
+        <div class="timetable-content timetable-content--column-2">
+          {{> blocks/timetable/timetable-list items=timetable.days-2}}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+{{> layout/footer }}

@@ -153,6 +153,7 @@
     align-items: flex-start;
     width: 100%;
     padding: 0 5px 0 1px;
+    padding-right: -5px;
     text-align: left;
     @include font-sm;
 
@@ -162,13 +163,15 @@
   }
 
   &__left {
-    margin-right: 10px;
+    margin-right: 9px;
   }
 
   &__image {
+    opacity: 0.5;
     .icon {
-      max-width: 22px;
-      max-height: 31px;
+      margin-top: 5px;
+      max-width: 25px;
+      max-height: 34px;
     }
   }
 

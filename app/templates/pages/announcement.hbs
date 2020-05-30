@@ -1,0 +1,17 @@
+{{!Объявления}}
+
+{{> layout/header page-breadcrumbs=announcement.page-breadcrumbs}}
+
+<div class="container page__container">
+  <div class="grid-main">
+    <main class="page__content grid-col-9">
+      {{> blocks/announcement/main }}
+    </main>
+
+    <aside class="page__aside grid-col-3">
+      {{> blocks/common/aside no-form=true}}
+    </aside>
+  </div>
+</div>
+
+{{> layout/footer }}

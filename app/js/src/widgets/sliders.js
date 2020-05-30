@@ -177,8 +177,8 @@ class SliderDefault {
   }
 }
 
-class SliderArticleUI {
-  static initOnLoad() {
+class SliderUI {
+  static init() {
     document.querySelectorAll('.js-slider-article').forEach(item => {
       new SliderArticle(item);
     });
@@ -188,8 +188,15 @@ class SliderArticleUI {
   }
 }
 
-SliderArticleUI.initOnLoad();
-window.SliderArticleUI = SliderArticleUI;
+
+document.addEventListener('DOMContentLoaded', () => {
+  SliderUI.init();
+});
+
+
+window.SliderArticle = SliderArticle;
+window.SliderDefault = SliderDefault;
+window.SliderUI = SliderUI;
 
 // const configsForSwiper = {
 //   news: {

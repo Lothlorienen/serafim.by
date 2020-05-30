@@ -20,7 +20,7 @@
       &::after {
         @include fill;
         content: '';
-        background-image: linear-gradient(to right, transparent 75%, white 102%);
+        background-image: linear-gradient(to right, transparent 75%, white 100%);
       }
     }
 

@@ -27,7 +27,7 @@ function getInners (container) {
   };
 }
 
-function initSliders () {
+function initSliders() {
   const defaultSliderContainer = document.querySelectorAll('.js-slider-default');
 
   defaultSliderContainer.forEach(item => {
@@ -53,5 +53,11 @@ function initSliders () {
     new Swiper(slider, config);
   });
 }
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  initSliders();
+});
+
 
 window.initSliders = initSliders;

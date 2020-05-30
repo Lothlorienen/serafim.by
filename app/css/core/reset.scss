@@ -49,9 +49,9 @@ figure {
 button {
   padding: 0;
   border: 0;
+  color: inherit;
   background-color: transparent;
   cursor: pointer;
-  color: inherit;
 }
 
 main {
@@ -99,7 +99,7 @@ body {
   'Fira Sans',
   'Droid Sans',
   'Helvetica Neue',
-  sans-serif;
+  serif;
   font-size: 14px;
   color: #000;
   -webkit-font-smoothing: antialiased;

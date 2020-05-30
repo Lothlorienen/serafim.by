@@ -1,0 +1,21 @@
+{{!Изречения старцев / Цитаты}}
+
+{{> layout/header page-breadcrumbs=article.page-breadcrumbs}}
+
+<div class="container page__container">
+  <div class="grid-main">
+    <main class="page__content grid-col-9">
+      {{#> blocks/section-wrapper title="Цитаты" class-sw="section-wrapper--quotes"}}
+        {{> blocks/quote-slider }}
+      {{/blocks/section-wrapper}}
+
+      {{> blocks/quote/main }}
+    </main>
+
+    <aside class="page__aside grid-col-3">
+      {{> blocks/common/aside }}
+    </aside>
+  </div>
+</div>
+
+{{> layout/footer }}

@@ -1,0 +1,17 @@
+{{!Новости}}
+
+{{> layout/header page-breadcrumbs=news.page-breadcrumbs}}
+
+<div class="container page__container">
+  <div class="grid-main">
+    <main class="page__content grid-col-9">
+      {{> blocks/news/main }}
+    </main>
+
+    <aside class="page__aside grid-col-3">
+      {{> blocks/common/aside }}
+    </aside>
+  </div>
+</div>
+
+{{> layout/footer }}
