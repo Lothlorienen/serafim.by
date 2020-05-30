@@ -1,6 +1,6 @@
 .header {
   position: relative;
-  color: $color-text-main;
+  color: $color-black;
   background: $color-white;
 
   &__top {
@@ -94,7 +94,7 @@
     display: grid;
     gap: 13px;
     grid-template-rows: repeat(auto-fit, minmax(20px, max-content));
-    color: $color-text-gray;
+    color: $color-grey;
 
     @include tablet-and-mobile {
       display: none;
@@ -109,12 +109,12 @@
   &__bottom {
     position: relative;
     z-index: 2;
-    background-color: $color-gray;
+    background-color: $color-lightgrey;
   }
 
   &__breadcrumbs {
     position: relative;
-    background-color: $color-bg-main;
+    background-color: $bg-light;
   }
 
   .actions,

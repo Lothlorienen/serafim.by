@@ -17,7 +17,7 @@
       }
 
       ~ .photo__description {
-        color: $color-gray;
+        color: $color-lightgrey;
       }
     }
   }
@@ -109,7 +109,7 @@
     &:focus {
 
       ~ .video__description {
-        background-color: $color-gray;
+        background-color: $color-lightgrey;
       }
     }
   }
@@ -134,7 +134,7 @@
     align-items: center;
     margin-top: auto;
     padding: 20px 25px;
-    color: $color-text-main;
+    color: $color-black;
   }
 
   &__text {

@@ -9,7 +9,7 @@
   }
 
   &-content {
-    color: $color-text-gray;
+    color: $color-grey;
 
     &--column-1 {
       grid-area: column-1;
@@ -34,7 +34,7 @@
     @include font-base-up;
     display: inline-block;
     margin-right: 5px;
-    color: $color-text-main;
+    color: $color-black;
 
     &::after {
       display: inline;
@@ -48,7 +48,7 @@
 
   &__date {
     @include font-base;
-    color: $color-muted;
+    color: $color-secondary;
     font-weight: 400;
     font-style: italic;
 
@@ -60,7 +60,7 @@
 
   &__event {
     span {
-      color: $color-text-main;
+      color: $color-black;
     }
   }
 

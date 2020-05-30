@@ -688,5 +688,12 @@
         }
       ]
     }
-  ]
+  ],
+  "important": {
+    "page-breadcrumbs": {
+      "main": "Главная",
+      "current": "Важная информация",
+      "main-link": "home.html"
+    }
+  }
 }

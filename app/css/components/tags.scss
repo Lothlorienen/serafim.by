@@ -3,13 +3,13 @@
   //grid-template-columns: repeat(auto-fit, minmax(60px, max-content));
   font-size: 13px;
   line-height: 30px;
-  color: $color-muted;
+  color: $color-secondary;
 
   &__title {
     display: inline;
     float: left;
     margin-right: 5px;
-    color: $color-muted;
+    color: $color-secondary;
     font-weight: 400;
   }
 
@@ -30,6 +30,6 @@
   }
 
   &__link {
-    color: $color-text-gray;
+    color: $color-grey;
   }
 }

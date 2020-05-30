@@ -65,11 +65,11 @@
     }
 
     .section-widget__text {
-      color: $color-text-gray;
+      color: $color-grey;
       @include font-base;
 
       strong {
-        color: $color-text-main;
+        color: $color-black;
         font-weight: inherit;
       }
     }

@@ -27,7 +27,7 @@
       @include font-base;
       line-height: 1.5;
       min-height: 60px;
-      border-bottom: 1px solid $color-gray;
+      border-bottom: 1px solid $color-lightgrey;
     }
 
     .audio__image {
@@ -59,7 +59,7 @@
       min-height: 60px;
 
       &:hover {
-        background-color: transparentize($color-gray, 0.3);
+        background-color: transparentize($color-lightgrey, 0.3);
       }
 
       > * {
@@ -74,7 +74,7 @@
       gap: 15px;
       width: 100%;
       padding: 5px 0;
-      border-bottom: 1px solid $color-gray;
+      border-bottom: 1px solid $color-lightgrey;
     }
 
     &-image {
@@ -112,7 +112,7 @@
 
       .audio__item {
         &:first-child {
-          border-top: 1px solid $color-gray;
+          border-top: 1px solid $color-lightgrey;
         }
       }
     }
@@ -133,7 +133,7 @@
         display: block;
         width: 1px;
         height: 100%;
-        background-color: $color-gray;
+        background-color: $color-lightgrey;
       }
     }
 
@@ -157,7 +157,7 @@
     @include font-sm;
 
     &:hover {
-      background-color: transparentize($color-gray, 0.5);
+      background-color: transparentize($color-lightgrey, 0.5);
     }
   }
 
@@ -184,7 +184,7 @@
   &__duration {
     flex: 0 1 49%;
     font-style: italic;
-    color: $color-muted;
+    color: $color-secondary;
   }
 
   &__label {
@@ -192,6 +192,6 @@
     display: flex;
     justify-content: flex-end;
     font-style: italic;
-    color: $color-muted;
+    color: $color-secondary;
   }
 }

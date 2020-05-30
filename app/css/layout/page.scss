@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   @include font-base;
-  background-color: $color-bg-main;
+  background-color: $bg-light;
 
   &__inner {
     display: flex;

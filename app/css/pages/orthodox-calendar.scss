@@ -29,7 +29,7 @@
     font-style: italic;
     font-size: 35px;
     line-height: 1;
-    color:$color-muted;
+    color:$color-secondary;
 
     &--current {
       color: $color-danger;
@@ -87,7 +87,7 @@
       @include font-base;
 
       span {
-        color: $color-text-gray;
+        color: $color-grey;
       }
     }
   }

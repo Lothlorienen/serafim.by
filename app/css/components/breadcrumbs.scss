@@ -5,19 +5,19 @@
 
   &__link {
     @include font-sm;
-    color: $color-text-gray;
+    color: $color-grey;
 
     &:not(:last-child) {
       &::after {
         content: '/';
         display: inline-block;
         margin: 0 3px;
-        color: $color-muted;
+        color: $color-secondary;
       }
     }
 
     &--current {
-      color: $color-muted;
+      color: $color-secondary;
     }
   }
 }

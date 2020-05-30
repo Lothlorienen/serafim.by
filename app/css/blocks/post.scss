@@ -15,7 +15,7 @@
   }
 
   &__statistics {
-    color: $color-muted;
+    color: $color-secondary;
     font-style: italic;
   }
 
@@ -37,7 +37,7 @@
       }
 
       a {
-        color: $color-muted;
+        color: $color-secondary;
       }
     }
   }
@@ -51,7 +51,7 @@
       font-style: italic;
       font-size: 16px;
       line-height: 30px;
-      color: $color-muted;
+      color: $color-secondary;
       text-align: center;
 
       @include mobile {

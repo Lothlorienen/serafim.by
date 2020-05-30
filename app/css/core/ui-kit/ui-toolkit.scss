@@ -24,13 +24,12 @@
   }
 
   &__container {
-    flex-shrink: 0;
-    flex: 1;
-    background-color: #fcfcfc;
-    margin: 0 -10px;
+    flex: 1 1 auto;
     display: flex;
+    margin: 0 -10px;
+    background-color: #fcfcfc;
 
-    @includetablet-and-mobile {
+    @include tablet-and-mobile {
       flex-direction: column;
     }
   }
@@ -46,9 +45,11 @@
       }
 
       &__nav {
-        @includetablet-and-mobile {
+        @include tablet-and-mobile {
           display: flex;
+          align-items: center;
           flex-direction: row;
+          overflow: auto;
         }
 
         ._link {
@@ -69,6 +70,7 @@
   &__main {
     flex-basis: 75%;
     padding: 0 10px;
+    background-color: #fff;
 
     .main {
       &__section {
@@ -91,8 +93,16 @@
     flex-wrap: wrap;
 
     ._item {
-      margin-right: 10px;
+      margin-right: 20px;
       margin-bottom: 20px;
+
+      @include mobile {
+        flex: 1 1 40%;
+        max-width: calc(50% - 10px);
+        &:nth-child(even) {
+          margin-right: 0;
+        }
+      }
 
       &:last-child {
         margin-right: 0;
@@ -109,9 +119,13 @@
     }
 
     ._demo {
-      width: 140px;
-      height: 140px;
-      box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+      width: 40vmin;
+      height: 40vmin;
+      max-width: 145px;
+      max-height: 145px;
+      min-width: 90px;
+      min-height: 90px;
+      box-shadow: 0 5px 30px rgba(0, 0, 0, 0.18);
       border-radius: 12px;
       color: #ffffff;
       display: flex;
