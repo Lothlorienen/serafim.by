@@ -1,29 +1,59 @@
 .header {
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
   color: $color-black;
-  background: $color-white;
+  background: $bg-light;
+
+  //&.fixed {
+  //  position: fixed;
+  //}
 
   &__top {
-    display: grid;
-    grid-template-columns: 172px 1fr 278px;
-    grid-template-rows: 172px;
-    align-content: center;
-    gap: 65px;
+    background-color: $color-white;
 
-    @include tablet-and-mobile {
-      grid-template-columns: repeat(auto-fit, minmax(40px, max-content));
-      grid-template-rows: auto;
-      gap: 43px;
-      padding: 20px 0;
-    }
+    &-container {
+      display: grid;
+      grid-template-columns: 172px 1fr 278px;
+      grid-template-rows: 172px;
+      display: flex;
+      height: 172px;
+      align-content: center;
+      gap: 65px;
+      transition: all 350ms linear;
+       * {
+         transition: all 350ms linear;
+       }
 
-    @include mobile {
-      gap: 10px;
-      padding: 10px 0 0;
+      @include tablet-and-mobile {
+        grid-template-columns: repeat(auto-fit, minmax(40px, max-content));
+        grid-template-rows: auto;
+        gap: 43px;
+        padding: 20px 0;
+      }
+
+      @include mobile {
+        gap: 10px;
+        padding: 10px 0 0;
+      }
+
+      .fixed & {
+        height: 102px;
+        transition: all 350ms ease;
+      }
     }
   }
 
   &__logo {
+    display: flex;
+    flex: 0 0 172px;
+
+    > * {
+      flex: 1 1 100%;
+    }
+
     @include mobile {
       align-self: flex-end;
     }
@@ -34,8 +64,8 @@
       &::before {
         content: '';
         display: block;
-        padding-top: 172px;
-        width: 80px;
+        padding-top: 100%;
+        width: 100%;
 
         @include tablet-and-mobile {
           padding-top: 112px;
@@ -47,23 +77,37 @@
         bottom: 0;
         left: 0;
         width: 100%;
-        height: auto;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
       }
+    }
+
+    .fixed & {
+      flex-basis: 102px;
     }
   }
 
   &__brand {
-    align-self: center;
-    justify-self: center;
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-left: 60px;
+    margin-right: 60px;
 
     @include tablet-and-mobile {
       justify-self: auto;
       align-self: center;
     }
+
+    .fixed & {
+      margin-left: 20px;
+    }
   }
 
   &__title {
-    align-self: center;
     font-weight: bold;
     font-size: 40px;
     line-height: 1.1;
@@ -74,6 +118,10 @@
 
     @include mobile {
       font-size: 20px;
+    }
+
+    .fixed & {
+      font-size: 35px;
     }
   }
 
@@ -87,17 +135,60 @@
       font-size: 13px;
       line-height: 22px;
     }
+
+    .fixed & {
+      opacity: 0;
+      clip-path: circle(0px at 0 0);
+      margin-top: -38px;
+    }
   }
 
-  &__extra {
-    align-self: center;
-    display: grid;
-    gap: 13px;
-    grid-template-rows: repeat(auto-fit, minmax(20px, max-content));
+  &__media {
+    flex: 0 0 278px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-content: center;
     color: $color-grey;
+
+    &-item {
+      &--actions {
+       flex: 1 1 100%;
+      }
+
+      &--contacts  {
+        flex: 1 1 auto;
+        //max-width: 50%;
+        margin-top: 13px;
+      }
+
+      &--funds {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 0 1 auto;
+        margin-top: 13px;
+      }
+
+      &--socials  {
+        flex: 1 1 100%;
+        margin-top: 13px;
+
+        .fixed & {
+          clip-path: circle(0px at 0 0);
+          opacity: 0;
+          margin-top: -34px;
+        }
+      }
+    }
 
     @include tablet-and-mobile {
       display: none;
+    }
+
+    .fixed & {
+      //flex: 1 1 500px;
+
     }
 
     .btn--funds {
@@ -114,11 +205,16 @@
 
   &__breadcrumbs {
     position: relative;
-    background-color: $bg-light;
+    transition: all 350ms ease;
+
+    .fixed & {
+      opacity: 0;
+      visibility: hidden;
+      height: 0;
+    }
   }
 
-  .actions,
-  .extra-links {
+  .actions {
     display: flex;
     justify-content: space-between;
     align-items: center;

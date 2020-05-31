@@ -10,5 +10,7 @@ import './src/widgets/collapse';
 import './src/widgets/slider-aside';
 import './src/widgets/sliders';
 
+import './src/modules/header';
+
 import './src/app';
 

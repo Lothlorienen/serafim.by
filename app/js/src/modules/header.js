@@ -1,55 +1,55 @@
 class Header {
   constructor(nodeElement) {
     this.nodeElement = nodeElement;
-    this.isMenuFixed = false;
-    this.viewportHeight = null;
+    this.topElement = nodeElement.querySelector('.header__top');
+    this.topElementOffset = null;
+    this.addEvents();
+  }
 
-    this.updateCache();
-    this.init();
+  addEvents() {
+    this.setOffset();
+    onScroll(this.onScroll.bind(this));
+    onResize(this.setOffset.bind(this));
+  }
+
+  setOffset() {
+    this.topElementOffset = this.topElement.getBoundingClientRect().height;
+    const height = this.nodeElement.getBoundingClientRect().height;
+    const nextElement = this.nodeElement.nextElementSibling;
+    nextElement.style.marginTop = `${height + 40}px`;
   }
 
   setAsFixed() {
-    if (this.isMenuFixed) return;
-
     this.nodeElement.classList.add('fixed');
-    this.isMenuFixed = true;
   }
 
   setAsNotFixed() {
-    if (!this.isMenuFixed) return;
-
     this.nodeElement.classList.remove('fixed');
-    this.isMenuFixed = false;
-  }
-
-  isMobileMenuOpened() {
-    return document.querySelector('.main-menu-toggler__button').classList.contains('opened');
   }
 
   onScroll() {
-    if (this.isMobileMenuOpened()) {
-      return;
-    }
-
     const scrollTop = getScrollPos();
-    if (scrollTop > 80) {
+    if (scrollTop > 0) {
       this.setAsFixed();
     } else {
       this.setAsNotFixed();
     }
   }
 
-  updateCache() {
-    this.viewportHeight = window.innerHeight;
+  static init(elem) {
+    new Header(elem);
   }
+}
 
-  init() {
-    onResize(this.updateCache.bind(this));
-    onScroll(this.onScroll.bind(this));
+class HeaderUI {
+  static init() {
+    const header = document.querySelector('.js-header');
+    if (header) Header.init(header);
   }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  const headerElement = document.querySelector('.js-header');
-  if (headerElement) new Header(headerElement);
+  HeaderUI.init();
 });
+
+window.HeaderUI = HeaderUI;
