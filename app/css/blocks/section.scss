@@ -244,4 +244,15 @@
       transition: all .3s ease;
     }
   }
+
+  &--black {
+    &::after {
+      @include sprite('arrow-black');
+    }
+    &:hover {
+      &::after {
+        @include sprite('arrow');
+      }
+    }
+  }
 }

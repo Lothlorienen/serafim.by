@@ -1,8 +1,33 @@
 <ul class="nav-menu">
-  <li class="nav-menu__item"><a href="{{nav-links.nav-1.url}}" class="nav-menu__link">О приходе</a></li>
-  <li class="nav-menu__item"><a href="{{nav-links.nav-2.url}}" class="nav-menu__link">Службы и таинства</a></li>
-  <li class="nav-menu__item"><a href="{{nav-links.nav-3.url}}" class="nav-menu__link">Проекты и деятельность</a></li>
-  <li class="nav-menu__item"><a href="{{nav-links.nav-4.url}}" class="nav-menu__link">Воскресная школа</a></li>
-  <li class="nav-menu__item"><a href="{{nav-links.nav-5.url}}" class="nav-menu__link">Паломнический отдел</a></li>
-  <li class="nav-menu__item"><a href="{{nav-links.nav-6.url}}" class="nav-menu__link">Молодежный центр</a></li>
+  {{#if footer}}
+    {{#each links.header-menu}}
+      <li class="nav-menu__item">
+        <a href="{{this.url}}" class="nav-menu__link">{{this.label}}</a>
+      </li>
+    {{/each}}
+  {{else}}
+    {{#each links.header-menu}}
+      <li class="nav-menu__item">
+        <a href="{{this.url}}" class="nav-menu__link">{{this.label}}</a>
+        {{#if this.submenu}}
+          <ul class="nav-menu__submenu submenu">
+            {{#each this.submenu}}
+              <li class="submenu__item">
+                <a href="#" class="submenu__link">{{this.level-1}}{{#if this.submenu-2}}{{>ui/svg name="arrow-black"}}{{/if}}</a>
+                {{#if this.submenu-2}}
+                  <ul class="nav-menu__submenu submenu">
+                    {{#each this.submenu-2}}
+                      <li class="submenu__item">
+                        <a href="#" class="submenu__link">{{this.level-2}}</a>
+                      </li>
+                    {{/each}}
+                  </ul>
+                {{/if}}
+              </li>
+            {{/each}}
+          </ul>
+        {{/if}}
+      </li>
+    {{/each}}
+  {{/if}}
 </ul>
