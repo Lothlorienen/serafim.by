@@ -7,6 +7,10 @@
   color: $color-black;
   background: $bg-light;
 
+  @include mobile {
+    box-shadow: 0 0 16px rgba(38,38,38,.16);
+  }
+
   &__top {
     background-color: $color-white;
 
