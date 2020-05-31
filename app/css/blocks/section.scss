@@ -4,6 +4,9 @@
   }
 
   &-wrapper {
+    display: flex;
+    flex-direction: column;
+
     &__title {
       @include font-regular-title;
 
@@ -18,6 +21,17 @@
 
     &--quotes {
       max-width: 920px;
+
+      @include tablet-and-mobile {
+        max-width:  calc(100vw - 40px);
+      }
+    }
+
+    .card,
+    .news-slider__container {
+      @include mobile {
+        box-shadow: 0 5px 30px rgba(0, 0, 0, 0.12);
+      }
     }
   }
 
@@ -36,6 +50,10 @@
 
     &__text {
       @include font-sm;
+
+      @include mobile {
+        font-size: 14px;
+      }
 
       + .section-widget__link-container {
         margin-top: $main-gutters;
@@ -124,8 +142,25 @@
   }
 
   &-quote {
+    &.card{
+      padding: 27px;
+
+      @include mobile {
+        display: flex;
+        flex-direction: column;
+        padding: 30px 20px;
+        margin: 0 -10px;
+      }
+    }
+
     &__title {
+      @include font-regular-title;
+      font-weight: bold;
       margin-bottom: 20px !important;
+
+      @include mobile {
+        order: -1;
+      }
     }
 
     &__image {
@@ -139,6 +174,12 @@
         float: left;
         margin-right: 40px;
         margin-bottom: 20px;
+
+        @include mobile {
+          margin-right: 0;
+          margin-bottom: 40px;
+          width: 100%;
+        }
       }
 
       p {
@@ -156,8 +197,19 @@
 
     &__content {
       p {
+        @include font-base;
+
+        @include mobile {
+          font-size: 15px;
+          line-height: 1.8;
+        }
+
         &:not(:first-child) {
           margin-top: 30px;
+
+          @include mobile {
+            margin-top: 16px;
+          }
         }
       }
     }

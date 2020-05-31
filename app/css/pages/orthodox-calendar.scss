@@ -11,16 +11,45 @@
     min-width: 100%;
     margin-bottom: 10px;
 
+    @include smallTablet {
+      margin-bottom: 20px;
+    }
+
+    @include mobile {
+      width: 100%;
+      display: block;
+      margin-bottom: 20px;
+    }
+
     &-left {
       grid-area: left;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(100px, max-content));
       align-items: baseline;
       gap: 23px;
+
+      @include smallTablet {
+        grid-template-columns: repeat(2, max-content);
+        gap: 10px;
+      }
+
+      @include mobile {
+        grid-template-columns: 1fr;
+        gap: 5px;
+      }
     }
 
     &-right {
       grid-area: right;
+
+      @include smallTablet {
+        align-self: end;
+        margin-bottom: 6px;
+      }
+
+      @include mobile {
+        margin-top: 10px;
+      }
     }
   }
 
@@ -30,6 +59,14 @@
     font-size: 35px;
     line-height: 1;
     color:$color-secondary;
+
+    @include smallTablet {
+      grid-column: -1 / 1;
+    }
+
+    @include mobile {
+      margin-bottom: 5px;
+    }
 
     &--current {
       color: $color-danger;
@@ -50,7 +87,7 @@
   }
 
   &__article-link {
-    //grid-area: article-link;
+    position: relative;
     justify-self: end;
     display: flex;
     @include font-sm;
@@ -88,6 +125,10 @@
 
       span {
         color: $color-grey;
+      }
+
+      @include mobile {
+        margin-top: 10px;
       }
     }
   }

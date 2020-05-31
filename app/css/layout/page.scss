@@ -21,6 +21,7 @@
     display: grid;
     gap: $main-gutters;
     grid-template-rows: repeat(auto-fit, minmax(100px, max-content));
+    grid-template-columns: 1fr;
   }
 
   &__footer {
@@ -34,6 +35,10 @@
     flex: 1 0 auto;
     min-height: 1px;
     margin: 20px auto 67px;
+
+    @include mobile {
+      margin-bottom: 43px;
+  }
 
     .home & {
       margin-top: 40px;
@@ -52,56 +57,5 @@
     @include tablet-and-mobile {
       display: none;
     }
-  }
-}
-
-.grid {
-  &-main {
-    display: grid;
-    grid-template-columns: repeat(12, minmax($main-gutters, 1fr));
-    gap: $main-gutters;
-  }
-
-  &-aside {
-    display: grid;
-    grid-template-columns: repeat(6, minmax($main-gutters, 1fr));
-    grid-template-rows: repeat(auto-fit, minmax(100px, 1fr));
-    gap: $main-gutters;
-    grid-auto-flow: row dense;
-
-    .section-wrapper {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .photo + .photo,
-    .video + .video,
-    .widget + .widget {
-      margin-top: $main-gutters;
-    }
-
-    .photo__text,
-    .video__text {
-      display: -webkit-box;
-      max-height: 60px;
-      //height: 100%;
-      -webkit-box-orient: vertical;
-      -webkit-line-clamp: 2;
-      overflow: hidden;
-    }
-
-    .photo__description {
-      padding: 20px 15px;
-    }
-  }
-
-  &-timetable {
-    display: block;
-  }
-
-  &-column-container {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: $main-gutters;
   }
 }

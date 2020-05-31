@@ -2,6 +2,9 @@
   background-color: $color-white;
 
   @include mobile {
+    font-size: 16px;
+    line-height: 1.8;
+
     .container {
       padding-right: 20px;
       padding-left: 20px;
@@ -10,33 +13,56 @@
 
   &__inner {
     display: grid;
-    grid-template-columns: 600px repeat(2, 270px);
-    gap: 50px;
+    grid-template-areas:
+      'map address credits'
+      'map nav copyright';
+    grid-auto-flow: dense;
+    gap: 0 50px;
     padding-top: 50px;
     padding-bottom: 50px;
 
     @include tablet {
-      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      grid-template-areas:
+        'map map map'
+        'credits address nav'
+        'copyright copyright copyright';
+      gap: 43px;
     }
 
     @include mobile {
-      grid-template-columns: 1fr;
+      grid-template-areas:
+        'credits'
+        'address'
+        'nav'
+        'map'
+        'copyright';
+      gap: 20px;
     }
   }
 
   &__map {
-    @include tablet-and-mobile {
-      grid-column: 1 / -1;
-      grid-row: 2 / 3;
+    grid-area: map;
+    width: 600px;
+    height: 390px;
 
+    @include tablet-and-mobile {
+      width: 100%;
+      height: 100%;
       iframe {
         width: 100%;
         min-height: 100%;
       }
     }
+
+    @include mobile {
+      width: 100%;
+      height: 100%;
+      margin-top: 20px;
+    }
   }
 
   &__address {
+    grid-area: address;
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -48,21 +74,31 @@
   }
 
   &__credits {
+    grid-area: credits;
     display: flex;
     flex-direction: column;
   }
 
   &__copy {
+    grid-area: copyright;
     margin-top: auto;
     @include font-sm;
 
     @include mobile {
-      margin-top: $main-gutters;
+      margin-top: 20px;
     }
+  }
+
+  &__menu {
+    grid-area: nav;
   }
 
   &__btn {
     margin: 20px 0 25px;
+
+    @include mobile {
+      margin-bottom: 0;
+    }
   }
 
   .btn--funds {
@@ -81,14 +117,29 @@
     @include font-sm;
     line-height: 26px;
     font-weight: 400;
+
+    @include mobile {
+      font-size: 16px;
+      line-height: 1.8;
+    }
   }
 
   .socials {
     justify-content: flex-start;
+
+    @include mobile {
+      $value: 12vmin;
+      grid-template-columns: repeat(6, $value);
+      grid-template-rows: repeat(auto-fit,$value);
+    }
   }
 
   .timetable {
     margin-top: 15px;
+
+    @include mobile {
+      margin-top: 20px;
+    }
   }
 }
 

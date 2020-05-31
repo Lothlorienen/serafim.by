@@ -4,6 +4,10 @@
   grid-template-columns: 1fr minmax(320px, 430px);
   @include font-base;
 
+  @include mobile {
+    grid-template-columns: 1fr;
+  }
+
   &__right {
     display: flex;
     flex-direction: column;
@@ -67,6 +71,10 @@
     position: relative;
     height: 100%;
     width: 100%;
+
+    @include mobile {
+      min-height: 300px;
+    }
 
     img {
       @include fill();

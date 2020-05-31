@@ -52,6 +52,11 @@
 @mixin font-base() {
   font-size: $font-base;
   line-height: 30px;
+
+  @include mobile {
+    font-size: 14px;
+    line-height: 1.7;
+  }
 }
 
 @mixin font-sm() {

@@ -29,6 +29,12 @@
   }
 }
 
+@mixin smallTablet() {
+  @media (min-width: $mobileMedia + 1) and (max-width: 1023px) {
+    @content;
+  }
+}
+
 @mixin tablet-and-mobile() {
   @media (max-width: $tabletMedia) {
     @content;

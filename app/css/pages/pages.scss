@@ -1,0 +1,10 @@
+.page {
+  &--article {
+    .grid-main {
+      margin: 0 -10px;
+    }
+    .news {
+      padding: 0 10px;
+    }
+  }
+}

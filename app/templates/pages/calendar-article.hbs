@@ -1,10 +1,22 @@
 {{!Календарь / пример поста}}
 
+{{> layout/head
+        page-title="Календарь / пример поста"
+        page-description="...."
+        page-url="https://ozitag.com"
+        page-image="https://ozitag.com/content/images/home/og.jpg"
+        page-image-16-9="https://ozitag.com/content/images/home/og_16x9.jpg"
+        page-image-alt=".."
+        page-published-date="2019-02-05T12:01:51+00:00"
+        page-modified-date="2020-03-30T09:00:00+03:00"
+        page-mode="page--calendar"
+}}
+
 {{> layout/header page-breadcrumbs=calendar-main.page-breadcrumbs }}
 
 <div class="container page__container">
   <div class="grid-main">
-    <main class="page__content grid-col-9">
+    <main class="page__content grid-md-col-12 grid-col-9">
       {{> blocks/calendar/article }}
       {{> blocks/related }}
     </main>

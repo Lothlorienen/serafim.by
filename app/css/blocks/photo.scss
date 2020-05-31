@@ -3,6 +3,10 @@
   display: flex;
   height: 100%;
 
+  @include mobile {
+    min-height: 300px;
+  }
+
   &__link {
     @include fill;
     z-index: 10;
@@ -80,6 +84,10 @@
 
   &-slider {
     position: relative;
+
+    @include mobile {
+      max-width: calc(100vw - 20px);
+    }
 
     .photo {
       min-height: 290px;

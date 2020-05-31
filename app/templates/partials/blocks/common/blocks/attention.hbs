@@ -1,13 +1,37 @@
 <div class="widget widget--attention">
-  <h3 class="widget__title">Внимание!</h3>
-  <section class="card section-widget">
-    <div class="section-widget__content">
-      <p class="section-widget__text">Сегодня на служении требуется трое мужчин переставить рояль.
-        Кто свободен с 13:00 просьба связаться с нашим куратором
-        от церкви для получения подробной информации </p>
-      <div class="section-widget__link-container">
-        <a href="#" class="section-widget__link link-arrow">Подробнее</a>
+  {{#if on-page }}
+    <h3 class="widget__title">Внимание!</h3>
+    <section class="card section-widget">
+      <div class="section-widget__content">
+        <p class="section-widget__text">
+          <b>22 июля 2020</b>
+          <br>Сегодня на служении требуется трое мужчин переставить рояль.
+          <br>Кто свободен с 13:00 просьба связаться с нашим куратором от церкви для получения подробной информации  свяжитесь по номеру
+          <br>+375 44 546 98 59 Анна
+          <br>Спасибо!
+        </p>
       </div>
-    </div>
-  </section>
+    </section>
+    <section class="card section-widget">
+      <div class="section-widget__content">
+        <p class="section-widget__text">
+          <b>16 июля 2020</b>
+          <br>Были найдены документы на машину Honda Civic 2001 года. Документы находятся у служителя Егора. Связаться с ним можно по номеру +375 44 546 98 59
+          <br>Будьте внимательны!
+        </p>
+      </div>
+    </section>
+  {{else}}
+    <h3 class="widget__title">Внимание!</h3>
+    <section class="card section-widget">
+      <div class="section-widget__content">
+        <p class="section-widget__text">Сегодня на служении требуется трое мужчин переставить рояль.
+          Кто свободен с 13:00 просьба связаться с нашим куратором
+          от церкви для получения подробной информации </p>
+        <div class="section-widget__link-container">
+          <a href="#" class="section-widget__link link-arrow">Подробнее</a>
+        </div>
+      </div>
+    </section>
+  {{/if}}
 </div>

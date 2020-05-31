@@ -21,19 +21,6 @@
 @import 'components/tags';
 @import 'components/aside-calendar';
 
-@import 'blocks/menu';
-@import 'blocks/section';
-@import 'blocks/widget';
-@import 'blocks/post';
-@import 'blocks/related';
-@import 'blocks/article';
-@import 'blocks/photo';
-@import 'blocks/slider';
-@import 'blocks/quote';
-@import 'blocks/audio';
+@import 'blocks/index';
 
-@import "pages/article";
-@import "pages/orthodox-calendar";
-@import "pages/announcement";
-@import "pages/timetable";
-@import "pages/news";
+@import "pages/index";

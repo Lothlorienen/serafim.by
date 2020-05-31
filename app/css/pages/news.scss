@@ -19,6 +19,11 @@
       position: relative;
       height: 287px;
       overflow: hidden;
+
+      @include mobile {
+        height: 300px;
+        box-shadow: 0 5px 30px rgba(0, 0, 0, 0.12);
+      }
     }
   }
 
@@ -42,6 +47,10 @@
           .news-article__title {
             height: 120px;
             -webkit-line-clamp: 4;
+
+            @include mobile {
+              height: 100px;
+            }
           }
         }
       }
@@ -69,6 +78,13 @@
       color: $color-white;
       transition: all 0.3s ease;
 
+      @include mobile {
+        height: auto;
+        margin-top: auto;
+        color: $color-black;
+        background-color: $color-white;
+      }
+
       &::before {
         @include fill;
         content: '';
@@ -78,6 +94,10 @@
         background: linear-gradient(360deg, rgba(0, 0, 0, 0.7) 22.74%, transparent 100%) 0 0;
         background-size: 100% 200%;
         transition: all .45s ease;
+
+        @include mobile {
+          display: none;
+        }
       }
     }
 
@@ -85,10 +105,15 @@
       position: relative;
       display: -webkit-box;
       height: 60px;
+      font-size: 20px;
       -webkit-box-orient: vertical;
       -webkit-line-clamp: 2;
       overflow: hidden;
       transition: all 0.45s ease;
+
+      @include mobile {
+        font-size: 18px;
+      }
     }
 
     .views {
@@ -103,6 +128,20 @@
     width: 100%;
     max-width: 920px;
 
+    @include tablet-and-mobile {
+      max-width:  calc(100vw - 40px);
+    }
+
+    @include mobile {
+      max-width: calc(100vw - 20px);
+    }
+
+    &__slide {
+      @include mobile {
+        box-shadow: 0 5px 30px rgba(0, 0, 0, 0.12);
+      }
+    }
+
     &__bullets {
       position: absolute;
       top: 20px;
@@ -110,7 +149,13 @@
       z-index: 10;
       line-height: 1;
 
-
+      @include mobile {
+        position: static;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+      }
     }
   }
 }
