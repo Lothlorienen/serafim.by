@@ -19,7 +19,6 @@
     &:hover {
       > .nav-menu__submenu {
         visibility: visible;
-        //clip-path: circle(750px at 50% 50%);
         opacity: 1;
       }
     }
@@ -27,7 +26,10 @@
 
   &__link {
     display: block;
-    padding: 24px 10px;
+
+    .header & {
+      padding: 24px 10px;
+    }
 
     &:hover {
       color: $color-primary;
@@ -38,7 +40,6 @@
     position: absolute;
     top: calc(100% - 5px);
     visibility: hidden;
-    //clip-path: circle(0px at 50% 0);
   }
 }
 
@@ -47,7 +48,6 @@
   grid-template-columns: max-content;
   grid-template-rows: repeat(auto-fit, minmax(30px, max-content));
   background-color: $color-lightgrey;
-  padding: 20px 0;
   font-weight: 400;
   border-radius: 5px;
   box-shadow: 0 5px 20px rgba(black, 0.17);
@@ -55,12 +55,15 @@
   opacity: 0;
   visibility: hidden;
 
+  .header & {
+    padding: 20px 0;
+  }
+
   &__item {
     position: relative;
 
     &:hover {
       > .nav-menu__submenu {
-        //clip-path: circle(350px at 50%);
         visibility: visible;
         opacity: 1;
       }
@@ -69,7 +72,6 @@
     .nav-menu__submenu {
       top: 0;
       left: calc(100% - 5px);
-      //clip-path: circle(350px at 0 50%);
     }
   }
 
