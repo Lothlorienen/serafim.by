@@ -22,7 +22,7 @@
     &--quotes {
       max-width: 920px;
 
-      @include tablet-and-mobile {
+      @include tablet {
         max-width:  calc(100vw - 40px);
       }
     }

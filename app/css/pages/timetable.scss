@@ -34,6 +34,10 @@
       grid-template-columns: 1fr 1fr;
       grid-template-rows: auto;
 
+      @include mobile {
+        grid-template-columns: 1fr;
+      }
+
       .calendar__text-big {
         @include font-base;
       }
@@ -88,7 +92,8 @@
       justify-content: space-between;
 
       @include mobile {
-        display: block;
+        flex-direction: column;
+        align-items: flex-start;
       }
     }
 

@@ -5,6 +5,9 @@
   @include font-base;
 
   @include mobile {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
     grid-template-columns: 1fr;
   }
 
