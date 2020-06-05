@@ -9,6 +9,8 @@ import './src/widgets/popups';
 import './src/widgets/collapse';
 import './src/widgets/slider-aside';
 import './src/widgets/sliders';
+import './src/widgets/lightbox';
+import './src/widgets/lity';
 
 import './src/modules/header';
 

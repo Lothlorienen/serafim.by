@@ -4,11 +4,10 @@
       {{#times 7}}
         <div class="photo-slider__slide swiper-slide">
           <div class="photo">
-            <a href="#" class="photo__link"></a>
-            <div class="photo__image">
-              {{#if ../photo}}
-                {{> components/image img=(concat 'photo/' ../photo) fallback-ext='jpg' }}
-              {{/if}}
+            <div class="photo__video-image">
+              <a data-lity href="https://www.youtube.com/watch?v=llyIkmJIT4Q&t=56s" class="photo__video-link">
+                {{> components/image img="photo/about" fallback-ext='jpg' }}
+              </a>
             </div>
             <div class="photo__description">
               <p class="photo__text">{{{../text}}}</p>
