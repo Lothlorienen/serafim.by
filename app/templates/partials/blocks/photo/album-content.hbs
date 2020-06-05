@@ -1,0 +1,20 @@
+{{#> blocks/section-wrapper title="Пасха Христова - 28.04.2019"}}
+  <div class="album-container">
+    <ul class="album-grid">
+      {{#times 24}}
+        <li class="album-grid__item">
+          <a href="..assets/images/news/04.jpg" class="album-grid__link">
+            {{>components/image img="news/04" fallback-ext="jpg"}}
+          </a>
+        </li>
+      {{/times}}
+    </ul>
+    <div class="news-container__button">
+      {{> ui/btn
+              label="Показать еще"
+              button=true
+              mix="btn-download-more"
+      }}
+    </div>
+  </div>
+{{/blocks/section-wrapper}}
