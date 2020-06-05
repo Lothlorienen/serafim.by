@@ -11,7 +11,11 @@
         }}
         <div class="news-article__text">
           <h3 class="news-article__title">{{this.title}}</h3>
-          {{> components/views views=this.views}}
+          {{#if ../photos}}
+            {{> components/views views=this.views photos=true}}
+          {{else}}
+            {{> components/views views=this.views }}
+          {{/if}}
         </div>
       </article>
     </li>

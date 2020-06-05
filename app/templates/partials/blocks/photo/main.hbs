@@ -1,7 +1,6 @@
-{{#> blocks/section-wrapper title="Новости"}}
+{{#> blocks/section-wrapper title="Фото"}}
   <div class="news-container">
-    {{> blocks/slider-article }}
-    {{> blocks/news/blocks/list items=news.articles}}
+    {{> blocks/news/blocks/list items=photo.articles photos=true}}
     <div class="news-container__button">
       {{> ui/btn
               label="Показать еще"

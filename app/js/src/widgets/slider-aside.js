@@ -46,7 +46,6 @@ function initSliders() {
         type: 'bullets',
         clickable: true,
         dynamicBullets: false,
-        // dynamicMainBullets: 1,
         bulletActiveClass: 'active',
       };
     }

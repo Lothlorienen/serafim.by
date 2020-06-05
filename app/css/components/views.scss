@@ -5,11 +5,22 @@
   font-size: 13px;
   color: $color-secondary;
   line-height: 30px;
-  font-style: italic;
+  font-style: normal;
 
   .icon-eye {
     width: 13px;
     height: 13px;
     margin-right: 5px;
+    font-size: 13px;
+    line-height: 30px;
+  }
+
+  .icon-camera {
+    width: 14px;
+    height: 13px;
+    margin-right: 5px;
+    margin-bottom: 2px;
+    font-size: 13px;
+    line-height: 30px;
   }
 }
