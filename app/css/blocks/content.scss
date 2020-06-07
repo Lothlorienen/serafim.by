@@ -1,0 +1,26 @@
+.content {
+  &-container {
+    display: grid;
+    gap: $main-gutters;
+
+    &__button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  &-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: $main-gutters;
+
+    @include smallTablet {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include mobile {
+      grid-template-columns: 1fr;
+    }
+  }
+}

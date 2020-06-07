@@ -111,6 +111,11 @@
         "label": "Молодежный центр",
         "url": "#"
       }
-    ]
+    ],
+    "photos": {
+      "album": {
+        "url": "photos-album.html"
+      }
+    }
   }
 }

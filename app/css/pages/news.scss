@@ -1,15 +1,4 @@
 .news {
-  &-container {
-    display: grid;
-    gap: $main-gutters;
-
-    &__button {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-  }
-
   &-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));

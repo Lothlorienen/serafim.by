@@ -4,7 +4,7 @@
       {{#times 7}}
         <div class="photo-slider__slide swiper-slide">
           <div class="photo">
-            <a href="#" class="photo__link"></a>
+            <a href="{{../links.photos.album.url}}" class="photo__link"></a>
             <div class="photo__image">
               {{#if ../photo}}
                 {{> components/image img=(concat 'photo/' ../photo) fallback-ext='jpg' }}

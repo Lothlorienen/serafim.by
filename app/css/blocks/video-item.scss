@@ -1,0 +1,46 @@
+.video-item {
+  &__content-link {
+    display: block;
+    position: relative;
+    padding-bottom: 90px;
+
+    &:hover {
+      .video-item__text {
+        -webkit-line-clamp: 4;
+        height: 124px;
+        transition: height 450ms ease, color 0ms ease;
+      }
+    }
+  }
+
+  &__image {
+    position: relative;
+    padding-top: 70%;
+
+    img {
+      @include fill;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  &__description {
+    position: absolute;
+    bottom: 0;
+    padding: 16px 25px 18px;
+    background-color: $color-white;
+    transition: all 450ms ease;
+  }
+
+  &__text {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    transition: height 450ms ease, color 0ms ease;
+    height: 64px;
+    @include font-base-up;
+  }
+}

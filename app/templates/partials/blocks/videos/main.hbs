@@ -1,7 +1,12 @@
-{{#> blocks/section-wrapper title="Новости"}}
+{{#> blocks/section-wrapper title="Видео"}}
   <div class="content-container">
-    {{> blocks/slider-article }}
-    {{> blocks/news/blocks/list items=news.articles}}
+    <ul class="content-grid">
+      {{#each video.articles}}
+        <li class="content-grid__item">
+          {{> blocks/videos/video-item}}
+        </li>
+      {{/each}}
+    </ul>
     <div class="content-container__button">
       {{> ui/btn
               label="Показать еще"
