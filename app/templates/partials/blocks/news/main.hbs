@@ -1,7 +1,9 @@
 {{#> blocks/section-wrapper title="Новости"}}
   <div class="content-container">
     {{> blocks/slider-article }}
-    {{> blocks/news/blocks/list items=news.articles}}
+
+    {{> blocks/news/blocks/news-grid array=news.articles}}
+
     <div class="content-container__button">
       {{> ui/btn
               label="Показать еще"

@@ -1,15 +1,31 @@
-.video-item {
+.video-item,
+.photo-item {
   &__content-link {
     display: block;
     position: relative;
     padding-bottom: 90px;
 
     &:hover {
-      .video-item__text {
-        -webkit-line-clamp: 4;
-        height: 124px;
-        transition: height 450ms ease, color 0ms ease;
+      .video-item__image {
+        &::after,
+        &::before {
+          transform: translate(-50%, -50%) scale(1.1);
+        }
       }
+
+      .video-item__text {
+        -webkit-line-clamp: 3;
+        height: 90px;
+        transition: height 350ms ease, color 0ms ease;
+
+        @include mobile {
+          height: 60px;
+        }
+      }
+    }
+
+    @include mobile {
+      box-shadow: 0 5px 30px rgba(0, 0, 0, 0.12);
     }
   }
 
@@ -27,11 +43,42 @@
   }
 
   &__description {
+    width: 100%;
     position: absolute;
     bottom: 0;
     padding: 16px 25px 18px;
     background-color: $color-white;
-    transition: all 450ms ease;
+    transition: all 350ms ease;
+  }
+}
+
+.video-item {
+  &__image {
+    &::after,
+    &::before {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      content: '';
+      z-index: 1;
+      display: block;
+      transform: translate(-50%, -50%);
+      transition: all 350ms ease;
+    }
+
+    &::before {
+      width: 50px;
+      height: 50px;
+      background-color: rgba(black, 0.5);
+      border-radius: 50%;
+    }
+
+    &::after {
+      left: calc(50% + 3.75px);
+      border-top: 7px solid transparent;
+      border-bottom: 7px solid transparent;
+      border-left: 11px solid $color-white;
+    }
   }
 
   &__text {
@@ -40,7 +87,25 @@
     -webkit-line-clamp: 2;
     overflow: hidden;
     transition: height 450ms ease, color 0ms ease;
-    height: 64px;
+    height: 60px;
+    @include font-base-up;
+  }
+}
+
+.photo-item {
+  &__text {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  &__title {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    transition: height 450ms ease, color 0ms ease;
+    height: 60px;
     @include font-base-up;
   }
 }

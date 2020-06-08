@@ -1,0 +1,13 @@
+<div class="photo-item">
+  <a class="photo-item__content-link" href="photo-album.html">
+    <div class="photo-item__image">
+      {{>components/image img=(concat 'news/' image) fallback-ext="jpg"}}
+    </div>
+    <div class="photo-item__description">
+      <div class="photo-item__text">
+        <h3 class="photo-item__title">{{title}}</h3>
+        {{> components/views views=views photos=true}}
+      </div>
+    </div>
+  </a>
+</div>

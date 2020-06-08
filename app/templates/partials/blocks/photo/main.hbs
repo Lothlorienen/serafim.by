@@ -1,12 +1,15 @@
 {{#> blocks/section-wrapper title="Фото"}}
   <div class="content-container">
-    {{> blocks/news/blocks/list items=photo.articles photos=true}}
+    <ul class="content-grid">
+      {{#each photo.articles}}
+        <li class="content-grid__item">
+          {{> blocks/photo/photo-article photos=true}}
+        </li>
+      {{/each}}
+    </ul>
+
     <div class="content-container__button">
-      {{> ui/btn
-              label="Показать еще"
-              button=true
-              mix="btn-download-more"
-      }}
+      {{> ui/btn label="Показать еще" button=true mix="btn-download-more"}}
     </div>
   </div>
 {{/blocks/section-wrapper}}

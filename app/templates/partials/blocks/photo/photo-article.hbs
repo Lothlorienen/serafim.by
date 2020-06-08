@@ -1,0 +1,13 @@
+<article class="content-article content-article--photo">
+  <a class="content-article__link" href="{{#if href}}{{href}}{{else}}article.html{{/if}}"></a>
+  {{> components/image-fit
+          img=(concat 'news/' this.image)
+          is-cover=true
+          mix="content-article__image"
+          fallback-ext="jpg"
+  }}
+  <div class="content-article__text">
+    <h3 class="content-article__title">{{this.title}}</h3>
+    {{> components/views views=this.views photos=true}}
+  </div>
+</article>
