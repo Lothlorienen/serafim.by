@@ -13,6 +13,7 @@ import './src/widgets/slider-aside';
 import './src/widgets/sliders';
 import './src/widgets/lightbox';
 import './src/widgets/lity';
+// import './src/widgets/daterangepicker';
 
 import './src/modules/header';
 
