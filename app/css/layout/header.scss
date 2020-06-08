@@ -1,5 +1,5 @@
 .header {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
@@ -34,12 +34,12 @@
       }
 
       .fixed & {
-        min-height: 102px;
-        transition: all 350ms ease;
-
-        @include mobile {
-          min-height: 82px;
-        }
+        //min-height: 102px;
+        //transition: all 350ms ease;
+        //
+        //@include mobile {
+        //  min-height: 82px;
+        //}
       }
     }
   }
@@ -82,13 +82,13 @@
       }
     }
 
-    .fixed & {
-      flex-basis: 102px;
-
-      @include mobile {
-        flex-basis: 62px;
-      }
-    }
+    //.fixed & {
+    //  flex-basis: 102px;
+    //
+    //  @include mobile {
+    //    flex-basis: 62px;
+    //  }
+    //}
   }
 
   &__brand {
@@ -104,13 +104,13 @@
       margin: 0 0 0 10px;
     }
 
-    .fixed & {
-      margin-left: 20px;
-
-      @include mobile {
-        margin-left: 10px;
-      }
-    }
+    //.fixed & {
+    //  margin-left: 20px;
+    //
+    //  @include mobile {
+    //    margin-left: 10px;
+    //  }
+    //}
   }
 
   &__title {
@@ -126,13 +126,13 @@
       font-size: 20px;
     }
 
-    .fixed & {
-      font-size: 35px;
-
-      @include mobile {
-        font-size: 20px;
-      }
-    }
+    //.fixed & {
+    //  font-size: 35px;
+    //
+    //  @include mobile {
+    //    font-size: 20px;
+    //  }
+    //}
   }
 
   &__text {
@@ -146,15 +146,15 @@
       line-height: 22px;
     }
 
-    .fixed & {
-      opacity: 0;
-      clip-path: circle(0px at 0 0);
-      margin-top: -38px;
-
-      @include mobile {
-        margin-top: -44px;
-      }
-    }
+    //.fixed & {
+    //  opacity: 0;
+    //  clip-path: circle(0px at 0 0);
+    //  margin-top: -38px;
+    //
+    //  @include mobile {
+    //    margin-top: -44px;
+    //  }
+    //}
   }
 
   &__media {
@@ -188,11 +188,11 @@
         flex: 1 1 100%;
         margin-top: 13px;
 
-        .fixed & {
-          clip-path: circle(0px at 0 0);
-          opacity: 0;
-          margin-top: -34px;
-        }
+        //.fixed & {
+        //  clip-path: circle(0px at 0 0);
+        //  opacity: 0;
+        //  margin-top: -34px;
+        //}
       }
     }
 
@@ -200,10 +200,9 @@
       display: none;
     }
 
-    .fixed & {
-      //flex: 1 1 500px;
-
-    }
+    //.fixed & {
+    //  //flex: 1 1 500px;
+    //}
 
     .btn--funds {
       line-height: 1;
@@ -225,11 +224,11 @@
     position: relative;
     transition: all 350ms ease;
 
-    .fixed & {
-      opacity: 0;
-      visibility: hidden;
-      height: 0;
-    }
+    //.fixed & {
+    //  opacity: 0;
+    //  visibility: hidden;
+    //  height: 0;
+    //}
   }
 
   .actions {

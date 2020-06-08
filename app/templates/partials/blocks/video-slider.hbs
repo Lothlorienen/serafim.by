@@ -4,22 +4,24 @@
       {{#times 7}}
         <div class="photo-slider__slide swiper-slide">
           <div class="photo">
-            <div class="photo__video-image">
-              <a data-lity href="https://www.youtube.com/watch?v=llyIkmJIT4Q&t=56s" class="photo__video-link">
-                {{> components/image img="photo/about" fallback-ext='jpg' }}
-              </a>
-            </div>
-            <div class="photo__description">
-              <p class="photo__text">{{{../text}}}</p>
-              <div class="photo__stats">
-                {{# if ../stats}}
-                  {{> ui/svg name="camera" }}
-                  <span class="photo__amount">{{../amount}}</span>
-                {{else}}
-                  <span class="photo__date">{{../date}}</span>
-                {{/if}}
+            <a href="videos.html" class="photo__content-link">
+              <div class="photo__video-image">
+                <div class="photo__video-link">
+                  {{> components/image img="photo/about" fallback-ext='jpg' }}
+                </div>
               </div>
-            </div>
+              <div class="photo__description">
+                <p class="photo__text">{{{../text}}}</p>
+                <div class="photo__stats">
+                  {{# if ../stats}}
+                    {{> ui/svg name="camera" }}
+                    <span class="photo__amount">{{../amount}}</span>
+                  {{else}}
+                    <span class="photo__date">{{../date}}</span>
+                  {{/if}}
+                </div>
+              </div>
+            </a>
           </div>
         </div>
       {{/times}}

@@ -7,6 +7,12 @@
     min-height: 300px;
   }
 
+  &__content-link {
+    display: flex;
+    height: 100%;
+    margin-top: auto;
+  }
+
   &__link {
     @include fill;
     z-index: 10;
