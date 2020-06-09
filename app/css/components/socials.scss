@@ -19,25 +19,22 @@
     align-items: center;
     box-shadow: 0 0 0 1px #CCCCCC;
     border-radius: 50%;
-    transition: 0.3s;
+    transition: all 350ms ease;
 
-    svg {
-      transition: 0.3s;
+    .icon {
+      max-width: $social-icon-value;
+      max-height: $social-icon-value;
+      height: auto;
+      color: #CCCCCC;
+      transition: color 350ms ease;
     }
 
     &:hover {
       box-shadow: 0 0 0 1px $color-primary;
 
-      svg {
+      .icon {
         color: $color-primary;
       }
     }
-  }
-
-  .icon {
-    max-width: $social-icon-value;
-    max-height: $social-icon-value;
-    height: auto;
-    color: #CCCCCC;
   }
 }

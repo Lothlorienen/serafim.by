@@ -1,25 +1,18 @@
 class Header {
   constructor(nodeElement) {
     this.nodeElement = nodeElement;
-    this.topElement = nodeElement.querySelector('.header__top');
-    this.topElementOffset = null;
+    this.viewportHeight = null;
+
     this.addEvents();
   }
 
   addEvents() {
-    this.setOffset();
+    onResize(this.updateCache.bind(this));
     onScroll(this.onScroll.bind(this));
-    onResize(this.setOffset.bind(this));
-  }
-
-  setOffset() {
-    this.topElementOffset = this.topElement.getBoundingClientRect().height;
-    const height = this.nodeElement.getBoundingClientRect().height;
-    const nextElement = this.nodeElement.nextElementSibling;
-    nextElement.style.marginTop = `${height + 40}px`;
   }
 
   setAsFixed() {
+    this.nodeElement.classList.add('fixed-start');
     this.nodeElement.classList.add('fixed');
   }
 
@@ -29,11 +22,19 @@ class Header {
 
   onScroll() {
     const scrollTop = getScrollPos();
-    if (scrollTop > 0) {
+    if (scrollTop > window.innerHeight) {
       this.setAsFixed();
     } else {
       this.setAsNotFixed();
     }
+
+    if (scrollTop < 300) {
+      this.nodeElement.classList.remove('fixed-start');
+    }
+  }
+
+  updateCache() {
+    this.viewportHeight = window.innerHeight;
   }
 
   static init(elem) {

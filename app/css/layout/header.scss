@@ -6,9 +6,18 @@
   z-index: 20;
   color: $color-black;
   background: $bg-light;
+  transition: top 350ms ease;
+
+  + * {
+    margin-top: 282px;
+  }
 
   @include mobile {
-    box-shadow: 0 0 16px rgba(38,38,38,.16);
+    box-shadow: 0 0 16px rgba(38, 38, 38, .16);
+
+    + * {
+      margin-top: 282px;
+    }
   }
 
   &__top {
@@ -16,37 +25,16 @@
 
     &-container {
       display: flex;
-      min-height: 172px;
       align-content: center;
       transition: all 350ms linear;
-
-      @include tablet-and-mobile {
-        //padding: 20px 0;
-      }
-
-      @include mobile {
-        min-height: 82px;
-        //padding: 10px 0 0;
-      }
-
-      * {
-        transition: all 350ms linear;
-      }
-
-      .fixed & {
-        //min-height: 102px;
-        //transition: all 350ms ease;
-        //
-        //@include mobile {
-        //  min-height: 82px;
-        //}
-      }
     }
   }
 
   &__logo {
+    position: relative;
     display: flex;
     flex: 0 0 172px;
+    padding-top: 13.872%;
 
     > * {
       flex: 1 1 100%;
@@ -57,38 +45,13 @@
       align-self: flex-end;
     }
 
-    .image-fit {
-      position: relative;
-
-      &::before {
-        content: '';
-        display: block;
-        padding-top: 100%;
-        width: 100%;
-
-        @include tablet-and-mobile {
-          padding-top: 130%;
-        }
-      }
-
-      img{
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: center;
-      }
+    img {
+      @include fill;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
     }
-
-    //.fixed & {
-    //  flex-basis: 102px;
-    //
-    //  @include mobile {
-    //    flex-basis: 62px;
-    //  }
-    //}
   }
 
   &__brand {
@@ -125,17 +88,9 @@
     @include mobile {
       font-size: 20px;
     }
-
-    //.fixed & {
-    //  font-size: 35px;
-    //
-    //  @include mobile {
-    //    font-size: 20px;
-    //  }
-    //}
   }
 
-  &__text {
+  &__title-text {
     font-size: 16px;
     line-height: 38px;
     font-weight: normal;
@@ -145,64 +100,62 @@
       font-size: 13px;
       line-height: 22px;
     }
-
-    //.fixed & {
-    //  opacity: 0;
-    //  clip-path: circle(0px at 0 0);
-    //  margin-top: -38px;
-    //
-    //  @include mobile {
-    //    margin-top: -44px;
-    //  }
-    //}
   }
 
   &__media {
     flex: 0 0 278px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-end;
+    display: grid;
+    grid-template-areas:
+      'search entrance'
+      'contacts funds'
+      'socials socials';
+    align-items: center;
     align-content: center;
+    gap: 13px;
     color: $color-grey;
 
     &-item {
-      &--actions {
-       flex: 1 1 100%;
-      }
-
-      &--contacts  {
-        flex: 1 1 auto;
-        //max-width: 50%;
-        margin-top: 13px;
-      }
-
-      &--funds {
+      &-link {
         display: flex;
         align-items: center;
         justify-content: center;
-        flex: 0 1 auto;
-        margin-top: 13px;
       }
 
-      &--socials  {
-        flex: 1 1 100%;
-        margin-top: 13px;
+      &--search {
+        grid-area: search;
+        justify-self: start;
 
-        //.fixed & {
-        //  clip-path: circle(0px at 0 0);
-        //  opacity: 0;
-        //  margin-top: -34px;
-        //}
+        .icon-search {
+          display: inline-flex;
+          margin-right: 5px;
+          width: 14px;
+          height: 14px;
+        }
+      }
+
+      &--entrance {
+        grid-area: entrance;
+        justify-self: end;
+      }
+
+      &--contacts {
+        grid-area: contacts;
+        justify-self: start;
+      }
+
+      &--funds {
+        grid-area: funds;
+        justify-self: end;
+      }
+
+      &--socials {
+        grid-area: socials;
       }
     }
 
     @include tablet-and-mobile {
       display: none;
     }
-
-    //.fixed & {
-    //  //flex: 1 1 500px;
-    //}
 
     .btn--funds {
       line-height: 1;
@@ -231,21 +184,51 @@
     //}
   }
 
-  .actions {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  &.fixed-start {
+    position: fixed;
+    margin-top: -282px;
+    box-shadow: 0 0 16px rgba(38, 38, 38, .26);
+
+    .header {
+      &__media {
+        flex: 0 1 480px;
+        margin-left: auto;
+        grid-template-areas:
+          'contacts search entrance'
+          ' funds socials socials';
+        grid-template-columns: max-content 1fr max-content;
+        gap: 10px;
+
+        &-item--funds {
+          justify-self: start;
+        }
+      }
+
+      &__title-text {
+        display: none;
+      }
+
+      &__logo {
+        flex: 0 0 92px;
+        padding-top: 92px;
+      }
+
+      &__title {
+        font-size: 30px;
+      }
+
+      &__brand {
+        flex: 0 0 auto;
+        margin-left: 15px;
+      }
+
+      &__breadcrumbs {
+        display: none;
+      }
+    }
   }
 
-  #main-search {
-    display: flex;
-    align-items: center;
-  }
-
-  .icon-search {
-    display: inline-block;
-    margin-right: 5px;
-    width: 14px;
-    height: 14px;
+  &.fixed {
+    top: 282px;
   }
 }

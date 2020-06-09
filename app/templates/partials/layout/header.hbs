@@ -3,21 +3,18 @@
     <div class="container">
       <div class="header__top-container">
         <div class="header__logo">
-          {{>components/image-fit img="header/logo" tablet-img="header/logo-mobile" fallback-ext="png"}}
+          {{>components/image img="header/logo" tablet-img="header/logo-mobile" fallback-ext="png"}}
         </div>
         <div class="header__brand">
           <h1 class="header__title">Приход преподобного<br>Серафима Саровского</h1>
-          <span class="header__text">г. Минск, Белорусская Православная Церковь Московского Патриархата</span>
+          <span class="header__title-text">г. Минск, Белорусская Православная Церковь Московского Патриархата</span>
         </div>
         <div class="header__media">
-          <div class="header__media-item header__media-item--actions">
-            <div class="actions">
-              <a href="#" class="link--text" id="main-search">
-                {{>ui/svg name="search"}}
-                Поиск
-              </a>
-              <button class="link--text" type="button" id="main-entrance">Вход / Регистрация</button>
-            </div>
+          <div class="header__media-item header__media-item--search">
+            <a href="#" class="link--text">{{>ui/svg name="search"}} Поиск</a>
+          </div>
+          <div class="header__media-item header__media-item--entrance">
+            <button class="header__media-link link--text" type="button" id="main-entrance">Вход&nbsp;/&nbsp;Регистрация</button>
           </div>
           <div class="header__media-item header__media-item--contacts">
             <a href="#contacts" class="link--text js-scroll-to">Контакты</a>

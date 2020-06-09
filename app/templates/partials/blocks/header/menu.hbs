@@ -13,12 +13,12 @@
           <ul class="nav-menu__submenu submenu">
             {{#each this.submenu}}
               <li class="submenu__item">
-                <a href="#" class="submenu__link">{{this.level-1}}{{#if this.submenu-2}}{{>ui/svg name="arrow-black"}}{{/if}}</a>
+                <a href="{{#if this.url-1}}{{this.url-1}}{{else}}#{{/if}}" class="submenu__link">{{{this.level-1}}}{{#if this.submenu-2}}{{>ui/svg name="arrow-black"}}{{/if}}</a>
                 {{#if this.submenu-2}}
                   <ul class="nav-menu__submenu submenu">
                     {{#each this.submenu-2}}
                       <li class="submenu__item">
-                        <a href="#" class="submenu__link">{{this.level-2}}</a>
+                        <a href="{{#if this.url-2}}{{this.url-2}}{{else}}#{{/if}}" class="submenu__link">{{this.level-2}}</a>
                       </li>
                     {{/each}}
                   </ul>
