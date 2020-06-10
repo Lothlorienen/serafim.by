@@ -12,13 +12,13 @@
 
 
 @mixin desktop() {
-  @media (min-width: $tabletMedia + 1) {
+  @media (min-width: $desktopWidth + 1) {
     @content;
   }
 }
 
 @mixin no-desktop() {
-  @media (max-width: $tabletMedia) {
+  @media (max-width: $desktopWidth) {
     @content;
   }
 }
