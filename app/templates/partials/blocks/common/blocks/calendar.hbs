@@ -5,8 +5,8 @@
       <div class="swiper-wrapper">
         {{#each aside-calendar}}
           <div class="swiper-slide calendar">
-            <div class="calendar__date">
-              <a href="#">
+            <a class="calendar__link" href="#">
+              <div class="calendar__date">
                 {{#if this.label-after}}
                   <span class="calendar__label calendar__label--small">{{this.label-after}}</span>
                 {{else}}
@@ -14,12 +14,11 @@
                 {{/if}}
                 <span class="calendar__day">{{this.day}}</span>
                 <span class="calendar__month">{{this.month}}</span>
-              </a>
-            </div>
-
-            <p class="section-widget__text">
-              <a href="#">{{this.text}}</a>
-            </p>
+              </div>
+              <p class="calendar__text section-widget__text">
+                {{this.text}}
+              </p>
+            </a>
           </div>
         {{/each}}
       </div>
