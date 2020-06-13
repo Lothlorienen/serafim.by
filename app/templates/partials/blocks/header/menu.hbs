@@ -7,25 +7,49 @@
     {{/each}}
   {{else}}
     {{#each links.header-menu}}
-      <li class="nav-menu__item">
-        <a href="{{this.url}}" class="nav-menu__link">{{this.label}}</a>
+      <li class="nav-menu__item{{#if this.submenu}} js-submenu{{/if}}">
         {{#if this.submenu}}
-          <ul class="nav-menu__submenu submenu">
-            {{#each this.submenu}}
-              <li class="submenu__item">
-                <a href="{{#if this.url-1}}{{this.url-1}}{{else}}#{{/if}}" class="submenu__link">{{{this.level-1}}}{{#if this.submenu-2}}{{>ui/svg name="arrow-black"}}{{/if}}</a>
-                {{#if this.submenu-2}}
-                  <ul class="nav-menu__submenu submenu">
-                    {{#each this.submenu-2}}
-                      <li class="submenu__item">
-                        <a href="{{#if this.url-2}}{{this.url-2}}{{else}}#{{/if}}" class="submenu__link">{{this.level-2}}</a>
-                      </li>
-                    {{/each}}
-                  </ul>
-                {{/if}}
-              </li>
-            {{/each}}
-          </ul>
+          <span class="nav-menu__link">{{this.label}}{{>ui/svg name="arrow-black"}}</span>
+        {{else}}
+          <a href="{{this.url}}" class="nav-menu__link">{{this.label}}</a>
+        {{/if}}
+        {{#if this.submenu}}
+          <div class="nav-menu__submenu">
+            <div class="submenu-controls _smallTablet-visible">
+              <button class="submenu-controls__back" type="button">
+                {{>ui/svg name="arrow-black"}}
+                <span class="submenu-controls__current"></span>
+              </button>
+            </div>
+            <ul class="submenu">
+              {{#each this.submenu}}
+                <li class="submenu__item{{#if this.submenu-2}} js-submenu{{/if}}">
+                  {{#if this.submenu-2}}
+                    <span class="submenu__link">{{{this.level-1}}}{{#if this.submenu-2}}{{>ui/svg name="arrow-black"}}{{/if}}</span>
+                  {{else}}
+                    <a href="{{#if this.url-1}}{{this.url-1}}{{else}}#{{/if}}" class="submenu__link">{{{this.level-1}}}{{#if this.submenu-2}}{{>ui/svg name="arrow-black"}}{{/if}}</a>
+                  {{/if}}
+                  {{#if this.submenu-2}}
+                    <div class="nav-menu__submenu">
+                      <div class="submenu-controls _smallTablet-visible js-submenu-controls">
+                        <button class="submenu-controls__back" type="button">
+                          {{>ui/svg name="arrow-black"}}
+                          <span class="submenu-controls__current"></span>
+                        </button>
+                      </div>
+                      <ul class="submenu">
+                        {{#each this.submenu-2}}
+                          <li class="submenu__item">
+                            <a href="{{#if this.url-2}}{{this.url-2}}{{else}}#{{/if}}" class="submenu__link">{{this.level-2}}</a>
+                          </li>
+                        {{/each}}
+                      </ul>
+                    </div>
+                  {{/if}}
+                </li>
+              {{/each}}
+            </ul>
+          </div>
         {{/if}}
       </li>
     {{/each}}

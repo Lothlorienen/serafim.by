@@ -1,45 +1,66 @@
 .menu-toggle {
+  position: relative;
   display: flex;
   justify-content: center;
-  flex-direction: column;
+  align-items: center;
   margin-left: auto;
-  max-width: 50px;
-  max-height: 50px;
-  width: 50px;
-  height: 50px;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  box-shadow: 0 -1px 10px white, 0 1px 10px rgba(0, 0, 0, 0.125);
+  transition: all 350ms ease;
 
-  @include mobile {
-    max-width: 30px;
-    max-height: 30px;
-  }
+  $toggleValue: 7px;
+
   &::after,
   &::before {
     content: '';
     display: inline-flex;
-    max-width: 40%;
-    width: 100%;
-    height: 3px;
+    width: $toggleValue;
+    height: $toggleValue;
     background-color: $color-secondary;
-    border-radius: 15px;
-  }
-
-  &::after {
-    margin-left: auto;
-    margin-top: 6px;
-  }
-
-  &::before {
-    max-width: 100%;
-    margin-bottom: 6px;
+    border-radius: 50%;
+    transition: all 350ms ease;
   }
 
   &__item {
     display: inline-flex;
     max-width: 70%;
-    margin-left: auto;
-    width: 100%;
-    height: 3px;
+    margin: 0 6px;
+    width: $toggleValue;
+    height: $toggleValue;
     background-color: $color-secondary;
-    border-radius: 15px;
+    border-radius: 50%;
+    transition: all 350ms ease;
+  }
+
+  &._opened {
+    flex-direction: column;
+    transform: rotate(360deg);
+    box-shadow: 0 0 0 white, 0 0 0 rgba(0, 0, 0, 0.125);
+
+    &::after,
+    &::before {
+      width: 30px;
+      height: 2px;
+      border-radius: 10px;
+    }
+
+    &::after {
+      transform: rotate(45deg) translateY(-1px);
+    }
+
+    .menu-toggle__item {
+      opacity: 0;
+      position: absolute;
+    }
+
+    &::before {
+      transform: rotate(-45deg) translateY(1px);
+    }
+  }
+
+  .fixed-start  & {
+    box-shadow: none;
   }
 }

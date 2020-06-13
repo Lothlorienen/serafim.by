@@ -8,22 +8,6 @@
   background: $bg-light;
   transition: top 350ms ease;
 
-  + * {
-    margin-top: 282px;
-
-    @include tablet {
-      margin-top: 180px;
-    }
-
-    @include smallTablet {
-      margin-top: 151px;
-    }
-
-    @include mobile {
-      margin-top: 135px;
-    }
-  }
-
   &__top {
     background-color: $color-white;
 
@@ -39,6 +23,7 @@
     display: flex;
     flex: 0 0 172px;
     padding-top: 13.872%;
+    overflow: hidden;
 
     > * {
       flex: 1 1 100%;
@@ -56,8 +41,12 @@
     }
 
     @include mobile {
-      padding-top: 26%;
-      flex-basis: 60px;
+      padding-top: 25%;
+      flex-basis: 65px;
+    }
+
+    @include mobile320 {
+      display: none;
     }
 
     img {
@@ -82,7 +71,12 @@
     }
 
     @include smallTablet-and-mobile {
-      margin: 10px 0 10px 15px;
+      margin: 8px;
+    }
+
+    @include mobile320 {
+      justify-content: flex-start;
+      margin-left: 0;
     }
   }
 
@@ -197,16 +191,41 @@
 
   &__toggle-menu {
     align-self: center;
-    flex: 1 1 auto;
+    flex: 0 0 55px;
   }
 
   &__bottom {
-    position: relative;
     z-index: 2;
     background-color: $color-lightgrey;
 
-    @include mobile {
+    @include smallTablet-and-mobile {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      left: 0;
       display: none;
+      transition: height 450ms ease;
+      background-color: $color-white;
+      overflow: hidden;
+
+      &.animate {
+        display: block;
+        transition: height 450ms ease;
+      }
+
+      .header._opened & {
+        display: block;
+      }
+
+      .container {
+        height: 100%;
+      }
+    }
+  }
+
+  &__nav {
+    @include smallTablet-and-mobile {
+      height: 100%;
     }
   }
 
@@ -248,8 +267,9 @@
         }
 
         @include mobile {
-          padding-top: 75px;
-          flex-basis: 50px;
+          display: none;
+          padding-top: 60px;
+          flex-basis: 45px;
         }
       }
 
@@ -262,11 +282,11 @@
       }
 
       &__brand {
-        flex: 0 0 auto;
+        flex: 1 0 auto;
         margin-left: 15px;
 
         @include mobile {
-          margin: 10px 15px;
+          margin: 10px 0;
         }
       }
 

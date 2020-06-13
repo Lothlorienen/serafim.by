@@ -38,8 +38,9 @@ class Collapse {
   }
 
   static animate(elem, height) {
-    const handler = e => {
-      if (e.target !== e.currentTarget) return false;
+    const handler = ({target, currentTarget}) => {
+      if (target !== currentTarget) return false;
+
       elem.removeEventListener(endEvents.transition, handler);
       elem.classList.remove('animate');
       elem.style.height = '';

@@ -29,6 +29,12 @@
   }
 }
 
+@mixin no-smallTablet() {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
 @mixin smallTablet() {
   @media (min-width: $mobileMedia + 1) and (max-width: 1023px) {
     @content;

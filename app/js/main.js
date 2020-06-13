@@ -14,9 +14,9 @@ import './src/widgets/sliders';
 import './src/widgets/lightbox';
 import './src/widgets/lity';
 import './src/widgets/ymap';
-// import './src/widgets/daterangepicker';
 
 import './src/modules/header';
+import './src/modules/menu-toggle';
 
 import './src/app';
 
