@@ -46,6 +46,7 @@
 
   &__link {
     @include fill;
+    z-index: 1;
   }
 
   &__publish-date {

@@ -2,15 +2,11 @@ class SliderArticle {
   constructor(nodeElement) {
     this.nodeElement = nodeElement;
     this.timeout = +this.nodeElement.dataset.timeout || 5000;
-
     this.pagination = nodeElement.querySelector('.article-slider__pagination');
-
     this.slidesCount = nodeElement.querySelectorAll('.swiper-slide').length;
-
     this.startTime = null;
     this.elapsedTime = null;
     this.timeFraction = null;
-
     this.activeSlideElement = null;
     this.activeSlideElementProgress = null;
 
@@ -142,29 +138,32 @@ class SliderArticle {
   }
 }
 
-class SliderDefault {
+class SliderFade {
   constructor(nodeElement) {
     this.nodeElement = nodeElement;
 
-    this.pagination = nodeElement.querySelector('.news-slider__bullets');
+    this.events();
+  }
 
-    this.startTime = null;
-    this.init();
+  events() {
+    this.initSwiper();
   }
 
   initSwiper() {
     this.swiper = new Swiper(this.nodeElement, {
+      el: this.nodeElement.querySelector('[data-slider=\"slider\"]'),
       effect: 'fade',
       loop: true,
       slidesPerView: 1,
-      spaceBetween: 43,
-      // speed: 1000,
-      autoplay: true,
+      autoplay: {
+        delay: 7000,
+        disableOnInteraction: false,
+      },
       fadeEffect: { crossFade: true },
       autoHeight: true,
       pagination: {
+        el: this.nodeElement.querySelector('[data-slider=\"pagination\"]'),
         type: 'bullets',
-        // el: '[data-slider="paging"]',
         clickable: true,
         dynamicBullets: false,
         bulletActiveClass: 'active',
@@ -172,8 +171,73 @@ class SliderDefault {
     });
   }
 
-  init() {
+  static init(element) {
+    new SliderFade(element);
+  }
+}
+
+class SliderDefault {
+  constructor(nodeElement) {
+    this.nodeElement = nodeElement;
+
+    this.events();
+  }
+
+  events() {
     this.initSwiper();
+  }
+
+  initSwiper() {
+    this.swiper = new Swiper(this.nodeElement, {
+      el: this.nodeElement.querySelector('[data-slider=\"slider\"]'),
+      slidesPerView: 1,
+      spaceBetween: 43,
+      pagination: {
+        el: this.nodeElement.querySelector('[data-slider=\"pagination\"]'),
+        type: 'bullets',
+        clickable: true,
+        dynamicBullets: false,
+        bulletActiveClass: 'active',
+      },
+    });
+  }
+
+  static init(element) {
+    new SliderDefault(element);
+  }
+}
+
+class SliderQuotes {
+  constructor(nodeElement) {
+    this.nodeElement = nodeElement;
+
+    this.events();
+  }
+
+  events() {
+    this.initSwiper();
+  }
+
+  initSwiper() {
+    this.swiper = new Swiper(this.nodeElement, {
+      el: this.nodeElement.querySelector('[data-slider=\"slider\"]'),
+      effect: 'fade',
+      loop: true,
+      slidesPerView: 1,
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+      },
+      fadeEffect: { crossFade: true },
+      navigation: {
+        prevEl: '[data-slider="prev"]',
+        nextEl: '[data-slider="next"]',
+      },
+    });
+  }
+
+  static init(element) {
+    new SliderQuotes(element);
   }
 }
 
@@ -182,49 +246,18 @@ class SliderUI {
     document.querySelectorAll('.js-slider-article').forEach(item => {
       new SliderArticle(item);
     });
-    document.querySelectorAll('.js-swiper-slider').forEach(item => {
-      new SliderDefault(item);
+    document.querySelectorAll('.js-slider-fade').forEach(item => {
+      SliderFade.init(item);
+    });
+    document.querySelectorAll('.js-slider-default').forEach(item => {
+      SliderDefault.init(item);
+    });
+    document.querySelectorAll('.js-slider-quotes').forEach(item => {
+      SliderQuotes.init(item);
     });
   }
 }
 
-
 document.addEventListener('DOMContentLoaded', () => {
   SliderUI.init();
 });
-
-
-window.SliderArticle = SliderArticle;
-window.SliderDefault = SliderDefault;
-window.SliderUI = SliderUI;
-
-// const configsForSwiper = {
-//   news: {
-//     slidesPerView: 1,
-//     spaceBetween: 43,
-//     centeredSlides: true,
-//     loop: true,
-//     slideActiveClass: 'active',
-//     slider: {
-//      el: '[data-slider="slides"]'
-//     },
-//     autoplay: {
-//       delay: 5000,
-//       disableOnInteraction: false,
-//     },
-//     pagination: {
-//       el: '[data-slider="paging"]',
-//       clickable: true,
-//       bulletClass: 'swiper-slider__bullet',
-//       bulletActiveClass: 'active',
-//     }
-//   },
-// };
-
-// class DefaultSliders {
-//   static init () {
-//     const news = new Swiper('.js-swiper-slider', configsForSwiper.news);
-//   }
-// }
-
-// window.initClassSliders = DefaultSliders.init;

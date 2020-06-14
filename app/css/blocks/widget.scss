@@ -125,17 +125,9 @@
     .btn {
       padding: 10px 25px;
       @include font-sm;
-      //color: $color-white;
-      //background-color: $color-primary;
-      //border: none;
       border-radius: 10px;
       line-height: 1;
       transition: all 0.3s ease;
-
-      //&:hover,
-      //&:focus {
-      //  background-color: $color-success;
-      //}
     }
 
     .home & {

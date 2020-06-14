@@ -12,6 +12,12 @@
     @include mobile {
       grid-template-columns: 1fr;
     }
+
+    &--article {
+      @include mobile {
+        margin: 0 -10px;
+      }
+    }
   }
 
   &-aside {

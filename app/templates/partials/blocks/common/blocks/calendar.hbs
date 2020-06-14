@@ -1,7 +1,7 @@
 <div class="widget widget--calendar">
   <h3 class="widget__title">Православный календарь</h3>
   <section class="card section-widget js-slider-default">
-    <div class="section-widget__content swiper-container " data-slider="slides">
+    <div class="section-widget__content swiper-container" data-slider="slider">
       <div class="swiper-wrapper">
         {{#each aside-calendar}}
           <div class="swiper-slide calendar">
@@ -15,15 +15,13 @@
                 <span class="calendar__day">{{this.day}}</span>
                 <span class="calendar__month">{{this.month}}</span>
               </div>
-              <p class="calendar__text section-widget__text">
-                {{this.text}}
-              </p>
+              <p class="calendar__text section-widget__text">{{this.text}}</p>
             </a>
           </div>
         {{/each}}
       </div>
     </div>
 
-    <div class="calendar__bullets" data-slider="paging"></div>
+    <div class="calendar__bullets" data-slider="pagination"></div>
   </section>
 </div>

@@ -3,11 +3,24 @@
     <div class="container">
       <div class="header__top-container">
         <div class="header__logo">
-          {{>components/image img="header/logo" tablet-img="header/logo-mobile" fallback-ext="png"}}
+          {{#ifCond current-page 'Home'}}
+            {{>components/image img="header/logo" tablet-img="header/logo-mobile" fallback-ext="png"}}
+          {{else}}
+            <a class="home-link" href="home.html">
+              {{>components/image img="header/logo" tablet-img="header/logo-mobile" fallback-ext="png"}}
+            </a>
+          {{/ifCond}}
         </div>
         <div class="header__brand">
-          <h1 class="header__title">Приход преподобного<br>Серафима Саровского</h1>
-          <span class="header__title-text">Белорусская Православная Церковь Московского&nbsp;Патриархата, г. Минск</span>
+          {{#ifCond current-page 'Home'}}
+            <h1 class="header__title">Приход преподобного<br>Серафима Саровского</h1>
+            <span class="header__title-text">Белорусская Православная Церковь Московского&nbsp;Патриархата, г. Минск</span>
+          {{else}}
+            <a class="home-link" href="home.html">
+              <h1 class="header__title">Приход преподобного<br>Серафима Саровского</h1>
+              <span class="header__title-text">Белорусская Православная Церковь Московского&nbsp;Патриархата, г. Минск</span>
+            </a>
+          {{/ifCond}}
         </div>
         <div class="header__media">
           <div class="header__media-item header__media-item--search">

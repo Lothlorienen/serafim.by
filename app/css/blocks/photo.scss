@@ -8,9 +8,9 @@
   }
 
   &__content-link {
+    @include fill;
     display: flex;
     height: 100%;
-    margin-top: auto;
   }
 
   &__link {

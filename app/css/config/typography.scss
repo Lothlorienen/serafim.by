@@ -20,6 +20,10 @@
       color: $color-primary;
     }
 
+    &.home-link[href]:hover {
+      color: $color-black ;
+    }
+
     &.link {
       &:hover {
         color: $color-primary;
