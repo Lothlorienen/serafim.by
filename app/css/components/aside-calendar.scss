@@ -2,14 +2,14 @@
   position: relative;
   font-size: 35px;
 
-  @include mobile {
-    display: flex;
-    align-items: flex-end;
-    padding-top: 40px;
-  }
-
   &__link {
     display: block;
+
+    @include mobile {
+      display: flex;
+      align-items: flex-end;
+      padding-top: 40px;
+    }
   }
 
   &__date {

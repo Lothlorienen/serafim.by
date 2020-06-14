@@ -1,0 +1,65 @@
+@include tablet {
+  .home {
+    &-articles {
+      grid-area: articles;
+    }
+
+    &-calendar {
+      grid-area: calendar;
+    }
+
+    &-related {
+      grid-area: related;
+
+      @include smallTablet {
+        .content-grid__item:last-child {
+          display: none;
+        }
+      }
+    }
+
+    &-attention {
+      grid-area: attention;
+    }
+
+    &-time {
+      grid-area: time;
+    }
+
+    &-intro {
+      grid-area: intro;
+    }
+
+    &-video {
+      grid-area: video;
+    }
+
+    &-photo {
+      grid-area: photo;
+    }
+
+    &-audio {
+      grid-area: audio;
+    }
+
+    &-quotes {
+      grid-area: quotes;
+    }
+
+    &-questions {
+      grid-area: questions;
+    }
+
+    &-form {
+      grid-area: form;
+    }
+
+    &-album-1 {
+      grid-area: album-1;
+    }
+
+    &-album-2 {
+      grid-area: album-2;
+    }
+  }
+}

@@ -59,6 +59,10 @@
         @include font-base;
       }
 
+      @include smallTablet {
+        @include font-sm;
+      }
+
       @include mobile {
         font-size: 14px;
       }

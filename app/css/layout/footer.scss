@@ -22,11 +22,22 @@
     padding-bottom: 50px;
 
     @include tablet {
+      grid-template-columns: repeat(3, 1fr);
       grid-template-areas:
-        'map map map'
-        'credits address nav'
-        'copyright copyright copyright';
+        'map map credits'
+        'map map address'
+        'map map nav'
+        'copyright copyright copyright' ;
       gap: 43px;
+    }
+
+    @include smallTablet {
+      grid-template-columns: repeat(auto-fit, minmax(100px, max-content));
+
+      grid-template-areas:
+        'map map'
+        'address credits '
+        'nav copyright' ;
     }
 
     @include mobile {
@@ -84,6 +95,10 @@
     grid-area: copyright;
     margin-top: auto;
     @include font-sm;
+
+    @include tablet {
+      margin: 0;
+    }
 
     @include mobile {
       margin-top: 20px;
