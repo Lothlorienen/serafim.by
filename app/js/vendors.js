@@ -10,10 +10,15 @@ import 'lazysizes/plugins/object-fit/ls.object-fit';
 import svgPolyfill from 'svg4everybody';
 import jquery from 'jquery';
 import swiper from 'swiper';
+import Datepicker from 'vanillajs-datepicker/js/Datepicker';
+import ru from 'vanillajs-datepicker/js/i18n/locales/ru';
 
 window.$ = window.jQuery = jquery;
 window.svg4everybody = svgPolyfill;
 window.Swiper = swiper;
+
+window.Datepicker = Datepicker;
+Object.assign(Datepicker.locales, ru);
 
 lazySizes.cfg.lazyClass = 'lazy';
 lazySizes.cfg.srcAttr = 'data-original';

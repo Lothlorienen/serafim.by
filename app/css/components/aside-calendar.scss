@@ -82,5 +82,24 @@
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 4;
     overflow: hidden;
+
+    &--big {
+      @include font-base;
+    }
+  }
+
+  &-inline {
+    padding: 0;
+    font-size: 13px;
+  }
+
+  &-simple {
+    height: 100%;
+
+    &__link {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
   }
 }

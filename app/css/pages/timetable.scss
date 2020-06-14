@@ -37,10 +37,6 @@
       @include mobile {
         grid-template-columns: 1fr;
       }
-
-      .calendar__text-big {
-        @include font-base;
-      }
     }
   }
 

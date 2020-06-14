@@ -156,7 +156,7 @@ class SliderFade {
       loop: true,
       slidesPerView: 1,
       autoplay: {
-        delay: 7000,
+        delay: 10000,
         disableOnInteraction: false,
       },
       fadeEffect: { crossFade: true },
@@ -225,7 +225,7 @@ class SliderQuotes {
       loop: true,
       slidesPerView: 1,
       autoplay: {
-        delay: 5000,
+        delay: 8000,
         disableOnInteraction: false,
       },
       fadeEffect: { crossFade: true },

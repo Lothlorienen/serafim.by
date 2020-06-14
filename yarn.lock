@@ -10347,6 +10347,11 @@ value-or-function@^3.0.0:
   resolved "https://registry.yarnpkg.com/value-or-function/-/value-or-function-3.0.0.tgz#1c243a50b595c1be54a754bfece8563b9ff8d813"
   integrity sha1-HCQ6ULWVwb5Up1S/7OhWO5/42BM=
 
+vanillajs-datepicker@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/vanillajs-datepicker/-/vanillajs-datepicker-1.0.3.tgz#d478479490084829602211786e35679617d0315d"
+  integrity sha512-DE0/KivlyluaIPsJHxKif73sDXsAFTst54Nq013S0GGrE9JY0JvbSys3T9B8cnm+tMFn+/RncxX5JIU9b1LOUA==
+
 verror@1.10.0:
   version "1.10.0"
   resolved "https://registry.yarnpkg.com/verror/-/verror-1.10.0.tgz#3a105ca17053af55d6e270c1f8288682e18da400"
