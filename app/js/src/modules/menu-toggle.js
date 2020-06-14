@@ -3,7 +3,6 @@ class MenuToggle {
     this.nodeElement = nodeElement;
     this.menu = document.querySelector('.js-menu-mobile');
     this.header = document.querySelector('.js-header');
-    this.main = document.querySelector('.page__container');
     this.busy = false;
 
     this.addEvents();
@@ -11,9 +10,6 @@ class MenuToggle {
   }
 
   addEvents() {
-    this.calcContentMargin();
-    onResize(this.calcContentMargin.bind(this));
-
     if(!isTabletLayout()) return;
 
     if (!this.busy) {
@@ -64,9 +60,6 @@ class MenuToggle {
     this.menu.style.top = `${this.header.getBoundingClientRect().height}px`;
   }
 
-  calcContentMargin() {
-    this.main.style.marginTop = `${this.header.getBoundingClientRect().height + 20}px`;
-  }
 
   hideSubmenu() {
     const submenus = document.querySelectorAll('.nav-menu__submenu');

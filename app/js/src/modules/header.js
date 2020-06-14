@@ -2,6 +2,7 @@ class Header {
   constructor(nodeElement) {
     this.nodeElement = nodeElement;
     this.viewportHeight = null;
+    this.main = document.querySelector('.page__container');
 
     this.addEvents();
   }
@@ -9,6 +10,8 @@ class Header {
   addEvents() {
     onResize(this.updateCache.bind(this));
     onScroll(this.onScroll.bind(this));
+    this.calcContentMargin();
+    onResize(this.calcContentMargin.bind(this));
   }
 
   setAsFixed() {
@@ -20,8 +23,14 @@ class Header {
     this.nodeElement.classList.remove('fixed');
   }
 
+  calcContentMargin() {
+    this.main.style.marginTop = `${this.nodeElement.getBoundingClientRect().height + 20}px`;
+  }
+
   onScroll() {
     const scrollTop = getScrollPos();
+    this.calcContentMargin();
+
     if (scrollTop > window.innerHeight) {
       this.setAsFixed();
     } else {
