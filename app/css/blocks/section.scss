@@ -41,7 +41,6 @@
 
   &-widget {
     position: relative;
-    height: 100%;
 
     &__content {
       position: relative;
@@ -55,6 +54,10 @@
 
     &__text {
       @include font-sm;
+
+      @include tablet {
+        @include font-base;
+      }
 
       @include mobile {
         font-size: 14px;
@@ -224,6 +227,10 @@
 .card {
   padding: 20px 25px;
   background-color: $color-white;
+
+  &--fw {
+    height: 100%;
+  }
 }
 
 .link-arrow {

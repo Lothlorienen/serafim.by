@@ -179,6 +179,7 @@
   &__right {
     display: flex;
     flex-wrap: wrap;
+    flex: auto;
   }
 
   &__name {

@@ -18,6 +18,85 @@
         margin: 0 -10px;
       }
     }
+
+    &--home {
+      @include tablet {
+        max-width: calc(100vw - 40px);
+        grid-template-columns: repeat(4, minmax(100px, 1fr));
+        //grid-template-columns: repeat(auto-fit, minmax(100px, 100vw));
+        grid-auto-rows: minmax(10px,auto);
+        grid-template-areas:
+          'articles articles articles articles'
+          'calendar calendar attention attention '
+          'time time time time'
+          'related related related related'
+          'announcement announcement announcement announcement'
+          'intro intro intro intro'
+          'photo photo video video'
+          'audio audio audio audio'
+          'quotes quotes quotes quotes'
+          'questions questions form form'
+          'album-1 album-1 album-2 album-2';
+
+        .home {
+          &-articles {
+            grid-area: articles;
+          }
+
+          &-calendar {
+            grid-area: calendar;
+          }
+
+          &-related {
+            grid-area: related;
+          }
+
+          &-attention {
+            grid-area: attention;
+          }
+
+          &-time {
+            grid-area: time;
+          }
+
+          &-intro {
+            grid-area: intro;
+          }
+
+          &-video {
+            grid-area: video;
+          }
+
+          &-photo {
+            grid-area: photo;
+          }
+
+          &-audio {
+            grid-area: audio;
+          }
+
+          &-quotes {
+            grid-area: quotes;
+          }
+
+          &-questions {
+            grid-area: questions;
+          }
+
+          &-form {
+            grid-area: form;
+          }
+
+          &-album-1 {
+            grid-area: album-1;
+          }
+
+          &-album-2 {
+            grid-area: album-2;
+          }
+        }
+      }
+    }
   }
 
   &-aside {
@@ -46,7 +125,6 @@
     .video__text {
       display: -webkit-box;
       max-height: 60px;
-      //height: 100%;
       -webkit-box-orient: vertical;
       -webkit-line-clamp: 2;
       overflow: hidden;
@@ -65,5 +143,9 @@
     display: grid;
     grid-template-columns: 1fr;
     gap: $main-gutters;
+
+    @include tablet {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 }

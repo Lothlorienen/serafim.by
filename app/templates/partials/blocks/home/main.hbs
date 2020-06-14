@@ -1,28 +1,28 @@
-{{#> blocks/section-wrapper title="Главное" class-sw="grid-md-col-12 grid-col-9"}}
+{{#> blocks/section-wrapper title="Главное" class-sw="home-articles grid-col-9"}}
   <div class="content-container">
     {{> blocks/slider-article }}
   </div>
 {{/blocks/section-wrapper}}
 
 
-{{#> blocks/section-wrapper class-sw="grid-md-col-6 grid-col-3"}}
+{{#> blocks/section-wrapper class-sw="home-calendar grid-col-3"}}
   {{> blocks/common/blocks/calendar }}
 {{/blocks/section-wrapper}}
 
 
-{{#> blocks/section-wrapper class-sw="grid-md-col-12 grid-col-9"}}
+{{#> blocks/section-wrapper class-sw="home-related grid-col-9"}}
   <div class="content-container">
     {{> blocks/news/blocks/news-grid array=news.related}}
   </div>
 {{/blocks/section-wrapper}}
 
 
-{{#> blocks/section-wrapper class-sw="grid-md-col-6 grid-col-3"}}
+{{#> blocks/section-wrapper class-sw="home-attention grid-col-3"}}
   {{> blocks/common/blocks/attention }}
 {{/blocks/section-wrapper}}
 
 
-{{#> blocks/section-wrapper class-sw="grid-md-col-12 grid-col-5"}}
+{{#> blocks/section-wrapper class-sw="home-time grid-col-5"}}
   <div class="grid-column-container">
     {{> blocks/common/blocks/timetable }}
     {{> blocks/common/blocks/announcement }}
@@ -30,46 +30,46 @@
 {{/blocks/section-wrapper}}
 
 
-{{#> blocks/section-wrapper class-sw="grid-md-col-12 grid-col-7"}}
+{{#> blocks/section-wrapper class-sw="home-intro grid-col-7"}}
   {{> blocks/common/blocks/introduction }}
 {{/blocks/section-wrapper}}
 
 
-{{#> blocks/section-wrapper title="Видео" class-sw="grid-md-col-12 grid-col-5"}}
+{{#> blocks/section-wrapper title="Видео" class-sw="home-video grid-col-5"}}
   {{> blocks/video-slider text="Паломническая поездка в церковь Антифонитис на Северном Кипре" date="16.07.2020" }}
 {{/blocks/section-wrapper}}
 
 
-{{#> blocks/section-wrapper title="Фото" class-sw="grid-md-col-6 grid-col-4"}}
+{{#> blocks/section-wrapper title="Фото" class-sw="home-photo grid-col-4"}}
   {{> blocks/photo-slider photo="inst" text="Паломничество для столицы в Instagram" date="16.07.2020" }}
 {{/blocks/section-wrapper}}
 
 
-{{#> blocks/section-wrapper title="Аудио" class-sw="grid-md-col-6 grid-col-3"}}
+{{#> blocks/section-wrapper title="Аудио" class-sw="home-audio grid-col-3"}}
     {{> blocks/common/blocks/audio }}
 {{/blocks/section-wrapper}}
 
 
-{{#> blocks/section-wrapper title="Цитаты" class-sw="grid-md-col-12 grid-col-8"}}
+{{#> blocks/section-wrapper title="Цитаты" class-sw="home-quotes grid-col-8"}}
   {{> blocks/quote-slider }}
 {{/blocks/section-wrapper}}
 
 
-{{#> blocks/section-wrapper title="Вопросы священнику" class-sw="grid-md-col-6 grid-col-4"}}
+{{#> blocks/section-wrapper title="Вопросы священнику" class-sw="home-questions grid-col-4"}}
   {{> blocks/common/blocks/form-question }}
 {{/blocks/section-wrapper}}
 
 
-{{#> blocks/section-wrapper class-sw="grid-md-col-6 grid-col-4"}}
+{{#> blocks/section-wrapper class-sw="home-form grid-col-4"}}
   {{> blocks/common/blocks/form }}
 {{/blocks/section-wrapper}}
 
 
-{{#> blocks/section-wrapper class-sw="grid-md-col-6 grid-col-4"}}
+{{#> blocks/section-wrapper class-sw="home-album-1 grid-col-4"}}
   {{> blocks/photo-item photo="relicts" text="Святыни прихода" stats=true amount="124"}}
 {{/blocks/section-wrapper}}
 
 
-{{#> blocks/section-wrapper class-sw="grid-md-col-6 grid-col-4"}}
+{{#> blocks/section-wrapper class-sw="home-album-2 grid-col-4"}}
   {{> blocks/photo-item photo="about" text="О храме <br> (фото и описание)" stats=true amount="167" }}
 {{/blocks/section-wrapper}}
