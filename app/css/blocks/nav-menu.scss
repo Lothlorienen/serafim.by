@@ -8,7 +8,7 @@
   font-weight: bold;
 
   @include tablet {
-    text-align: center;
+    font-size: 14px;
   }
 
   @include smallTablet-and-mobile {
@@ -50,6 +50,10 @@
 
     .header & {
       padding: 24px 10px;
+
+      @include tablet {
+        padding: 20px 0;
+      }
     }
 
     &:hover {
