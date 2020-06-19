@@ -1,101 +1,55 @@
 class Ymap {
   constructor(node) {
     this.node = node;
-    this.closePopup = null;
+    this.closeButton = null;
     this.overlay = null;
     this.container = null;
     this.body = document.querySelector('.page');
     this.map = null;
     this.isInited = false;
+
     this.events();
   }
 
   events() {
-    this.node.addEventListener('click', () => {
-      if (!this.isInited) {
-        this.addMap();
-      } else {
-        if (this.map.classList.contains('visible')) {
-          this.map.classList.add('not-visible');
-          this.map.classList.remove('visible');
-          this.overlay.classList.add('not-visible');
-          this.overlay.classList.remove('visible');
-        } else if (this.map.classList.contains('not-visible')) {
-          this.map.classList.add('visible');
-          this.map.classList.remove('not-visible');
-          this.overlay.classList.add('visible');
-          this.overlay.classList.remove('not-visible');
-        }
-      }
-
-    });
+    if (!this.isInited) this.initPopup();
   }
 
-  addMap() {
-    const newPromise = new Promise((resolve, reject) => {
-      resolve(this.createOverlay());
-      hideScrollbar();
-    });
-    newPromise
-      .then(() => {
-        setTimeout(() => {
-          this.overlay.classList.add('visible');
-          this.map.classList.add('visible');
-        }, 300);
-      })
-      .then(() => {
-        this.createPopup();
-      })
-      .then(() => {
-        setTimeout(() => {
-          this.container.insertAdjacentHTML('beforeend',
-            `<div style="position:relative;overflow:hidden;"><a href="https://yandex.by/maps/org/tserkov_v_chest_prepodobnykh_startsev_optinskikh/205184322415/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">Церковь в честь преподобных старцев Оптинских</a><a href="https://yandex.by/maps/157/minsk/category/orthodox_church/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:14px;">Православный храм в Минске</a><a href="https://yandex.by/maps/157/minsk/category/religious_association/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:28px;">Религиозное объединение в Минске</a><iframe src="https://yandex.by/map-widget/v1/-/CCQdjSUxpC" width="560" height="400" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe></div>`);
-        }, 300);
-      })
-      .then(() => {
-        this.overlay.addEventListener('click', (e) => {
-          let target = e.target;
-          if (target === this.overlay) {
-            this.removePopup();
-            this.removeOverlay();
-          }
-          showScrollbar();
-        });
-        this.closePopup.addEventListener('click', (e) => {
-          let target = e.target;
-          if (target === this.closePopup) {
-            this.removeOverlay();
-            this.removePopup();
-          }
-          showScrollbar();
-        });
-        this.isInited = true;
-      });
+  initPopup() {
+    this.createOverlay();
+    this.createPopupHTML();
+    this.node.addEventListener('click', this.handler.bind(this));
+    this.overlay.addEventListener('click', this.closePopup.bind(this));
+    this.closeButton.addEventListener('click', this.closePopup.bind(this));
+    this.isInited = true;
   }
 
-  createPopup() {
+  handler() {
+    this.revealPopup();
+  }
+
+  revealPopup() {
+    hideScrollbar();
+    this.showElement(this.map);
+    this.showElement(this.overlay);
+  }
+
+  createPopupHTML() {
     this.map = document.createElement('div');
     this.map.classList.add('ymap');
 
-    this.closePopup = document.createElement('button');
-    this.closePopup.setAttribute('type', 'button');
-    this.closePopup.classList.add('ymap__close');
+    this.closeButton = document.createElement('button');
+    this.closeButton.setAttribute('type', 'button');
+    this.closeButton.classList.add('ymap__close');
 
     this.container = document.createElement('div');
     this.container.classList.add('ymap__container');
+    this.container.insertAdjacentHTML('beforeend',
+      `<div style="position:relative;overflow:hidden;"><a href="https://yandex.by/maps/org/tserkov_v_chest_prepodobnykh_startsev_optinskikh/205184322415/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">Церковь в честь преподобных старцев Оптинских</a><a href="https://yandex.by/maps/157/minsk/category/orthodox_church/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:14px;">Православный храм в Минске</a><a href="https://yandex.by/maps/157/minsk/category/religious_association/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:28px;">Религиозное объединение в Минске</a><iframe src="https://yandex.by/map-widget/v1/-/CCQdjSUxpC" width="560" height="400" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe></div>`);
 
-    this.map.appendChild(this.closePopup);
+    this.map.appendChild(this.closeButton);
     this.map.appendChild(this.container);
     this.body.appendChild(this.map);
-  }
-
-  removePopup() {
-    this.map.classList.add('not-visible');
-    this.map.classList.remove('visible');
-
-    // this.map.addEventListener('transitionend', () => {
-    //   this.map.remove();
-    // });
   }
 
   createOverlay() {
@@ -104,13 +58,21 @@ class Ymap {
     this.body.appendChild(this.overlay);
   }
 
-  removeOverlay() {
-    this.overlay.classList.add('not-visible');
-    this.overlay.classList.remove('visible');
+  closePopup(e) {
+    let target = e.target;
+    if (target === this.overlay || target === this.closeButton) {
+      this.hideElement(this.overlay);
+      this.hideElement(this.map);
+    }
+    showScrollbar();
+  }
 
-    // this.overlay.addEventListener('transitionend', () => {
-    //   this.overlay.remove();
-    // });
+  showElement(element) {
+    element.classList.add('visible');
+  }
+
+  hideElement(element) {
+    element.classList.remove('visible');
   }
 
   static init(item) {
