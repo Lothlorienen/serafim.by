@@ -8,7 +8,9 @@ class Ymap {
     this.map = null;
     this.isInited = false;
 
-    this.events();
+    setTimeout(() => {
+      this.events();
+    }, 1000);
   }
 
   events() {
