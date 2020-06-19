@@ -1,5 +1,5 @@
 <article class="content-article">
-  <a class="content-article__link" href="{{#if href}}{{href}}{{else}}article.html{{/if}}"></a>
+  <a class="content-article__link" href="{{#if href}}{{href}}{{else}}article.html{{/if}}" aria-label="Ссылка на статью."></a>
   {{> components/image-fit
           img=(concat 'news/' this.image)
           is-cover=true

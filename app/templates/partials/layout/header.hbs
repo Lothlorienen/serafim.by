@@ -6,7 +6,7 @@
           {{#ifCond current-page 'Home'}}
             {{>components/image img="header/logo" tablet-img="header/logo-mobile" fallback-ext="png"}}
           {{else}}
-            <a class="home-link" href="home.html">
+            <a class="home-link" href="home.html" aria-label="Link to homepage.">
               {{>components/image img="header/logo" tablet-img="header/logo-mobile" fallback-ext="png"}}
             </a>
           {{/ifCond}}
@@ -16,7 +16,7 @@
             <h1 class="header__title">Приход преподобного<br>Серафима Саровского</h1>
             <span class="header__title-text">Белорусская Православная Церковь Московского&nbsp;Патриархата, г. Минск</span>
           {{else}}
-            <a class="home-link" href="home.html">
+            <a class="home-link" href="home.html" aria-label="Link to homepage.">
               <h1 class="header__title">Приход преподобного<br>Серафима Саровского</h1>
               <span class="header__title-text">Белорусская Православная Церковь Московского&nbsp;Патриархата, г. Минск</span>
             </a>
@@ -40,7 +40,7 @@
           </div>
         </div>
         <div class="header__toggle-menu _smallTablet-visible">
-          <button class="menu-toggle js-menu-toggle">
+          <button class="menu-toggle js-menu-toggle" aria-label="Menu button.">
             <span class="menu-toggle__item"></span>
           </button>
         </div>

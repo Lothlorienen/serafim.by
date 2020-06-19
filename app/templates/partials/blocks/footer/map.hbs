@@ -1,8 +1,16 @@
 <div class="footer__map">
   <div class="map-preview">
-    <img class="map-preview__image js-ymap"
-         src="../assets/images/common/map.jpeg"
-         alt="Карта проезда к храму."
-         tabindex="0">
+    <picture>
+      <source data-srcset="../assets/images/common/ymap.webp, ../assets/images/common/ymap@2x.webp 2x"
+              type="image/webp">
+      <source data-srcset="../assets/images/common/ymap.jpeg, ../assets/images/common/ymap@2x.jpeg 2x"
+              type="image/jpeg">
+      <img class="map-preview__image js-ymap lazy"
+           data-sizes="auto"
+           data-original="../assets/images/common/ymap.jpeg"
+           src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+           alt="Карта проезда к храму."
+           tabindex="0">
+    </picture>
   </div>
 </div>
