@@ -40,7 +40,7 @@
   <meta property="og:image:alt" content="..">
 
   <link rel="canonical" href="https://ozitag.com">
-  <link rel="stylesheet" href="../css/main.css?v=2926">
+  <link rel="stylesheet" href="../css/main.css?v=606">
 
   <script type="application/ld+json">
     {
@@ -113,7 +113,7 @@
 </svg> Поиск</a>
           </div>
           <div class="header__media-item header__media-item--entrance">
-            <button class="header__media-link link--text" type="button" id="main-entrance">Вход&nbsp;/&nbsp;Регистрация</button>
+            <button class="header__media-link link--text js-popup-open" type="button" data-popup="login">Вход&nbsp;/&nbsp;Регистрация</button>
           </div>
           <div class="header__media-item header__media-item--contacts">
             <a href="#contacts" class="link--text js-scroll-to">Контакты</a>
@@ -173,7 +173,7 @@
     </div>
   </div>
 
-  <div class="header__bottom  js-menu-mobile">
+  <div class="header__bottom js-menu-mobile">
     <div class="container">
       <nav class="header__nav">
         <ul class="nav-menu">
@@ -303,6 +303,7 @@
               </li>
         </ul>
       </nav>
+      <button class="nav-menu__link color-primary _mobile-visible js-popup-open" type="button" data-popup="login">Вход&nbsp;/&nbsp;Регистрация</button>
     </div>
   </div>
 
@@ -607,7 +608,6 @@
   </div>
 </div>
 
-
 <footer class="footer page__footer" id="contacts">
   <div class="container footer__inner">
     <div class="footer__map">
@@ -719,22 +719,45 @@
 
 </div>
 
-<script defer src="../js/vendors.js?v=2926"></script>
-  <script defer src="../js/layout.js?v=2926"></script>
-  <script defer src="../js/scroll-observer.js?v=2926"></script>
-  <script defer src="../js/resize-observer.js?v=2926"></script>
-  <script defer src="../js/scroll-control.js?v=2926"></script>
-  <script defer src="../js/preloader.js?v=2926"></script>
-  <script defer src="../js/scroll-to.js?v=2926"></script>
-  <script defer src="../js/scroll-to-link.js?v=2926"></script>
-  <script defer src="../js/popups.js?v=2926"></script>
-  <script defer src="../js/header.js?v=2926"></script>
-  <script defer src="../js/menu-toggle.js?v=2926"></script>
-  <script defer src="../js/sliders.js?v=2926"></script>
-  <script defer src="../js/collapse.js?v=2926"></script>
-  <script defer src="../js/lightbox.js?v=2926"></script>
-  <script defer src="../js/lity.js?v=2926"></script>
-  <script defer src="../js/ymap.js?v=2926"></script>
-  <script defer src="../js/app.js?v=2926"></script>
+<div class="popup popup--login card js-popup" data-popup-id="login">
+  <div class="popup__header">
+    <span class="popup__title">Войти</span>
+    <button class="popup__close js-popup-close"></button>
+  </div>
+  <div class="popup__content" data-api-url="location.href">
+    <form class="form">
+      <div class="form-row">
+        <input type="email" class="form-input" inputmode="email" name="loginEmail" placeholder="Ваш E-mail">
+      </div>
+      <div class="form-row">
+        <input type="password" class="form-input" name="loginPassword" placeholder="Пароль">
+      </div>
+      <div class="form-row">
+        <button type="submit" class="btn btn-primary" aria-label="Подтвердите вход.">Войти</button>
+      </div>
+    </form>
+    <div class="popup__credits">
+      Еще нет аккаунта? <a class="color-primary" href="#" aria-label="Перейти на страницу регистрации.">Зарегистрироваться</a>
+    </div>
+  </div>
+</div>
+
+<script defer src="../js/vendors.js?v=606"></script>
+  <script defer src="../js/layout.js?v=606"></script>
+  <script defer src="../js/scroll-observer.js?v=606"></script>
+  <script defer src="../js/resize-observer.js?v=606"></script>
+  <script defer src="../js/scroll-control.js?v=606"></script>
+  <script defer src="../js/preloader.js?v=606"></script>
+  <script defer src="../js/scroll-to.js?v=606"></script>
+  <script defer src="../js/scroll-to-link.js?v=606"></script>
+  <script defer src="../js/popups.js?v=606"></script>
+  <script defer src="../js/header.js?v=606"></script>
+  <script defer src="../js/menu-toggle.js?v=606"></script>
+  <script defer src="../js/sliders.js?v=606"></script>
+  <script defer src="../js/collapse.js?v=606"></script>
+  <script defer src="../js/lightbox.js?v=606"></script>
+  <script defer src="../js/lity.js?v=606"></script>
+  <script defer src="../js/ymap.js?v=606"></script>
+  <script defer src="../js/app.js?v=606"></script>
 </body>
 </html>
