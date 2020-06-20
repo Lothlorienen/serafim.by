@@ -78,6 +78,10 @@
   font-size: $font-related-title;
   line-height: 30px;
   font-weight: normal;
+
+  @include mobile320 {
+    font-size: 20px;
+  }
 }
 
 @mixin font-base-up() {

@@ -2,8 +2,20 @@
   color: $color-grey;
 }
 
+.color-primary {
+  color: $color-primary;
+
+  &:hover {
+    color: darken($color-primary, 5%) !important;
+  }
+}
+
 .text-muted {
   color: $color-secondary;
+}
+
+.text-bold {
+  font-weight: bold;
 }
 
 .link {

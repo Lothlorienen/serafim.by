@@ -12,7 +12,7 @@
   justify-content: center;
   align-items: center;
   @include transition(0.3s);
-  z-index: 1;
+  z-index: 1000;
 
   &.not-visible {
     background: transparent;
@@ -23,19 +23,17 @@
   position: fixed;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%) scale(0);
-  border-radius: 10px;
-  opacity: 0;
-  @include transition;
+  z-index: 1001;
+  width: 100%;
   background: #FFFFFF;
-  min-width: 828px;
-  box-shadow: 0px 20px 60px rgba(0, 0, 0, 0.15);
-  overflow: hidden;
-  z-index: 2;
+  border-radius: 10px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  transform: translate(-50%, -50%) scale(0);
+  @include transition;
+  opacity: 0;
 
-  @includetablet-and-mobile {
-    max-width: 95%;
-    min-width: 0;
+  @include mobile {
+    max-width: calc(100vw - 20px);
   }
 
   &.opened {
@@ -44,42 +42,66 @@
   }
 
   &__header {
-    height: 123px;
     display: flex;
-    justify-content: center;
     align-items: center;
     width: 100%;
-    position: relative;
     padding: 0 15px;
+    margin-bottom: 15px;
   }
 
   &__title {
     display: block;
-    text-align: center;
-    font-size: 48px;
-    line-height: 64px;
+    @include font-base;
   }
 
   &__close {
-    @include transition;
-    border-radius: 4px;
     position: absolute;
-    right: 31px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 50px;
-    height: 50px;
+    top: 0;
+    right: -20px;
+    width: 28px;
+    height: 28px;
+    transform: translateX(100%);
+    transition: opacity 350ms ease;
 
-    &:before {
+    @include mobile {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      transform: translateX(0);
+    }
+
+    &::after,
+    &::before {
       content: '';
-      @include sprite('popup-close');
-      @include align();
+      display: block;
+      width: 100%;
+      border-bottom: 2px solid $color-white;
+
+      @include mobile {
+        border-color: $color-secondary;
+      }
+    }
+
+    &::after {
+      transform: rotate(45deg) translate(-1px, -1px);
+    }
+
+    &::before {
+      transform: rotate(-45deg);
+    }
+
+    &:hover {
+      opacity: 0.5;
     }
   }
 
-  &__content {
-    padding: 20px;
-    background: #FAFAFA;
-    position: relative;
+  &__credits {
+    margin-top: 15px;
+  }
+
+  &--login {
+    @include no-mobile {
+      max-width: 400px;
+    }
   }
 }

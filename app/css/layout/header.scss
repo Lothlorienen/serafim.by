@@ -224,7 +224,7 @@
   }
 
   &__nav {
-    @include smallTablet-and-mobile {
+    @include smallTablet {
       height: 100%;
     }
   }

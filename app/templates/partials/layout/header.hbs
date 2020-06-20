@@ -27,7 +27,9 @@
             <a href="#" class="link--text">{{>ui/svg name="search"}} Поиск</a>
           </div>
           <div class="header__media-item header__media-item--entrance">
-            <button class="header__media-link link--text" type="button" id="main-entrance">Вход&nbsp;/&nbsp;Регистрация</button>
+            <button class="header__media-link link--text js-popup-open"
+                    type="button"
+                    data-popup="login">Вход&nbsp;/&nbsp;Регистрация</button>
           </div>
           <div class="header__media-item header__media-item--contacts">
             <a href="#contacts" class="link--text js-scroll-to">Контакты</a>
@@ -48,11 +50,14 @@
     </div>
   </div>
 
-  <div class="header__bottom  js-menu-mobile">
+  <div class="header__bottom js-menu-mobile">
     <div class="container">
       <nav class="header__nav">
         {{>blocks/header/menu}}
       </nav>
+      <button class="nav-menu__link color-primary _mobile-visible js-popup-open"
+              type="button"
+              data-popup="login">Вход&nbsp;/&nbsp;Регистрация</button>
     </div>
   </div>
 
