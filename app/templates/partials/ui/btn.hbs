@@ -13,6 +13,7 @@
      class="btn{{#if size}} btn-{{size}}{{/if}}{{#if color}} btn-{{color}}{{#if
              outline}}-outline{{/if}}{{/if}}{{#if w100}} btn-w100{{/if}} {{#if
              popup}} js-popup-open{{/if}} {{mix}}"
+    {{#if aria}}aria-label="{{aria}}" {{/if}}
     {{{attr}}}>
     {{label}}
   </a>

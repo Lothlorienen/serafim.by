@@ -1,5 +1,5 @@
 <div class="photo">
-  <a href="{{links.photos.album.url}}" class="photo__link"></a>
+  <a href="{{links.photos.album.url}}" class="photo__link" aria-label="Ссылка на страницу с фотоальбомом."></a>
   <div class="photo__image">
     {{> components/image img=(concat 'photo/' photo) fallback-ext='jpg' }}
   </div>

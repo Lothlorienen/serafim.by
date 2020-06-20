@@ -10,7 +10,7 @@ class Ymap {
 
     setTimeout(() => {
       this.events();
-    }, 1000);
+    }, 2500);
   }
 
   events() {

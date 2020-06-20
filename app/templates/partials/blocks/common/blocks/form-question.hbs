@@ -1,14 +1,11 @@
 <div class="widget widget--form">
   <section class="card section-widget">
     <div class="section-widget__content">
-      <p class="section-widget__text">
-        Вас что-то беспокоит, но вы не можете
-        обратиться в церкви?
-      </p>
+      <p class="section-widget__text">Вас что-то беспокоит, но вы не можете обратиться в церкви?</p>
       <form class="section-widget__form form" >
-        {{> ui/input placeholder="Ваш E-mail" }}
-        {{> ui/input textarea mode="email" textarea=true placeholder="Ваше cообщение"}}
-        {{> ui/btn button=true submit=true label="Отправить"}}
+        {{> ui/input placeholder="Ваш E-mail" aria="Поле для ввода вашего почтового ящика."}}
+        {{> ui/input textarea mode="email" textarea=true placeholder="Ваше cообщение" aria="Поле для ввода вашего сообщения."}}
+        {{> ui/btn button=true submit=true label="Отправить" aria="Отправить форму."}}
       </form>
     </div>
   </section>

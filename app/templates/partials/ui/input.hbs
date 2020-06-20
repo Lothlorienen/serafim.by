@@ -13,6 +13,7 @@
     {{#if textarea}}
       <textarea class="form-area {{area-class}}"
         {{#if placeholder}}placeholder="{{placeholder}}" {{/if}}
+        {{#if aria}}aria-label="{{aria}}" {{/if}}
         {{#if disabled}}disabled{{/if}}></textarea>
 
     {{else}}
@@ -21,6 +22,7 @@
         {{#if placeholder}}placeholder="{{placeholder}}" {{/if}}
         {{#if mode}}inputmode="{{mode}}" {{/if}}
         {{#if value}}value="{{value}}" {{/if}}
+        {{#if aria}}aria-label="{{aria}}" {{/if}}
         {{#if disabled}}disabled{{/if}} />
     {{/if}}
 
