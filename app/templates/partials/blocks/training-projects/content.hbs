@@ -1,0 +1,11 @@
+{{#> blocks/section-wrapper title="Файлы"}}
+  <div class="content-container">
+    <ul class="content-grid">
+      {{#each files}}
+        <li class="content-grid__item">
+          {{> blocks/training-projects/item}}
+        </li>
+      {{/each}}
+    </ul>
+  </div>
+{{/blocks/section-wrapper}}

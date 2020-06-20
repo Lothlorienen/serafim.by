@@ -15,11 +15,12 @@
 
 <div class="container page__container">
   <div class="grid-main">
-    <main class="page__content grid-col-9">
+    <main class="page__content grid-md-col-12 grid-col-9">
+      {{> blocks/training-projects/content }}
     </main>
 
     <aside class="page__aside grid-col-3">
-      {{> blocks/common/aside }}
+      {{> blocks/common/aside no-announcement=true}}
     </aside>
   </div>
 </div>

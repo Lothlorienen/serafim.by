@@ -1,0 +1,84 @@
+.file {
+  &__image {
+    background-color: $color-grey;
+  }
+
+  &__image-link {
+    position: relative;
+    padding-top: 60%;
+    display: block;
+
+    img {
+      @include fill;
+      width: 100%;
+      height: 100%;
+      object-position: center;
+      object-fit: cover;
+    }
+
+    &--audio img {
+      margin: auto;
+      height: 80%;
+      object-fit: contain;
+    }
+  }
+
+  &__info {
+    position: relative;
+  }
+
+  &__label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0 15px;
+    transform: translateY(-100%);
+    background-color: $color-lightgrey;
+    border-radius: 0px 4px 0px 0px;
+  }
+
+  &__label,
+  &__title {
+    @include font-sm;
+  }
+
+  &__title a {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    padding-right: 50px;
+    overflow: hidden;
+  }
+
+  &__pubdate,
+  &__category {
+    font-size: 11px;
+    color: $color-grey;
+    line-height: 30px;
+  }
+
+  &__category {
+    display: inline-flex;
+    align-items: center;
+
+    &::before {
+      content: '';
+      display: inline-block;
+      width: 4px;
+      height: 4px;
+      margin-right: 5px;
+      background-color: $color-grey;
+      border-radius: 50%;
+    }
+  }
+
+  &__pubdate {
+    font-style: italic;
+  }
+
+  &__meta {
+    display: flex;
+    justify-content: space-between;
+  }
+
+}
