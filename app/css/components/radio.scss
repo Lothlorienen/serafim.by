@@ -57,4 +57,43 @@
       }
     }
   }
+
+  &-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &-label {
+    position: relative;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    white-space: nowrap;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    input {
+      @include fill;
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    input:checked + span {
+      background-color: $color-primary;
+      color: $white;
+    }
+
+    span {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      @include font-base();
+      font-weight: bold;
+      padding: 5px 10px;
+      border: 1px solid $color-primary;
+      cursor: pointer;
+    }
+  }
 }

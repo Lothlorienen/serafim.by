@@ -17,6 +17,7 @@ import './src/widgets/datepicker';
 
 import './src/modules/header';
 import './src/modules/menu-toggle';
+import './src/modules/dropdown';
 
 import './src/app';
 

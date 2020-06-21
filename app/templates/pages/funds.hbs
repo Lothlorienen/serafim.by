@@ -13,8 +13,15 @@
 
 {{> layout/header page-breadcrumbs=funds.page-breadcrumbs}}
 
-<div class="container page__container">
-
+<div class="container page__container funds">
+  <div class="grid-main">
+    <main class="page__content grid-md-col-12 grid-col-6">
+      {{>blocks/funds/main}}
+    </main>
+  </div>
+  <div class="funds-bg">
+    {{> components/image img="funds/bg" fallback-ext="jpg"}}
+  </div>
 </div>
 
 {{> layout/footer }}

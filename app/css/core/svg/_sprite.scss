@@ -1,6 +1,7 @@
 $icons: (
-        sprite: (width: 50px, height: 42px, pngPath: '../assets/images/sprite.png', svgPath: '../assets/images/sprite.svg'),
+        sprite: (width: 66px, height: 58px, pngPath: '../assets/images/sprite.png', svgPath: '../assets/images/sprite.svg'),
 arrow: (width: 12px, height: 8px, backgroundX: 0px, backgroundY: 0px),
 arrow-black: (width: 12px, height: 8px, backgroundX: -12px, backgroundY: -8px),
-popup-close: (width: 26px, height: 26px, backgroundX: -24px, backgroundY: -16px),
+dropdown: (width: 16px, height: 16px, backgroundX: -24px, backgroundY: -16px),
+popup-close: (width: 26px, height: 26px, backgroundX: -40px, backgroundY: -32px),
 );
