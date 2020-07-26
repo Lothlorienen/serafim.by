@@ -16,6 +16,12 @@
     }
 
     &--article {
+      @include tablet-and-mobile {
+        .page__content {
+          display: flex;
+        }
+      }
+
       @include mobile {
         margin: 0 -10px;
       }
