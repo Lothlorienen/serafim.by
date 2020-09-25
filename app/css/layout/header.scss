@@ -6,7 +6,6 @@
   z-index: 20;
   color: $color-black;
   background: $bg-light;
-  transition: top 350ms ease;
 
   &__top {
     background-color: $color-white;
@@ -20,28 +19,26 @@
 
   &__logo {
     position: relative;
-    display: flex;
     flex: 0 0 172px;
-    padding-top: 13.872%;
+    width: 100%;
+    max-width: 172px;
     overflow: hidden;
 
-    > * {
-      flex: 1 1 100%;
+    &::after {
+      content: '';
+      display: block;
+      padding-top: 100%;
     }
 
     @include tablet {
       flex-basis: 91px;
-      padding-top: 14%;
     }
 
     @include smallTablet-and-mobile {
       flex-basis: 82px;
-      align-self: flex-end;
-      padding-top: 15%;
     }
 
     @include mobile {
-      padding-top: 25%;
       flex-basis: 65px;
     }
 
@@ -236,8 +233,22 @@
 
   &.fixed-start {
     position: fixed;
-    margin-top: -282px;
+    //margin-top: -282px;
+    margin-top: -292px;
     box-shadow: 0 0 16px rgba(38, 38, 38, .26);
+    transition: top 550ms ease;
+
+    @include tablet {
+      margin-top: -252px;
+    }
+
+    @include smallTablet {
+      margin-top: -157px;
+    }
+
+    @include mobile {
+      margin-top: -110px;
+    }
 
     .header {
       &__media {
@@ -260,7 +271,6 @@
 
       &__logo {
         flex: 0 0 92px;
-        padding-top: 92px;
 
         @include tablet {
           flex-basis: 74px;
@@ -268,7 +278,6 @@
 
         @include mobile {
           display: none;
-          padding-top: 60px;
           flex-basis: 45px;
         }
       }
@@ -297,6 +306,19 @@
   }
 
   &.fixed {
-    top: 282px;
+    //top: 282px;
+    top: 292px;
+
+    @include tablet {
+      top: 252px;
+    }
+
+    @include smallTablet {
+      top: 157px;
+    }
+
+    @include mobile {
+      top: 110px;
+    }
   }
 }

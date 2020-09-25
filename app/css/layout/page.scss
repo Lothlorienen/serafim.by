@@ -34,10 +34,35 @@
     gap: $main-gutters;
     flex: 1 0 auto;
     min-height: 1px;
-    margin: 20px auto 67px;
+    margin: 292px auto 67px;
+
+    @include tablet {
+      margin-top: 252px;
+    }
+
+    @include smallTablet {
+      margin-top: 157px;
+    }
 
     @include mobile {
+      margin-top: 110px;
       margin-bottom: 43px;
+    }
+
+    &.home {
+      margin-top: 262px;
+
+      @include tablet {
+        margin-top: 222px;
+      }
+
+      @include smallTablet {
+        margin-top: 127px;
+      }
+
+      @include mobile {
+        margin-top: 110px;
+      }
     }
   }
 
